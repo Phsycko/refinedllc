@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "projects": "Projects",
+    "about": "About Us",
+    "contact": "Contact",
+    "quote": "Get a Free Quote"
+  },
+  "home": {
+    "hero": {
+      "title": "Transforming Visions into Reality",
+      "subtitle": "World-class architectural design and construction. Over 9 years creating exceptional spaces that exceed expectations.",
+      "cta1": "View Projects",
+      "cta2": "Our Services"
+    },
+    "services": {
+      "title": "Our Services",
+      "subtitle": "We offer comprehensive solutions in design, construction, and remodeling",
+      "viewAll": "View all services",
+      "viewMore": "Learn more"
+    },
+    "process": {
+      "title": "Our Process",
+      "subtitle": "A systematic approach that ensures exceptional results"
+    },
+    "projects": {
+      "title": "Featured Projects",
+      "subtitle": "Portfolio of works demonstrating our excellence",
+      "viewAll": "View all projects"
+    },
+    "testimonials": {
+      "title": "What our clients say",
+      "subtitle": "Our clients' satisfaction is our greatest reward"
+    },
+    "cta": {
+      "title": "Ready to start your project?",
+      "description": "Contact us today for a free consultation and discover how we can bring your vision to life.",
+      "button": "Contact now"
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Complete solutions for your construction and design projects",
+    "details": "View details",
+    "features": "Service Features",
+    "gallery": "Project Gallery",
+    "interested": "Interested in this service?",
+    "interestedDesc": "Contact us for a free consultation and discover how we can help you with your project.",
+    "requestQuote": "Request quote"
+  },
+  "projects": {
+    "title": "Our Projects",
+    "subtitle": "Explore our portfolio of successfully completed projects",
+    "all": "All",
+    "about": "About the Project",
+    "highlights": "Highlights",
+    "servicesUsed": "Services Used",
+    "similarProject": "Similar project?",
+    "similarProjectDesc": "Contact us to discuss how we can help you with your project.",
+    "projectGallery": "Project Gallery",
+    "discoverMore": "Discover more projects",
+    "discoverMoreDesc": "Explore our complete portfolio of successful projects.",
+    "viewAll": "View all projects",
+    "location": "Location",
+    "year": "Year",
+    "area": "Area",
+    "category": "Category"
+  },
+  "about": {
+    "title": "About Us",
+    "whoWeAre": "Who We Are",
+    "mission": "Our Mission",
+    "values": "Our Values",
+    "valuesSubtitle": "The principles that guide everything we do",
+    "whyChooseUs": "Why Choose Us?",
+    "licenses": "Licenses and Certifications",
+    "qualityGuaranteed": "Quality Guaranteed",
+    "qualityDesc": "Every project is executed with the highest standards of quality and craftsmanship.",
+    "onTimeDelivery": "On-Time Delivery",
+    "onTimeDesc": "We respect deadlines and maintain our commitment to delivery dates.",
+    "expertTeam": "Expert Team",
+    "expertDesc": "Highly qualified professionals with years of industry experience."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We're here to help bring your project to life",
+    "info": "Contact Information",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "hours": "Hours",
+    "followUs": "Follow Us",
+    "sendMessage": "Send us a message",
+    "form": {
+      "name": "Full name",
+      "email": "Email",
+      "phone": "Phone",
+      "service": "Service of interest",
+      "selectService": "Select a service",
+      "generalInquiry": "General Inquiry",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your project...",
+      "file": "Attach file (optional)",
+      "fileSelected": "File selected:",
+      "submit": "Send message",
+      "sending": "Sending...",
+      "successMessage": "Message sent successfully! We'll be in touch soon.",
+      "errorMessage": "There was an error sending the message. Please try again."
+    }
+  },
+  "footer": {
+    "links": "Links",
+    "contact": "Contact",
+    "copyright": "All rights reserved."
+  },
+  "common": {
+    "readMore": "Read more",
+    "learnMore": "Learn more",
+    "close": "Close",
+    "next": "Next",
+    "previous": "Previous",
+    "featured": "Featured"
+  }
+}
+

@@ -1,0 +1,66 @@
+{
+  "name": "Refined LLC",
+  "slogan": "Exceeding Expectations",
+  "founded": 2015,
+  "description": "Refined LLC es una firma líder en diseño arquitectónico y construcción, comprometida con la excelencia en cada proyecto. Nos especializamos en transformar visiones en realidades tangibles, superando las expectativas de nuestros clientes.",
+  "mission": "Nuestra misión es crear espacios excepcionales que mejoren la vida de las personas, combinando diseño innovador, artesanía de calidad superior y un compromiso inquebrantable con la satisfacción del cliente.",
+  "values": [
+    {
+      "title": "Excelencia",
+      "description": "Nos esforzamos por la perfección en cada detalle de nuestros proyectos."
+    },
+    {
+      "title": "Integridad",
+      "description": "Operamos con transparencia, honestidad y ética en todas nuestras relaciones."
+    },
+    {
+      "title": "Innovación",
+      "description": "Adoptamos nuevas tecnologías y enfoques para ofrecer soluciones de vanguardia."
+    },
+    {
+      "title": "Sostenibilidad",
+      "description": "Nos comprometemos con prácticas de construcción ecológicas y sostenibles."
+    }
+  ],
+  "stats": [
+    {
+      "label": "Proyectos Completados",
+      "value": "200+",
+      "icon": "building"
+    },
+    {
+      "label": "Años de Experiencia",
+      "value": "9+",
+      "icon": "calendar"
+    },
+    {
+      "label": "Clientes Satisfechos",
+      "value": "150+",
+      "icon": "users"
+    },
+    {
+      "label": "Premios Ganados",
+      "value": "15+",
+      "icon": "award"
+    }
+  ],
+  "licenses": [
+    "Licencia de Contratista General de California #1234567",
+    "Certificación LEED AP",
+    "Miembro del American Institute of Architects (AIA)",
+    "Certificación de Construcción Verde"
+  ],
+  "contact": {
+    "phone": "+1 (310) 555-0100",
+    "email": "info@refined-llc.com",
+    "address": "1234 Wilshire Blvd, Suite 500, Los Angeles, CA 90025",
+    "hours": "Lunes - Viernes: 9:00 AM - 6:00 PM"
+  },
+  "social": {
+    "facebook": "https://facebook.com/refinedllc",
+    "instagram": "https://instagram.com/refinedllc",
+    "linkedin": "https://linkedin.com/company/refinedllc",
+    "twitter": "https://twitter.com/refinedllc"
+  }
+}
+

@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "slug": "villa-moderna-pacific-coast",
+    "title": "Villa Moderna Pacific Coast",
+    "category": "Residencial",
+    "location": "Malibú, California",
+    "year": 2024,
+    "area": "4,500 sq ft",
+    "description": "Residencia de lujo frente al mar con diseño contemporáneo y vistas panorámicas al océano.",
+    "fullDescription": "Esta impresionante villa moderna combina arquitectura de vanguardia con comodidades de lujo. El diseño de concepto abierto maximiza las vistas al océano, mientras que los materiales de alta gama y la atención al detalle crean un espacio verdaderamente excepcional. El proyecto incluyó diseño arquitectónico completo, gestión de construcción y diseño de interiores.",
+    "services": ["Diseño Arquitectónico", "Construcción Residencial", "Diseño de Interiores"],
+    "featured": true,
+    "mainImage": "/images/projects/villa-pacific-main.jpg",
+    "gallery": [
+      "/images/projects/villa-pacific-1.jpg",
+      "/images/projects/villa-pacific-2.jpg",
+      "/images/projects/villa-pacific-3.jpg",
+      "/images/projects/villa-pacific-4.jpg",
+      "/images/projects/villa-pacific-5.jpg"
+    ],
+    "highlights": [
+      "Diseño sostenible con certificación LEED",
+      "Sistema de domótica integral",
+      "Piscina infinita con vista al mar",
+      "Cocina gourmet de chef",
+      "Home theater y gimnasio privado"
+    ]
+  },
+  {
+    "id": 2,
+    "slug": "oficinas-tech-startup-hub",
+    "title": "Tech Startup Hub",
+    "category": "Comercial",
+    "location": "San Francisco, California",
+    "year": 2024,
+    "area": "12,000 sq ft",
+    "description": "Espacio de oficinas moderno diseñado para fomentar la colaboración y la innovación.",
+    "fullDescription": "Transformamos un espacio industrial en un vibrante hub para startups tecnológicas. El diseño incorpora espacios de trabajo flexibles, áreas de colaboración, salas de reuniones privadas y zonas de descanso. La iluminación natural, los materiales sostenibles y la tecnología de punta crean un ambiente inspirador.",
+    "services": ["Diseño Arquitectónico", "Construcción Comercial", "Remodelación Interior"],
+    "featured": true,
+    "mainImage": "/images/projects/tech-hub-main.jpg",
+    "gallery": [
+      "/images/projects/tech-hub-1.jpg",
+      "/images/projects/tech-hub-2.jpg",
+      "/images/projects/tech-hub-3.jpg",
+      "/images/projects/tech-hub-4.jpg"
+    ],
+    "highlights": [
+      "Espacios de trabajo flexibles",
+      "Iluminación LED inteligente",
+      "Sistemas de videoconferencia avanzados",
+      "Cocina y área de cafetería",
+      "Diseño biofílico con plantas integradas"
+    ]
+  },
+  {
+    "id": 3,
+    "slug": "remodelacion-penthouse-downtown",
+    "title": "Penthouse Downtown Renovation",
+    "category": "Remodelación",
+    "location": "Los Ángeles, California",
+    "year": 2023,
+    "area": "3,200 sq ft",
+    "description": "Renovación completa de penthouse con acabados de lujo y vistas a la ciudad.",
+    "fullDescription": "Renovación integral de un penthouse en el corazón de Los Ángeles. El proyecto incluyó la reconfiguración completa del espacio, actualización de sistemas, instalación de acabados de lujo e integración de tecnología smart home de última generación.",
+    "services": ["Remodelación Interior", "Diseño de Interiores"],
+    "featured": false,
+    "mainImage": "/images/projects/penthouse-main.jpg",
+    "gallery": [
+      "/images/projects/penthouse-1.jpg",
+      "/images/projects/penthouse-2.jpg",
+      "/images/projects/penthouse-3.jpg"
+    ],
+    "highlights": [
+      "Cocina italiana de diseñador",
+      "Mármol Calacatta en baños",
+      "Pisos de roble europeo",
+      "Terraza con cocina exterior",
+      "Sistema de iluminación automatizado"
+    ]
+  },
+  {
+    "id": 4,
+    "slug": "residencia-familiar-suburbs",
+    "title": "Residencia Familiar en Suburbios",
+    "category": "Residencial",
+    "location": "Pasadena, California",
+    "year": 2023,
+    "area": "3,800 sq ft",
+    "description": "Casa familiar de estilo craftsman moderno con énfasis en eficiencia energética.",
+    "fullDescription": "Diseñamos y construimos esta hermosa residencia familiar que combina el encanto del estilo craftsman con comodidades modernas. El diseño prioriza la eficiencia energética, la luz natural y espacios familiares funcionales.",
+    "services": ["Diseño Arquitectónico", "Construcción Residencial"],
+    "featured": false,
+    "mainImage": "/images/projects/family-home-main.jpg",
+    "gallery": [
+      "/images/projects/family-home-1.jpg",
+      "/images/projects/family-home-2.jpg",
+      "/images/projects/family-home-3.jpg"
+    ],
+    "highlights": [
+      "Paneles solares integrados",
+      "Sistema de recolección de agua lluvia",
+      "Aislamiento de alta eficiencia",
+      "Espacios de almacenamiento inteligentes",
+      "Patio trasero con área de juegos"
+    ]
+  }
+]
+

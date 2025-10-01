@@ -1,0 +1,87 @@
+[
+  {
+    "id": 1,
+    "slug": "diseno-arquitectonico",
+    "title": "Diseño Arquitectónico",
+    "category": "Arquitectura",
+    "description": "Creamos espacios únicos que combinan funcionalidad y estética, adaptados a tus necesidades específicas.",
+    "fullDescription": "Nuestro equipo de arquitectos altamente calificados transforma tus ideas en diseños arquitectónicos excepcionales. Trabajamos estrechamente contigo desde el concepto inicial hasta los planos finales, asegurando que cada detalle refleje tu visión mientras cumplimos con todas las normativas y códigos de construcción.",
+    "features": [
+      "Diseño conceptual y desarrollo de planos",
+      "Modelado 3D y renders fotorrealistas",
+      "Cumplimiento de códigos y normativas",
+      "Diseño sostenible y eficiencia energética",
+      "Asesoría durante todo el proceso"
+    ],
+    "image": "/images/services/arquitectura.jpg",
+    "gallery": [
+      "/images/projects/casa-moderna-1.jpg",
+      "/images/projects/casa-moderna-2.jpg"
+    ],
+    "price": "Desde $5,000"
+  },
+  {
+    "id": 2,
+    "slug": "construccion-residencial",
+    "title": "Construcción Residencial",
+    "category": "Construcción",
+    "description": "Construcción de hogares de alta calidad con los más altos estándares de la industria.",
+    "fullDescription": "Especializados en construcción residencial de lujo, desde casas unifamiliares hasta desarrollos residenciales completos. Nuestro equipo gestiona cada fase del proyecto con precisión, desde la preparación del terreno hasta los acabados finales.",
+    "features": [
+      "Gestión completa de proyectos",
+      "Materiales de primera calidad",
+      "Control de calidad riguroso",
+      "Cumplimiento de plazos",
+      "Garantía de construcción"
+    ],
+    "image": "/images/services/construccion.jpg",
+    "gallery": [
+      "/images/projects/residencial-1.jpg",
+      "/images/projects/residencial-2.jpg"
+    ],
+    "price": "Cotización personalizada"
+  },
+  {
+    "id": 3,
+    "slug": "remodelacion-interior",
+    "title": "Remodelación Interior",
+    "category": "Remodelación",
+    "description": "Transformamos espacios existentes en ambientes modernos y funcionales.",
+    "fullDescription": "Renovamos y actualizamos espacios interiores con diseños innovadores que maximizan la funcionalidad y el estilo. Ya sea una cocina, baño o renovación completa de tu hogar, trabajamos con atención meticulosa al detalle.",
+    "features": [
+      "Diseño de interiores personalizado",
+      "Renovación de cocinas y baños",
+      "Optimización de espacios",
+      "Selección de materiales y acabados",
+      "Mínima interrupción de tu rutina"
+    ],
+    "image": "/images/services/remodelacion.jpg",
+    "gallery": [
+      "/images/projects/remodelacion-1.jpg",
+      "/images/projects/remodelacion-2.jpg"
+    ],
+    "price": "Desde $15,000"
+  },
+  {
+    "id": 4,
+    "slug": "construccion-comercial",
+    "title": "Construcción Comercial",
+    "category": "Construcción",
+    "description": "Proyectos comerciales que impulsan tu negocio con diseño funcional y atractivo.",
+    "fullDescription": "Desarrollamos espacios comerciales que no solo cumplen con tus requisitos operacionales, sino que también crean una experiencia excepcional para tus clientes. Desde oficinas hasta locales comerciales.",
+    "features": [
+      "Diseño enfocado en la experiencia del cliente",
+      "Construcción adaptada a tu marca",
+      "Cumplimiento de normativas comerciales",
+      "Gestión de permisos y licencias",
+      "Entrega a tiempo"
+    ],
+    "image": "/images/services/comercial.jpg",
+    "gallery": [
+      "/images/projects/comercial-1.jpg",
+      "/images/projects/comercial-2.jpg"
+    ],
+    "price": "Cotización personalizada"
+  }
+]
+

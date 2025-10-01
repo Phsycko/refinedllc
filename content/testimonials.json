@@ -1,0 +1,43 @@
+[
+  {
+    "id": 1,
+    "name": "Jennifer Williams",
+    "role": "CEO, TechVision Inc.",
+    "project": "Tech Startup Hub",
+    "rating": 5,
+    "text": "Refined LLC transformó nuestra visión en realidad. El espacio de oficinas que crearon es exactamente lo que necesitábamos para fomentar la innovación y colaboración en nuestro equipo. Profesionalismo excepcional de principio a fin.",
+    "image": "/images/testimonials/jennifer-w.jpg",
+    "date": "2024-08-15"
+  },
+  {
+    "id": 2,
+    "name": "Michael Chen",
+    "role": "Propietario",
+    "project": "Villa Moderna Pacific Coast",
+    "rating": 5,
+    "text": "La atención al detalle y el compromiso con la excelencia de Refined LLC superó todas nuestras expectativas. Nuestra casa de ensueño frente al mar es aún más hermosa de lo que imaginamos. Recomendamos sus servicios sin reservas.",
+    "image": "/images/testimonials/michael-c.jpg",
+    "date": "2024-06-22"
+  },
+  {
+    "id": 3,
+    "name": "Sarah Thompson",
+    "role": "Directora de Desarrollo",
+    "project": "Penthouse Downtown Renovation",
+    "rating": 5,
+    "text": "La remodelación de nuestro penthouse fue manejada con absoluto profesionalismo. El equipo respetó nuestros tiempos, presupuesto y entregó resultados que exceden nuestras expectativas. El espacio ahora es verdaderamente espectacular.",
+    "image": "/images/testimonials/sarah-t.jpg",
+    "date": "2023-11-10"
+  },
+  {
+    "id": 4,
+    "name": "David & Lisa Martinez",
+    "role": "Propietarios",
+    "project": "Residencia Familiar en Suburbios",
+    "rating": 5,
+    "text": "Refined LLC hizo realidad nuestro sueño de tener una casa familiar perfecta. Desde el diseño inicial hasta la entrega final, cada paso fue manejado con cuidado y experiencia. No podríamos estar más felices con nuestra nueva casa.",
+    "image": "/images/testimonials/martinez-family.jpg",
+    "date": "2023-09-05"
+  }
+]
+
