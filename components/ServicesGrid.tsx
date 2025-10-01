@@ -5,7 +5,7 @@ import servicesData from '@/content/services.json'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function ServicesGrid() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
 
   return (
     <section className="bg-white py-16 sm:py-24">
@@ -20,7 +20,11 @@ export default function ServicesGrid() {
         </div>
 
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {servicesData.map((service) => (
+          {servicesData.map((service: any) => {
+            const title = language === 'en' && service.title_en ? service.title_en : service.title;
+            const description = language === 'en' && service.description_en ? service.description_en : service.description;
+            
+            return (
             <Link
               key={service.id}
               href={`/servicios/${service.slug}`}
@@ -35,20 +39,20 @@ export default function ServicesGrid() {
                   </div>
                 </div>
                 <h3 className="text-xl font-semibold text-primary group-hover:text-accent transition-colors">
-                  {service.title}
+                  {title}
                 </h3>
                 <p className="mt-2 text-sm text-secondary line-clamp-3">
-                  {service.description}
+                  {description}
                 </p>
                 <div className="mt-4 flex items-center text-accent font-medium text-sm">
-                  <span>Ver más</span>
+                  <span>{t.common.viewMore}</span>
                   <svg className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </div>
               </div>
             </Link>
-          ))}
+          )})}
         </div>
 
         <div className="mt-12 text-center">

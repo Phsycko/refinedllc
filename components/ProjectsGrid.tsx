@@ -10,7 +10,7 @@ interface ProjectsGridProps {
 }
 
 export default function ProjectsGrid({ featured = false, limit }: ProjectsGridProps) {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   
   let projects = featured 
     ? projectsData.filter(p => p.featured) 
@@ -33,7 +33,12 @@ export default function ProjectsGrid({ featured = false, limit }: ProjectsGridPr
         </div>
 
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
+          {projects.map((project: any) => {
+            const title = language === 'en' && project.title_en ? project.title_en : project.title;
+            const description = language === 'en' && project.description_en ? project.description_en : project.description;
+            const category = language === 'en' && project.category_en ? project.category_en : project.category;
+            
+            return (
             <Link
               key={project.id}
               href={`/proyectos/${project.slug}`}
@@ -48,16 +53,16 @@ export default function ProjectsGrid({ featured = false, limit }: ProjectsGridPr
                 </div>
                 <div className="absolute top-4 right-4">
                   <span className="inline-flex items-center rounded-full bg-accent px-3 py-1 text-xs font-semibold text-white">
-                    {project.category}
+                    {category}
                   </span>
                 </div>
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-primary group-hover:text-accent transition-colors line-clamp-1">
-                  {project.title}
+                  {title}
                 </h3>
                 <p className="mt-2 text-sm text-secondary line-clamp-2">
-                  {project.description}
+                  {description}
                 </p>
                 <div className="mt-4 flex items-center justify-between text-sm text-secondary">
                   <span className="flex items-center">
@@ -71,7 +76,7 @@ export default function ProjectsGrid({ featured = false, limit }: ProjectsGridPr
                 </div>
               </div>
             </Link>
-          ))}
+          )})}
         </div>
 
         {!limit && (

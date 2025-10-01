@@ -19,9 +19,9 @@ export default function ProcessSteps() {
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-5">
           {t.process.steps.map((step, index) => (
-            <div key={step.number} className="relative">
+            <div key={index} className="relative">
               {/* Connector line (hidden on mobile, shown on desktop) */}
-              {index < steps.length - 1 && (
+              {index < t.process.steps.length - 1 && (
                 <div className="hidden md:block absolute top-12 left-1/2 w-full h-0.5 bg-accent/30" />
               )}
               
