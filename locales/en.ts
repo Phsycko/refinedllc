@@ -54,6 +54,9 @@ export const en = {
     subtitle: "Portfolio of works demonstrating our excellence",
     viewAllProjects: "View all projects",
     featured: "Featured",
+    pageTitle: "Our Projects",
+    pageSubtitle: "Explore our portfolio of successfully completed projects",
+    all: "All",
   },
   testimonials: {
     title: "What our clients say",
