@@ -1,8 +1,12 @@
+'use client'
+
 import Link from 'next/link'
 import companyData from '@/content/company.json'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
+  const { t } = useLanguage()
 
   return (
     <footer className="bg-primary text-gray-300">
@@ -26,26 +30,26 @@ export default function Footer() {
 
           {/* Enlaces rápidos */}
           <div>
-            <h3 className="text-sm font-semibold text-white mb-4">Enlaces</h3>
+            <h3 className="text-sm font-semibold text-white mb-4">{t.footer.links}</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/servicios" className="text-sm hover:text-accent transition-colors">
-                  Servicios
+                  {t.nav.services}
                 </Link>
               </li>
               <li>
                 <Link href="/proyectos" className="text-sm hover:text-accent transition-colors">
-                  Proyectos
+                  {t.nav.projects}
                 </Link>
               </li>
               <li>
                 <Link href="/sobre" className="text-sm hover:text-accent transition-colors">
-                  Sobre Nosotros
+                  {t.nav.about}
                 </Link>
               </li>
               <li>
                 <Link href="/contacto" className="text-sm hover:text-accent transition-colors">
-                  Contacto
+                  {t.nav.contact}
                 </Link>
               </li>
             </ul>
@@ -53,7 +57,7 @@ export default function Footer() {
 
           {/* Contacto */}
           <div>
-            <h3 className="text-sm font-semibold text-white mb-4">Contacto</h3>
+            <h3 className="text-sm font-semibold text-white mb-4">{t.footer.contact}</h3>
             <ul className="space-y-2 text-sm">
               <li className="flex items-start">
                 <svg className="h-5 w-5 text-accent mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -81,7 +85,7 @@ export default function Footer() {
         {/* Redes sociales y copyright */}
         <div className="mt-8 border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-gray-400">
-            © {currentYear} Refined LLC. Todos los derechos reservados.
+            © {currentYear} Refined LLC. {t.footer.allRightsReserved}
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             {companyData.social.facebook && (

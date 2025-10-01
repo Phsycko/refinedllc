@@ -13,12 +13,71 @@ export const es = {
     viewProjects: "Ver Proyectos",
     ourServices: "Nuestros Servicios",
   },
+  services: {
+    title: "Nuestros Servicios",
+    subtitle: "Ofrecemos soluciones integrales en diseño, construcción y remodelación",
+    viewAllServices: "Ver todos los servicios",
+  },
+  process: {
+    title: "Nuestro Proceso",
+    subtitle: "Un enfoque sistemático que garantiza resultados excepcionales",
+    steps: [
+      {
+        title: "Consulta Inicial",
+        description: "Nos reunimos contigo para entender tu visión, necesidades y presupuesto.",
+      },
+      {
+        title: "Diseño y Planificación",
+        description: "Creamos diseños detallados y planos que dan vida a tu proyecto.",
+      },
+      {
+        title: "Aprobaciones y Permisos",
+        description: "Gestionamos todos los permisos y aprobaciones necesarias.",
+      },
+      {
+        title: "Construcción",
+        description: "Ejecutamos el proyecto con precisión, calidad y dentro del plazo.",
+      },
+      {
+        title: "Entrega Final",
+        description: "Revisamos cada detalle y entregamos tu proyecto completado.",
+      },
+    ],
+  },
+  projects: {
+    title: "Proyectos Destacados",
+    subtitle: "Portafolio de trabajos que demuestran nuestra excelencia",
+    viewAllProjects: "Ver todos los proyectos",
+    featured: "Destacado",
+  },
+  testimonials: {
+    title: "Lo que dicen nuestros clientes",
+    subtitle: "La satisfacción de nuestros clientes es nuestra mayor recompensa",
+  },
+  stats: {
+    projectsCompleted: "Proyectos Completados",
+    yearsExperience: "Años de Experiencia",
+    satisfiedClients: "Clientes Satisfechos",
+    awardsWon: "Premios Ganados",
+  },
+  cta: {
+    title: "¿Listo para comenzar tu proyecto?",
+    description: "Contáctanos hoy para una consulta gratuita y descubre cómo podemos hacer realidad tu visión.",
+    button: "Contactar ahora",
+  },
+  footer: {
+    links: "Enlaces",
+    contact: "Contacto",
+    followUs: "Síguenos",
+    allRightsReserved: "Todos los derechos reservados.",
+  },
   common: {
     viewAll: "Ver todos",
     viewMore: "Ver más",
     contactNow: "Contactar ahora",
     requestQuote: "Solicitar cotización",
     learnMore: "Aprender más",
+    readMore: "Leer más",
   }
 }
 

@@ -1,5 +1,8 @@
+'use client'
+
 import Link from 'next/link'
 import projectsData from '@/content/projects.json'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 interface ProjectsGridProps {
   featured?: boolean
@@ -7,6 +10,8 @@ interface ProjectsGridProps {
 }
 
 export default function ProjectsGrid({ featured = false, limit }: ProjectsGridProps) {
+  const { t } = useLanguage()
+  
   let projects = featured 
     ? projectsData.filter(p => p.featured) 
     : projectsData
@@ -20,10 +25,10 @@ export default function ProjectsGrid({ featured = false, limit }: ProjectsGridPr
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-primary sm:text-4xl">
-            {featured ? 'Proyectos Destacados' : 'Nuestros Proyectos'}
+            {t.projects.title}
           </h2>
           <p className="mt-4 text-lg text-secondary max-w-2xl mx-auto">
-            Portafolio de trabajos que demuestran nuestra excelencia
+            {t.projects.subtitle}
           </p>
         </div>
 
@@ -75,7 +80,7 @@ export default function ProjectsGrid({ featured = false, limit }: ProjectsGridPr
               href="/proyectos"
               className="inline-flex items-center rounded-md bg-primary px-6 py-3 text-base font-semibold text-white shadow-sm transition-all hover:bg-primary-light hover:shadow-md"
             >
-              Ver todos los proyectos
+              {t.projects.viewAllProjects}
             </Link>
           </div>
         )}

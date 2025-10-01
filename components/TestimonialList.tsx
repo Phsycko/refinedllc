@@ -1,15 +1,20 @@
+'use client'
+
 import testimonialsData from '@/content/testimonials.json'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function TestimonialList() {
+  const { t } = useLanguage()
+
   return (
     <section className="bg-background py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-primary sm:text-4xl">
-            Lo que dicen nuestros clientes
+            {t.testimonials.title}
           </h2>
           <p className="mt-4 text-lg text-secondary max-w-2xl mx-auto">
-            La satisfacción de nuestros clientes es nuestra mayor recompensa
+            {t.testimonials.subtitle}
           </p>
         </div>
 

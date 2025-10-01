@@ -1,16 +1,21 @@
+'use client'
+
 import Link from 'next/link'
 import servicesData from '@/content/services.json'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function ServicesGrid() {
+  const { t } = useLanguage()
+
   return (
     <section className="bg-white py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-primary sm:text-4xl">
-            Nuestros Servicios
+            {t.services.title}
           </h2>
           <p className="mt-4 text-lg text-secondary max-w-2xl mx-auto">
-            Ofrecemos soluciones integrales en diseño, construcción y remodelación
+            {t.services.subtitle}
           </p>
         </div>
 
@@ -51,7 +56,7 @@ export default function ServicesGrid() {
             href="/servicios"
             className="inline-flex items-center rounded-md bg-primary px-6 py-3 text-base font-semibold text-white shadow-sm transition-all hover:bg-primary-light hover:shadow-md"
           >
-            Ver todos los servicios
+            {t.services.viewAllServices}
           </Link>
         </div>
       </div>
