@@ -2,16 +2,19 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+import { useLanguage } from '@/contexts/LanguageContext'
+import LanguageToggle from './LanguageToggle'
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const { t } = useLanguage()
 
   const navItems = [
-    { href: '/', label: 'Inicio' },
-    { href: '/servicios', label: 'Servicios' },
-    { href: '/proyectos', label: 'Proyectos' },
-    { href: '/sobre', label: 'Sobre Nosotros' },
-    { href: '/contacto', label: 'Contacto' },
+    { href: '/', label: t.nav.home },
+    { href: '/servicios', label: t.nav.services },
+    { href: '/proyectos', label: t.nav.projects },
+    { href: '/sobre', label: t.nav.about },
+    { href: '/contacto', label: t.nav.contact },
   ]
 
   return (
@@ -30,7 +33,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:space-x-8">
+          <div className="hidden md:flex md:items-center md:space-x-6">
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -40,11 +43,12 @@ export default function Header() {
                 {item.label}
               </Link>
             ))}
+            <LanguageToggle />
             <Link
               href="/contacto"
               className="rounded-md bg-accent px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-accent-dark hover:shadow-md"
             >
-              Cotiza Gratis
+              {t.nav.quote}
             </Link>
           </div>
 
@@ -85,12 +89,15 @@ export default function Header() {
                   {item.label}
                 </Link>
               ))}
+              <div className="px-3 py-2">
+                <LanguageToggle />
+              </div>
               <Link
                 href="/contacto"
                 className="mx-3 mt-4 block rounded-md bg-accent px-6 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-accent-dark"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Cotiza Gratis
+                {t.nav.quote}
               </Link>
             </div>
           </div>

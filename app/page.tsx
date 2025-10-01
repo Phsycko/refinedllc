@@ -1,3 +1,5 @@
+'use client'
+
 import Hero from '@/components/Hero'
 import ServicesGrid from '@/components/ServicesGrid'
 import ProcessSteps from '@/components/ProcessSteps'
@@ -5,21 +7,22 @@ import ProjectsGrid from '@/components/ProjectsGrid'
 import TestimonialList from '@/components/TestimonialList'
 import ValueStats from '@/components/ValueStats'
 import CTASection from '@/components/CTASection'
-
-export const revalidate = 1800 // ISR: revalidar cada 30 minutos
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function HomePage() {
+  const { t } = useLanguage()
+
   return (
     <>
       <Hero
-        title="Transformando Visiones en Realidad"
-        subtitle="Diseño arquitectónico y construcción de clase mundial. Más de 9 años creando espacios excepcionales que superan expectativas."
+        title={t.hero.title}
+        subtitle={t.hero.subtitle}
         primaryCTA={{
-          text: 'Ver Proyectos',
+          text: t.hero.viewProjects,
           href: '/proyectos',
         }}
         secondaryCTA={{
-          text: 'Nuestros Servicios',
+          text: t.hero.ourServices,
           href: '/servicios',
         }}
       />
