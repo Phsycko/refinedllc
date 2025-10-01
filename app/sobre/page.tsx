@@ -1,12 +1,14 @@
 'use client'
 
-import companyData from '@/content/company.json'
+import companyDataEs from '@/content/company.json'
+import companyDataEn from '@/content/company-en.json'
 import ValueStats from '@/components/ValueStats'
 import CTASection from '@/components/CTASection'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function AboutPage() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
+  const companyData = language === 'en' ? companyDataEn : companyDataEs
 
   return (
     <>

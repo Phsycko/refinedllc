@@ -1,11 +1,13 @@
 'use client'
 
-import companyData from '@/content/company.json'
+import companyDataEs from '@/content/company.json'
+import companyDataEn from '@/content/company-en.json'
 import React from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function ValueStats() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
+  const companyData = language === 'en' ? companyDataEn : companyDataEs
   
   const iconMap: Record<string, React.ReactElement> = {
     building: (
@@ -21,13 +23,6 @@ export default function ValueStats() {
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
     ),
   }
-
-  const statsLabels = [
-    t.stats.projectsCompleted,
-    t.stats.yearsExperience,
-    t.stats.satisfiedClients,
-    t.stats.awardsWon,
-  ]
 
   return (
     <section className="bg-primary py-16 sm:py-20">
@@ -46,7 +41,7 @@ export default function ValueStats() {
                 {stat.value}
               </div>
               <div className="mt-2 text-sm text-gray-300">
-                {statsLabels[index]}
+                {stat.label}
               </div>
             </div>
           ))}

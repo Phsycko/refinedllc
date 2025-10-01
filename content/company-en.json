@@ -1,0 +1,66 @@
+{
+  "name": "Refined LLC",
+  "slogan": "Exceeding Expectations",
+  "founded": 2015,
+  "description": "Refined LLC is a leading architectural design and construction firm, committed to excellence in every project. We specialize in transforming visions into tangible realities, exceeding our clients' expectations.",
+  "mission": "Our mission is to create exceptional spaces that enhance people's lives, combining innovative design, superior quality craftsmanship, and an unwavering commitment to customer satisfaction.",
+  "values": [
+    {
+      "title": "Excellence",
+      "description": "We strive for perfection in every detail of our projects."
+    },
+    {
+      "title": "Integrity",
+      "description": "We operate with transparency, honesty, and ethics in all our relationships."
+    },
+    {
+      "title": "Innovation",
+      "description": "We embrace new technologies and approaches to deliver cutting-edge solutions."
+    },
+    {
+      "title": "Sustainability",
+      "description": "We are committed to eco-friendly and sustainable building practices."
+    }
+  ],
+  "stats": [
+    {
+      "label": "Projects Completed",
+      "value": "200+",
+      "icon": "building"
+    },
+    {
+      "label": "Years of Experience",
+      "value": "9+",
+      "icon": "calendar"
+    },
+    {
+      "label": "Satisfied Clients",
+      "value": "150+",
+      "icon": "users"
+    },
+    {
+      "label": "Awards Won",
+      "value": "15+",
+      "icon": "award"
+    }
+  ],
+  "licenses": [
+    "California General Contractor License #1234567",
+    "LEED AP Certification",
+    "Member of the American Institute of Architects (AIA)",
+    "Green Building Certification"
+  ],
+  "contact": {
+    "phone": "+1 (310) 555-0100",
+    "email": "info@refined-llc.com",
+    "address": "1234 Wilshire Blvd, Suite 500, Los Angeles, CA 90025",
+    "hours": "Monday - Friday: 9:00 AM - 6:00 PM"
+  },
+  "social": {
+    "facebook": "https://facebook.com/refinedllc",
+    "instagram": "https://instagram.com/refinedllc",
+    "linkedin": "https://linkedin.com/company/refinedllc",
+    "twitter": "https://twitter.com/refinedllc"
+  }
+}
+
