@@ -1,15 +1,29 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
 import projectsData from '@/content/projects.json'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function ProjectsPage() {
   const { t, language } = useLanguage()
+  const [selectedCategory, setSelectedCategory] = useState<string>('all')
   
-  const categories = Array.from(new Set(projectsData.map((p: any) => 
-    language === 'en' && p.category_en ? p.category_en : p.category
-  )))
+  // Obtener categorías únicas traducidas
+  const categoriesSet = new Set<string>()
+  projectsData.forEach((p: any) => {
+    const category = language === 'en' && p.category_en ? p.category_en : p.category
+    categoriesSet.add(category)
+  })
+  const categories = Array.from(categoriesSet)
+
+  // Filtrar proyectos por categoría seleccionada
+  const filteredProjects = selectedCategory === 'all' 
+    ? projectsData 
+    : projectsData.filter((p: any) => {
+        const projectCategory = language === 'en' && p.category_en ? p.category_en : p.category
+        return projectCategory === selectedCategory
+      })
 
   return (
     <>
@@ -30,13 +44,25 @@ export default function ProjectsPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Filtros por categoría */}
           <div className="mb-12 flex flex-wrap justify-center gap-4">
-            <button className="px-6 py-2 rounded-full bg-accent text-white font-medium">
+            <button
+              onClick={() => setSelectedCategory('all')}
+              className={`px-6 py-2 rounded-full font-medium transition-colors ${
+                selectedCategory === 'all'
+                  ? 'bg-accent text-white'
+                  : 'bg-white text-secondary hover:bg-accent hover:text-white'
+              }`}
+            >
               {t.projects.all}
             </button>
             {categories.map((category) => (
               <button
                 key={category}
-                className="px-6 py-2 rounded-full bg-white text-secondary font-medium hover:bg-accent hover:text-white transition-colors"
+                onClick={() => setSelectedCategory(category)}
+                className={`px-6 py-2 rounded-full font-medium transition-colors ${
+                  selectedCategory === category
+                    ? 'bg-accent text-white'
+                    : 'bg-white text-secondary hover:bg-accent hover:text-white'
+                }`}
               >
                 {category}
               </button>
@@ -45,7 +71,7 @@ export default function ProjectsPage() {
 
           {/* Grid de proyectos */}
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {projectsData.map((project: any) => {
+            {filteredProjects.map((project: any) => {
               const title = language === 'en' && project.title_en ? project.title_en : project.title
               const description = language === 'en' && project.description_en ? project.description_en : project.description
               const category = language === 'en' && project.category_en ? project.category_en : project.category
@@ -99,6 +125,17 @@ export default function ProjectsPage() {
               )
             })}
           </div>
+
+          {/* Mensaje si no hay proyectos */}
+          {filteredProjects.length === 0 && (
+            <div className="text-center py-12">
+              <p className="text-lg text-secondary">
+                {language === 'en' 
+                  ? 'No projects found in this category.'
+                  : 'No se encontraron proyectos en esta categoría.'}
+              </p>
+            </div>
+          )}
         </div>
       </section>
     </>
