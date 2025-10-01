@@ -17,6 +17,11 @@ export const en = {
     title: "Our Services",
     subtitle: "We offer comprehensive solutions in design, construction, and remodeling",
     viewAllServices: "View all services",
+    pageTitle: "Our Services",
+    pageSubtitle: "Complete solutions for your construction and design projects",
+    viewDetails: "View details",
+    notFound: "Can't find what you're looking for?",
+    notFoundDesc: "Contact us to discuss your specific needs. We offer customized solutions for each project.",
   },
   process: {
     title: "Our Process",
