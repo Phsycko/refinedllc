@@ -1,15 +1,13 @@
+'use client'
+
 import companyData from '@/content/company.json'
 import ValueStats from '@/components/ValueStats'
 import CTASection from '@/components/CTASection'
-
-export const revalidate = 1800
-
-export const metadata = {
-  title: 'Sobre Nosotros - Refined LLC',
-  description: companyData.description,
-}
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function AboutPage() {
+  const { t } = useLanguage()
+
   return (
     <>
       {/* Hero Section */}
@@ -17,7 +15,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl font-bold text-white sm:text-5xl">
-              Sobre Refined LLC
+              {t.about.pageTitle}
             </h1>
             <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
               {companyData.slogan}
@@ -31,7 +29,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-primary mb-6">
-              Quiénes Somos
+              {t.about.whoWeAre}
             </h2>
             <p className="text-lg text-secondary leading-relaxed">
               {companyData.description}
@@ -40,7 +38,7 @@ export default function AboutPage() {
 
           <div className="mt-16">
             <h3 className="text-2xl font-bold text-primary mb-6 text-center">
-              Nuestra Misión
+              {t.about.ourMission}
             </h3>
             <p className="text-lg text-secondary leading-relaxed text-center">
               {companyData.mission}
@@ -54,10 +52,10 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-primary">
-              Nuestros Valores
+              {t.about.ourValues}
             </h2>
             <p className="mt-4 text-lg text-secondary max-w-2xl mx-auto">
-              Los principios que guían todo lo que hacemos
+              {t.about.ourValuesSubtitle}
             </p>
           </div>
 
@@ -91,7 +89,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-primary">
-              ¿Por Qué Elegirnos?
+              {t.about.whyChooseUs}
             </h2>
           </div>
 
@@ -105,10 +103,10 @@ export default function AboutPage() {
                 </div>
               </div>
               <h3 className="text-xl font-bold text-primary mb-3">
-                Calidad Garantizada
+                {t.about.qualityGuaranteed}
               </h3>
               <p className="text-secondary">
-                Cada proyecto se ejecuta con los más altos estándares de calidad y artesanía.
+                {t.about.qualityDesc}
               </p>
             </div>
 
@@ -121,10 +119,10 @@ export default function AboutPage() {
                 </div>
               </div>
               <h3 className="text-xl font-bold text-primary mb-3">
-                Entrega a Tiempo
+                {t.about.onTimeDelivery}
               </h3>
               <p className="text-secondary">
-                Respetamos los plazos y mantenemos nuestro compromiso con fechas de entrega.
+                {t.about.onTimeDesc}
               </p>
             </div>
 
@@ -132,15 +130,15 @@ export default function AboutPage() {
               <div className="flex justify-center mb-4">
                 <div className="rounded-full bg-accent/10 p-4">
                   <svg className="h-10 w-10 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
                 </div>
               </div>
               <h3 className="text-xl font-bold text-primary mb-3">
-                Equipo Experto
+                {t.about.expertTeam}
               </h3>
               <p className="text-secondary">
-                Profesionales altamente calificados con años de experiencia en la industria.
+                {t.about.expertDesc}
               </p>
             </div>
           </div>
@@ -152,7 +150,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-primary">
-              Licencias y Certificaciones
+              {t.about.licenses}
             </h2>
           </div>
 
