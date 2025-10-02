@@ -2,8 +2,10 @@
 
 import { useState } from 'react'
 import servicesData from '@/content/services.json'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function ContactForm() {
+  const { t, language } = useLanguage()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -30,7 +32,7 @@ export default function ContactForm() {
       })
 
       if (!response.ok) {
-        throw new Error('Error al enviar el mensaje')
+        throw new Error(t.contact.form.errorSending)
       }
 
       setStatus('success')
@@ -44,7 +46,7 @@ export default function ContactForm() {
       setFile(null)
     } catch (error) {
       setStatus('error')
-      setErrorMessage(error instanceof Error ? error.message : 'Error desconocido')
+      setErrorMessage(error instanceof Error ? error.message : t.contact.form.error)
     }
   }
 
@@ -66,7 +68,7 @@ export default function ContactForm() {
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-primary mb-2">
-            Nombre completo *
+            {t.contact.form.name} *
           </label>
           <input
             type="text"
@@ -76,14 +78,14 @@ export default function ContactForm() {
             value={formData.name}
             onChange={handleChange}
             className="w-full rounded-md border border-gray-300 px-4 py-2 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
-            placeholder="Tu nombre"
+            placeholder={t.contact.form.namePlaceholder}
           />
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-primary mb-2">
-              Email *
+              {t.contact.form.email} *
             </label>
             <input
               type="email"
@@ -93,13 +95,13 @@ export default function ContactForm() {
               value={formData.email}
               onChange={handleChange}
               className="w-full rounded-md border border-gray-300 px-4 py-2 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
-              placeholder="tu@email.com"
+              placeholder={t.contact.form.emailPlaceholder}
             />
           </div>
 
           <div>
             <label htmlFor="phone" className="block text-sm font-medium text-primary mb-2">
-              Teléfono *
+              {t.contact.form.phone} *
             </label>
             <input
               type="tel"
@@ -109,14 +111,14 @@ export default function ContactForm() {
               value={formData.phone}
               onChange={handleChange}
               className="w-full rounded-md border border-gray-300 px-4 py-2 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
-              placeholder="+1 (555) 123-4567"
+              placeholder={t.contact.form.phonePlaceholder}
             />
           </div>
         </div>
 
         <div>
           <label htmlFor="service" className="block text-sm font-medium text-primary mb-2">
-            Servicio de interés *
+            {t.contact.form.service} *
           </label>
           <select
             id="service"
@@ -126,19 +128,22 @@ export default function ContactForm() {
             onChange={handleChange}
             className="w-full rounded-md border border-gray-300 px-4 py-2 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
           >
-            <option value="">Selecciona un servicio</option>
-            {servicesData.map((service) => (
-              <option key={service.id} value={service.title}>
-                {service.title}
-              </option>
-            ))}
-            <option value="Consulta General">Consulta General</option>
+            <option value="">{t.contact.form.selectService}</option>
+            {servicesData.map((service) => {
+              const title = language === 'en' && service.title_en ? service.title_en : service.title;
+              return (
+                <option key={service.id} value={title}>
+                  {title}
+                </option>
+              );
+            })}
+            <option value={t.contact.form.generalConsultation}>{t.contact.form.generalConsultation}</option>
           </select>
         </div>
 
         <div>
           <label htmlFor="message" className="block text-sm font-medium text-primary mb-2">
-            Mensaje *
+            {t.contact.form.message} *
           </label>
           <textarea
             id="message"
@@ -148,13 +153,13 @@ export default function ContactForm() {
             value={formData.message}
             onChange={handleChange}
             className="w-full rounded-md border border-gray-300 px-4 py-2 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
-            placeholder="Cuéntanos sobre tu proyecto..."
+            placeholder={t.contact.form.messagePlaceholder}
           />
         </div>
 
         <div>
           <label htmlFor="file" className="block text-sm font-medium text-primary mb-2">
-            Adjuntar archivo (opcional)
+            {t.contact.form.attachFile}
           </label>
           <input
             type="file"
@@ -166,7 +171,7 @@ export default function ContactForm() {
           />
           {file && (
             <p className="mt-2 text-sm text-secondary">
-              Archivo seleccionado: {file.name}
+              {t.contact.form.fileSelected} {file.name}
             </p>
           )}
         </div>
@@ -178,7 +183,7 @@ export default function ContactForm() {
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
               <p className="ml-3 text-sm text-green-700">
-                ¡Mensaje enviado exitosamente! Nos pondremos en contacto pronto.
+                {t.contact.form.success}
               </p>
             </div>
           </div>
@@ -191,7 +196,7 @@ export default function ContactForm() {
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
               </svg>
               <p className="ml-3 text-sm text-red-700">
-                {errorMessage || 'Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.'}
+                {errorMessage || t.contact.form.error}
               </p>
             </div>
           </div>
@@ -202,7 +207,7 @@ export default function ContactForm() {
           disabled={status === 'loading'}
           className="w-full rounded-md bg-accent px-6 py-3 text-base font-semibold text-white shadow-sm transition-all hover:bg-accent-dark hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {status === 'loading' ? 'Enviando...' : 'Enviar mensaje'}
+          {status === 'loading' ? t.contact.form.sending : t.contact.form.sendMessage}
         </button>
       </form>
     </div>

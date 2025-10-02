@@ -1,22 +1,23 @@
-import ContactForm from '@/components/ContactForm'
-import companyData from '@/content/company.json'
+'use client'
 
-export const metadata = {
-  title: 'Contacto - Refined LLC',
-  description: 'Ponte en contacto con nosotros para discutir tu próximo proyecto.',
-}
+import ContactForm from '@/components/ContactForm'
+import companyDataEs from '@/content/company.json'
+import companyDataEn from '@/content/company-en.json'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function ContactPage() {
+  const { t, language } = useLanguage()
+  const companyData = language === 'en' ? companyDataEn : companyDataEs
   return (
     <>
       <section className="bg-primary py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl font-bold text-white sm:text-5xl">
-              Contáctanos
+              {t.contact.pageTitle}
             </h1>
             <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
-              Estamos aquí para ayudarte a hacer realidad tu proyecto
+              {t.contact.pageSubtitle}
             </p>
           </div>
         </div>
@@ -29,7 +30,7 @@ export default function ContactPage() {
             <div className="lg:col-span-1 space-y-8">
               <div>
                 <h2 className="text-2xl font-bold text-primary mb-6">
-                  Información de Contacto
+                  {t.contact.contactInfo}
                 </h2>
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
@@ -41,7 +42,7 @@ export default function ContactPage() {
                       </div>
                     </div>
                     <div>
-                      <h3 className="font-semibold text-primary mb-1">Teléfono</h3>
+                      <h3 className="font-semibold text-primary mb-1">{t.contact.phone}</h3>
                       <p className="text-secondary">{companyData.contact.phone}</p>
                     </div>
                   </div>
@@ -55,7 +56,7 @@ export default function ContactPage() {
                       </div>
                     </div>
                     <div>
-                      <h3 className="font-semibold text-primary mb-1">Email</h3>
+                      <h3 className="font-semibold text-primary mb-1">{t.contact.email}</h3>
                       <p className="text-secondary">{companyData.contact.email}</p>
                     </div>
                   </div>
@@ -70,7 +71,7 @@ export default function ContactPage() {
                       </div>
                     </div>
                     <div>
-                      <h3 className="font-semibold text-primary mb-1">Dirección</h3>
+                      <h3 className="font-semibold text-primary mb-1">{t.contact.address}</h3>
                       <p className="text-secondary">{companyData.contact.address}</p>
                     </div>
                   </div>
@@ -84,7 +85,7 @@ export default function ContactPage() {
                       </div>
                     </div>
                     <div>
-                      <h3 className="font-semibold text-primary mb-1">Horario</h3>
+                      <h3 className="font-semibold text-primary mb-1">{t.contact.hours}</h3>
                       <p className="text-secondary">{companyData.contact.hours}</p>
                     </div>
                   </div>
@@ -92,7 +93,7 @@ export default function ContactPage() {
               </div>
 
               <div className="bg-white rounded-lg p-6 shadow-md">
-                <h3 className="font-semibold text-primary mb-4">Síguenos</h3>
+                <h3 className="font-semibold text-primary mb-4">{t.contact.followUs}</h3>
                 <div className="flex space-x-4">
                   {companyData.social.facebook && (
                     <a
@@ -137,7 +138,7 @@ export default function ContactPage() {
             {/* Contact Form */}
             <div className="lg:col-span-2">
               <h2 className="text-2xl font-bold text-primary mb-6">
-                Envíanos un mensaje
+                {t.contact.sendMessage}
               </h2>
               <ContactForm />
             </div>
