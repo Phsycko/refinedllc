@@ -170,7 +170,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                     ))}
                   </div>
                   <p className="text-gray-700 leading-relaxed">
-                    "{service.review.text}"
+                    &ldquo;{service.review.text}&rdquo;
                   </p>
                 </div>
               </div>

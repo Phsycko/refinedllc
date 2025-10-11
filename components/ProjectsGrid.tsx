@@ -33,7 +33,7 @@ export default function ProjectsGrid({ featured = false, limit }: ProjectsGridPr
         </div>
 
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project: any) => {
+          {projects.map((project) => {
             const title = language === 'en' && project.title_en ? project.title_en : project.title
             const description = language === 'en' && project.description_en ? project.description_en : project.description
             const category = language === 'en' && project.category_en ? project.category_en : project.category
