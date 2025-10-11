@@ -2,26 +2,26 @@
 
 Sitio web corporativo construido con **Next.js 14 (App Router)**, **TypeScript**, y **Tailwind CSS**. Incluye páginas públicas, sistema de gestión de mensajes, y auto-respuestas automáticas por email.
 
-## 🚀 Características
+## Características
 
-- ✅ Next.js 14 con App Router
-- ✅ TypeScript para type safety
-- ✅ Tailwind CSS para estilos modernos
-- ✅ Contenido manejado por archivos JSON
-- ✅ SSG con ISR (Incremental Static Regeneration)
-- ✅ Dashboard protegido para gestión de mensajes
-- ✅ Sistema de auto-respuestas por email
-- ✅ Base de datos Supabase
-- ✅ Diseño responsive y accesible
+- Next.js 14 con App Router
+- TypeScript para type safety
+- Tailwind CSS para estilos modernos
+- Contenido manejado por archivos JSON
+- SSG con ISR (Incremental Static Regeneration)
+- Dashboard protegido para gestión de mensajes
+- Sistema de auto-respuestas por email
+- Base de datos Supabase
+- Diseño responsive y accesible
 
-## 📋 Requisitos Previos
+## Requisitos Previos
 
 - Node.js 18+ 
 - npm o yarn
 - Cuenta de Supabase (gratis)
 - Cuenta de Resend o servidor SMTP para emails (opcional pero recomendado)
 
-## 🛠️ Instalación
+## Instalación
 
 ### 1. Clonar e instalar dependencias
 
@@ -84,7 +84,7 @@ Para Gmail:
 
 Coloca tu logo en `/public/logo.png` (formato PNG, tamaño recomendado: 200x200px)
 
-## 🚀 Desarrollo
+## Desarrollo
 
 Ejecutar el servidor de desarrollo en el puerto 3009:
 
@@ -94,7 +94,7 @@ npm run dev
 
 Abre [http://localhost:3009](http://localhost:3009) en tu navegador.
 
-## 📦 Build y Producción
+## Build y Producción
 
 ### Build del proyecto
 
@@ -110,7 +110,7 @@ npm start
 
 El sitio estará disponible en [http://localhost:3009](http://localhost:3009)
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 refined-llc/
@@ -156,7 +156,7 @@ refined-llc/
 └── package.json
 ```
 
-## 🎨 Personalización
+## Personalización
 
 ### Colores
 
@@ -197,13 +197,13 @@ El tiempo de revalidación (ISR) está configurado en 1800 segundos (30 minutos)
 export const revalidate = 1800 // segundos
 ```
 
-## 🔐 Dashboard
+## Dashboard
 
 Accede al dashboard en `/dashboard/messages` y `/dashboard/auto-replies`.
 
 **Nota**: En esta versión, el dashboard NO está protegido con autenticación. Para producción, se recomienda implementar autenticación usando Supabase Auth o NextAuth.js.
 
-## 📧 Auto-Respuestas
+## Auto-Respuestas
 
 El sistema de auto-respuestas automáticas:
 1. Se activa/desactiva desde el dashboard
@@ -211,7 +211,7 @@ El sistema de auto-respuestas automáticas:
 3. El mensaje es personalizable
 4. Requiere configuración de Resend o SMTP
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Error: "Cannot find module '@/content/...'"
 
@@ -229,10 +229,10 @@ Asegúrate de que todos los archivos JSON existan en la carpeta `/content/`.
 2. Asegúrate de haber ejecutado el script SQL
 3. Comprueba las políticas RLS en Supabase
 
-## 📄 Licencia
+## Licencia
 
 Este proyecto es privado y propiedad de Refined LLC.
 
-## 🤝 Soporte
+## Soporte
 
 Para preguntas o soporte, contacta a: info@refined-llc.com
