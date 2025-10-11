@@ -206,3 +206,5 @@ Si no tienes imágenes profesionales todavía:
 
 ¿Necesitas ayuda? Consulta la documentación de Next.js Image: https://nextjs.org/docs/app/api-reference/components/image
 
+
+

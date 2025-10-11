@@ -18,9 +18,9 @@ const config: Config = {
           light: '#475569',
         },
         accent: {
-          DEFAULT: '#F59E0B',
-          light: '#FCD34D',
-          dark: '#D97706',
+          DEFAULT: '#3B82F6',
+          light: '#60A5FA',
+          dark: '#2563EB',
         },
         background: '#F8FAFC',
       },
@@ -46,4 +46,5 @@ const config: Config = {
   plugins: [],
 };
 export default config;
+
 

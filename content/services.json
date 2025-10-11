@@ -21,7 +21,21 @@
       "/images/projects/casa-moderna-1.jpg",
       "/images/projects/casa-moderna-2.jpg"
     ],
-    "price": "Desde $5,000"
+    "price": "Desde $5,000",
+    "layout": "Planta Abierta",
+    "size": "Grande (2000+ sq. ft.)",
+    "buildingType": "Casa Residencial",
+    "location": "Los Ángeles, California",
+    "allInCost": "$50-75K",
+    "beforeImages": [
+      "/images/projects/before-1.jpg",
+      "/images/projects/before-2.jpg"
+    ],
+    "review": {
+      "stars": 5,
+      "text": "El equipo de diseño arquitectónico superó nuestras expectativas. Crearon exactamente lo que habíamos imaginado y más.",
+      "author": "Familia Martínez"
+    }
   },
   {
     "id": 2,
@@ -45,7 +59,20 @@
       "/images/projects/residencial-1.jpg",
       "/images/projects/residencial-2.jpg"
     ],
-    "price": "Cotización personalizada"
+    "price": "Cotización personalizada",
+    "layout": "Casa Completa",
+    "size": "Extra Grande (3000+ sq. ft.)",
+    "buildingType": "Vivienda Unifamiliar",
+    "location": "Malibú, California",
+    "allInCost": "$500K-1M",
+    "beforeImages": [
+      "/images/projects/before-construction-1.jpg"
+    ],
+    "review": {
+      "stars": 5,
+      "text": "La construcción de nuestra casa fue impecable. Cumplieron con todos los plazos y la calidad es excepcional.",
+      "author": "Robert Johnson"
+    }
   },
   {
     "id": 3,
@@ -69,7 +96,21 @@
       "/images/projects/remodelacion-1.jpg",
       "/images/projects/remodelacion-2.jpg"
     ],
-    "price": "Desde $15,000"
+    "price": "Desde $15,000",
+    "layout": "Solo Ducha",
+    "size": "Mediano (50 - 100 sq. ft.)",
+    "buildingType": "Casa",
+    "location": "Mississauga, Ontario",
+    "allInCost": "$25-30K",
+    "beforeImages": [
+      "/images/projects/before-1.jpg",
+      "/images/projects/before-2.jpg"
+    ],
+    "review": {
+      "stars": 5,
+      "text": "Trabajar con Refined LLC fue una experiencia extremadamente positiva. Todo el equipo fue profesional, receptivo y muy útil durante todo el proceso.",
+      "author": "Cliente Satisfecho"
+    }
   },
   {
     "id": 4,
@@ -93,7 +134,20 @@
       "/images/projects/comercial-1.jpg",
       "/images/projects/comercial-2.jpg"
     ],
-    "price": "Cotización personalizada"
+    "price": "Cotización personalizada",
+    "layout": "Oficinas Abiertas",
+    "size": "Grande (5000+ sq. ft.)",
+    "buildingType": "Edificio Comercial",
+    "location": "San Francisco, California",
+    "allInCost": "$200K-500K",
+    "beforeImages": [
+      "/images/projects/before-commercial-1.jpg"
+    ],
+    "review": {
+      "stars": 5,
+      "text": "Transformaron completamente nuestro espacio de oficinas. Ahora tenemos un ambiente de trabajo increíble que inspira a nuestro equipo.",
+      "author": "Tech Startup Hub"
+    }
   }
 ]
 

@@ -1,7 +1,5 @@
 import { notFound } from 'next/navigation'
 import servicesData from '@/content/services.json'
-import ProjectGallery from '@/components/ProjectGallery'
-import CTASection from '@/components/CTASection'
 
 export const revalidate = 1800
 
@@ -36,70 +34,150 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
   }
 
   return (
-    <>
-      <section className="bg-primary py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <div className="mb-4">
-              <span className="inline-flex items-center rounded-full bg-accent px-4 py-1 text-sm font-semibold text-white">
-                {service.category}
-              </span>
-            </div>
-            <h1 className="text-4xl font-bold text-white sm:text-5xl">
-              {service.title}
-            </h1>
-            <p className="mt-6 text-lg text-gray-300">
-              {service.description}
-            </p>
-            {service.price && (
-              <p className="mt-4 text-xl font-semibold text-accent">
-                {service.price}
-              </p>
-            )}
+    <div className="min-h-screen bg-white">
+      {/* Header Prompt */}
+      <div className="bg-gray-50 border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+          <div className="flex items-center justify-center space-x-2">
+            <span className="text-sm text-gray-600">¿Interesado en aprender más?</span>
+            <a href="/contacto" className="text-sm text-gray-800 hover:text-accent transition-colors font-medium">
+              Cuéntanos sobre tu proyecto
+            </a>
+            <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
           </div>
         </div>
-      </section>
+      </div>
 
-      <section className="bg-white py-16 sm:py-24">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="prose prose-lg max-w-none">
-            <p className="text-lg text-secondary leading-relaxed">
-              {service.fullDescription}
-            </p>
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Breadcrumb */}
+        <nav className="mb-8">
+          <div className="flex items-center space-x-2 text-sm text-gray-500">
+            <span>Galería de Servicios</span>
+            <span>/</span>
+            <span className="text-gray-900 font-medium">{service.title}</span>
           </div>
+        </nav>
 
-          <div className="mt-12">
-            <h2 className="text-2xl font-bold text-primary mb-6">
-              Características del Servicio
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {service.features.map((feature, index) => (
-                <div key={index} className="flex items-start space-x-3">
-                  <svg className="h-6 w-6 text-accent flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        {/* Main Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Left Side - Main Image */}
+          <div className="space-y-6">
+            {/* Main Project Image */}
+            <div className="aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
+              <div className="w-full h-full bg-gradient-to-br from-secondary/20 via-accent/10 to-primary/20 flex items-center justify-center">
+                <div className="text-center p-8">
+                  <svg className="h-24 w-24 text-secondary/30 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                   </svg>
-                  <span className="text-secondary">{feature}</span>
+                  <p className="text-sm text-secondary/50 font-medium">
+                    {service.title} - Vista Principal
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Thumbnail Gallery */}
+            <div className="grid grid-cols-3 gap-4">
+              {service.gallery && service.gallery.slice(0, 3).map((image, index) => (
+                <div key={index} className="aspect-square rounded-lg overflow-hidden shadow-md">
+                  <div className="w-full h-full bg-gradient-to-br from-secondary/15 to-accent/10 flex items-center justify-center">
+                    <svg className="h-8 w-8 text-secondary/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {service.gallery && service.gallery.length > 0 && (
-            <div className="mt-16">
-              <h2 className="text-2xl font-bold text-primary mb-6">
-                Galería de Proyectos
-              </h2>
-              <ProjectGallery images={service.gallery} projectTitle={service.title} />
-            </div>
-          )}
-        </div>
-      </section>
+          {/* Right Side - Project Details */}
+          <div className="space-y-8">
+            {/* Project Title */}
+            <h1 className="text-4xl font-bold text-primary">
+              {service.title}
+            </h1>
 
-      <CTASection
-        title="¿Interesado en este servicio?"
-        description="Contáctanos para una consulta gratuita y descubre cómo podemos ayudarte con tu proyecto."
-        buttonText="Solicitar cotización"
-      />
-    </>
+            {/* Project Specifications */}
+            <div className="space-y-4">
+              {service.layout && (
+                <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                  <span className="text-gray-600">Layout:</span>
+                  <span className="font-medium text-gray-900">{service.layout}</span>
+                </div>
+              )}
+              {service.size && (
+                <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                  <span className="text-gray-600">Tamaño:</span>
+                  <span className="font-medium text-gray-900">{service.size}</span>
+                </div>
+              )}
+              {service.buildingType && (
+                <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                  <span className="text-gray-600">Tipo de Edificio:</span>
+                  <span className="font-medium text-gray-900">{service.buildingType}</span>
+                </div>
+              )}
+              {service.location && (
+                <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                  <span className="text-gray-600">Ubicación:</span>
+                  <span className="font-medium text-gray-900">{service.location}</span>
+                </div>
+              )}
+              {service.allInCost && (
+                <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                  <span className="text-gray-600">Costo Total:</span>
+                  <span className="font-medium text-gray-900">{service.allInCost}</span>
+                </div>
+              )}
+            </div>
+
+            {/* Before Images Section */}
+            {service.beforeImages && (
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-lg font-medium text-gray-900">Imágenes Antes</h3>
+                  <button className="px-4 py-2 text-sm border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors">
+                    Ver Imágenes Antes
+                  </button>
+                </div>
+                <div className="flex space-x-4">
+                  {service.beforeImages.slice(0, 1).map((image, index) => (
+                    <div key={index} className="w-20 h-20 rounded-lg overflow-hidden shadow-sm">
+                      <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+                        <svg className="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Review Section */}
+            {service.review && (
+              <div className="space-y-4">
+                <h3 className="text-lg font-medium text-gray-900">Reseña</h3>
+                <div className="space-y-2">
+                  <div className="flex space-x-1">
+                    {[...Array(service.review.stars)].map((_, i) => (
+                      <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <p className="text-gray-700 leading-relaxed">
+                    "{service.review.text}"
+                  </p>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
