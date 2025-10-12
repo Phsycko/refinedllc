@@ -52,6 +52,7 @@
     "review": {
       "stars": 5,
       "text": "La remodelación de nuestra cocina superó todas nuestras expectativas. El equipo fue profesional y el resultado es increíble.",
+      "text_en": "Our kitchen remodel exceeded all our expectations. The team was professional and the result is incredible.",
       "author": "Familia García"
     }
   },
@@ -108,6 +109,7 @@
     "review": {
       "stars": 5,
       "text": "Nuestra nueva terraza es el lugar perfecto para relajarse. La calidad de construcción es excelente.",
+      "text_en": "Our new deck is the perfect place to relax. The construction quality is excellent.",
       "author": "John Smith"
     }
   },
@@ -164,6 +166,7 @@
     "review": {
       "stars": 5,
       "text": "La ampliación de nuestra casa fue perfecta. El equipo fue muy profesional y cumplió todos los plazos.",
+      "text_en": "Our home addition was perfect. The team was very professional and met all deadlines.",
       "author": "María Rodríguez"
     }
   },
@@ -220,6 +223,7 @@
     "review": {
       "stars": 5,
       "text": "Excelente servicio de reparación. Llegaron rápido, arreglaron todo perfectamente y el precio fue justo.",
+      "text_en": "Excellent repair service. They arrived quickly, fixed everything perfectly, and the price was fair.",
       "author": "Carlos López"
     }
   }

@@ -14,18 +14,26 @@ interface Service {
   fullDescription: string
   fullDescription_en?: string
   features: string[]
+  features_en?: string[]
   image: string
   gallery: string[]
   price: string
+  price_en?: string
   layout?: string
+  layout_en?: string
   size?: string
+  size_en?: string
   buildingType?: string
+  buildingType_en?: string
   location?: string
+  location_en?: string
   allInCost?: string
+  allInCost_en?: string
   beforeImages?: string[]
   review?: {
     stars: number
     text: string
+    text_en?: string
     author: string
   }
 }
@@ -36,18 +44,23 @@ interface ServiceDetailProps {
 
 export default function ServiceDetail({ service }: ServiceDetailProps) {
   const { language, t } = useLanguage()
+  
+  // Debug logging
+  console.log('ServiceDetail - Current language:', language)
+  console.log('ServiceDetail - Service data:', service)
 
   // Get the correct translations based on language
   const title = language === 'en' && service.title_en ? service.title_en : service.title
   const description = language === 'en' && service.description_en ? service.description_en : service.description
   const fullDescription = language === 'en' && service.fullDescription_en ? service.fullDescription_en : service.fullDescription
   const category = language === 'en' && service.category_en ? service.category_en : service.category
-  const layout = language === 'en' && (service as any).layout_en ? (service as any).layout_en : service.layout
-  const size = language === 'en' && (service as any).size_en ? (service as any).size_en : service.size
-  const buildingType = language === 'en' && (service as any).buildingType_en ? (service as any).buildingType_en : service.buildingType
-  const location = language === 'en' && (service as any).location_en ? (service as any).location_en : service.location
-  const allInCost = language === 'en' && (service as any).allInCost_en ? (service as any).allInCost_en : service.allInCost
-  const features = language === 'en' && (service as any).features_en ? (service as any).features_en : service.features
+  const layout = language === 'en' && service.layout_en ? service.layout_en : service.layout
+  const size = language === 'en' && service.size_en ? service.size_en : service.size
+  const buildingType = language === 'en' && service.buildingType_en ? service.buildingType_en : service.buildingType
+  const location = language === 'en' && service.location_en ? service.location_en : service.location
+  const allInCost = language === 'en' && service.allInCost_en ? service.allInCost_en : service.allInCost
+  const features = language === 'en' && service.features_en ? service.features_en : service.features
+  const reviewText = service.review && language === 'en' && service.review.text_en ? service.review.text_en : service.review?.text
 
   return (
     <div className="min-h-screen bg-white">
@@ -209,7 +222,7 @@ export default function ServiceDetail({ service }: ServiceDetailProps) {
                     ))}
                   </div>
                   <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                    &ldquo;{service.review.text}&rdquo;
+                    &ldquo;{reviewText}&rdquo;
                   </p>
                 </div>
               </div>
