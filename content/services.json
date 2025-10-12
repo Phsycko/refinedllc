@@ -19,6 +19,15 @@
       "Gabinetes y encimeras personalizados",
       "Sistemas de iluminación modernos"
     ],
+    "features_en": [
+      "Complete kitchen remodeling",
+      "Modern bathroom renovation",
+      "High-quality flooring installation",
+      "Professional interior painting",
+      "Drywall and finishing installation",
+      "Custom cabinets and countertops",
+      "Modern lighting systems"
+    ],
     "image": "/images/services/remodelacion-interior.jpg",
     "gallery": [
       "/images/projects/kitchen-remodel-1.jpg",
@@ -26,11 +35,17 @@
       "/images/projects/flooring-1.jpg"
     ],
     "price": "Desde $15,000",
+    "price_en": "From $15,000",
     "layout": "Remodelación Completa",
+    "layout_en": "Complete Remodeling",
     "size": "Variable según proyecto",
+    "size_en": "Variable per project",
     "buildingType": "Casa Residencial",
+    "buildingType_en": "Residential House",
     "location": "Área Metropolitana",
+    "location_en": "Metropolitan Area",
     "allInCost": "$15K-100K",
+    "allInCost_en": "$15K-100K",
     "beforeImages": [
       "/images/projects/before-interior-1.jpg"
     ],
@@ -60,6 +75,15 @@
       "Iluminación exterior",
       "Mantenimiento y reparaciones"
     ],
+    "features_en": [
+      "Wood and composite deck construction",
+      "Pergola design and installation",
+      "Patio and relaxation area creation",
+      "Fence and gate installation",
+      "Plant support structures",
+      "Outdoor lighting",
+      "Maintenance and repairs"
+    ],
     "image": "/images/services/outdoor-spaces.jpg",
     "gallery": [
       "/images/projects/deck-construction-1.jpg",
@@ -67,11 +91,17 @@
       "/images/projects/patio-1.jpg"
     ],
     "price": "Desde $8,000",
+    "price_en": "From $8,000",
     "layout": "Espacio Exterior",
+    "layout_en": "Outdoor Space",
     "size": "Variable según patio",
+    "size_en": "Variable per yard",
     "buildingType": "Estructura Exterior",
+    "buildingType_en": "Outdoor Structure",
     "location": "Área Metropolitana",
+    "location_en": "Metropolitan Area",
     "allInCost": "$8K-50K",
+    "allInCost_en": "$8K-50K",
     "beforeImages": [
       "/images/projects/before-outdoor-1.jpg"
     ],
@@ -101,6 +131,15 @@
       "Cumplimiento de códigos",
       "Garantía de trabajo"
     ],
+    "features_en": [
+      "Residential additions",
+      "Structural repairs",
+      "New construction",
+      "Major renovations",
+      "Preventive maintenance",
+      "Code compliance",
+      "Work warranty"
+    ],
     "image": "/images/services/general-construction.jpg",
     "gallery": [
       "/images/projects/home-addition-1.jpg",
@@ -108,11 +147,17 @@
       "/images/projects/structural-repair-1.jpg"
     ],
     "price": "Cotización personalizada",
+    "price_en": "Custom quote",
     "layout": "Proyecto Personalizado",
+    "layout_en": "Custom Project",
     "size": "Variable según necesidades",
+    "size_en": "Variable per needs",
     "buildingType": "Residencia",
+    "buildingType_en": "Residence",
     "location": "Área Metropolitana",
+    "location_en": "Metropolitan Area",
     "allInCost": "Variable",
+    "allInCost_en": "Variable",
     "beforeImages": [
       "/images/projects/before-construction-1.jpg"
     ],
@@ -142,6 +187,15 @@
       "Mantenimiento de sistemas HVAC",
       "Reparaciones de emergencia"
     ],
+    "features_en": [
+      "Preventive maintenance",
+      "Plumbing repairs",
+      "Electrical repairs",
+      "Minor updates",
+      "Structural repairs",
+      "HVAC system maintenance",
+      "Emergency repairs"
+    ],
     "image": "/images/services/home-improvements.jpg",
     "gallery": [
       "/images/projects/plumbing-repair-1.jpg",
@@ -149,11 +203,17 @@
       "/images/projects/hvac-maintenance-1.jpg"
     ],
     "price": "Desde $200",
+    "price_en": "From $200",
     "layout": "Servicio de Mantenimiento",
+    "layout_en": "Maintenance Service",
     "size": "Variable según trabajo",
+    "size_en": "Variable per job",
     "buildingType": "Residencia",
+    "buildingType_en": "Residence",
     "location": "Área Metropolitana",
+    "location_en": "Metropolitan Area",
     "allInCost": "Variable",
+    "allInCost_en": "Variable",
     "beforeImages": [
       "/images/projects/before-repair-1.jpg"
     ],

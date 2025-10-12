@@ -42,6 +42,12 @@ export default function ServiceDetail({ service }: ServiceDetailProps) {
   const description = language === 'en' && service.description_en ? service.description_en : service.description
   const fullDescription = language === 'en' && service.fullDescription_en ? service.fullDescription_en : service.fullDescription
   const category = language === 'en' && service.category_en ? service.category_en : service.category
+  const layout = language === 'en' && (service as any).layout_en ? (service as any).layout_en : service.layout
+  const size = language === 'en' && (service as any).size_en ? (service as any).size_en : service.size
+  const buildingType = language === 'en' && (service as any).buildingType_en ? (service as any).buildingType_en : service.buildingType
+  const location = language === 'en' && (service as any).location_en ? (service as any).location_en : service.location
+  const allInCost = language === 'en' && (service as any).allInCost_en ? (service as any).allInCost_en : service.allInCost
+  const features = language === 'en' && (service as any).features_en ? (service as any).features_en : service.features
 
   return (
     <div className="min-h-screen bg-white">
@@ -112,36 +118,59 @@ export default function ServiceDetail({ service }: ServiceDetailProps) {
 
             {/* Project Specifications */}
             <div className="space-y-3 sm:space-y-4">
-              {service.layout && (
+              {layout && (
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
                   <span className="text-sm sm:text-base text-gray-600">{t.serviceDetail.layout}</span>
-                  <span className="text-sm sm:text-base font-medium text-gray-900 text-right">{service.layout}</span>
+                  <span className="text-sm sm:text-base font-medium text-gray-900 text-right">{layout}</span>
                 </div>
               )}
-              {service.size && (
+              {size && (
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
                   <span className="text-sm sm:text-base text-gray-600">{t.serviceDetail.size}</span>
-                  <span className="text-sm sm:text-base font-medium text-gray-900 text-right">{service.size}</span>
+                  <span className="text-sm sm:text-base font-medium text-gray-900 text-right">{size}</span>
                 </div>
               )}
-              {service.buildingType && (
+              {buildingType && (
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
                   <span className="text-sm sm:text-base text-gray-600">{t.serviceDetail.buildingType}</span>
-                  <span className="text-sm sm:text-base font-medium text-gray-900 text-right">{service.buildingType}</span>
+                  <span className="text-sm sm:text-base font-medium text-gray-900 text-right">{buildingType}</span>
                 </div>
               )}
-              {service.location && (
+              {location && (
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
                   <span className="text-sm sm:text-base text-gray-600">{t.serviceDetail.location}</span>
-                  <span className="text-sm sm:text-base font-medium text-gray-900 text-right">{service.location}</span>
+                  <span className="text-sm sm:text-base font-medium text-gray-900 text-right">{location}</span>
                 </div>
               )}
-              {service.allInCost && (
+              {allInCost && (
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
                   <span className="text-sm sm:text-base text-gray-600">{t.serviceDetail.totalCost}</span>
-                  <span className="text-sm sm:text-base font-medium text-gray-900 text-right">{service.allInCost}</span>
+                  <span className="text-sm sm:text-base font-medium text-gray-900 text-right">{allInCost}</span>
                 </div>
               )}
+            </div>
+
+            {/* Full Description */}
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-primary">{language === 'en' ? 'Full Description' : 'Descripción Completa'}</h3>
+              <p className="text-secondary leading-relaxed">
+                {fullDescription}
+              </p>
+            </div>
+
+            {/* Features List */}
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-primary">{language === 'en' ? 'Features' : 'Características'}</h3>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-secondary">
+                {features.map((feature: string, index: number) => (
+                  <li key={index} className="flex items-center">
+                    <svg className="h-5 w-5 text-accent mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
             </div>
 
             {/* Before Images Section */}
