@@ -30,7 +30,7 @@ export default function ServicesGrid() {
                 href={`/servicios/${service.slug}`}
                 className="group relative overflow-hidden rounded-lg bg-background shadow-md transition-all hover:shadow-xl hover:scale-105"
               >
-                <div className="p-4 sm:p-6">
+                <div className="p-4 sm:p-6 flex flex-col h-full">
                   <div className="mb-3 sm:mb-4">
                     <div className="inline-flex items-center justify-center rounded-lg bg-accent/10 p-2 sm:p-3">
                       <svg className="h-6 w-6 sm:h-8 sm:w-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -38,10 +38,10 @@ export default function ServicesGrid() {
                       </svg>
                     </div>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-primary group-hover:text-accent transition-colors leading-tight">
+                  <h3 className="text-lg sm:text-xl font-semibold text-primary group-hover:text-accent transition-colors leading-tight mb-2">
                     {title}
                   </h3>
-                  <p className="mt-2 text-sm text-secondary line-clamp-3 leading-relaxed">
+                  <p className="text-sm text-secondary line-clamp-3 leading-relaxed flex-grow">
                     {description}
                   </p>
                   <div className="mt-4 flex items-center text-accent font-medium text-sm">
