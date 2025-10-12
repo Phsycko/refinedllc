@@ -9,6 +9,7 @@
     "description": "Actualizaciones completas o parciales del interior de tu hogar, incluyendo cocinas, baños, pisos, pintura, drywall, gabinetes, encimeras e iluminación.",
     "description_en": "Full or partial home interior upgrades, including kitchens, bathrooms, flooring, painting, drywall, cabinets, countertops, and lighting.",
     "fullDescription": "Transformamos completamente el interior de tu hogar con renovaciones que combinan funcionalidad y estilo. Desde remodelaciones de cocinas y baños hasta actualizaciones de pisos y pintura, creamos espacios que reflejan tu personalidad y mejoran tu calidad de vida.",
+    "fullDescription_en": "We completely transform the interior of your home with renovations that combine functionality and style. From kitchen and bathroom remodels to flooring and painting updates, we create spaces that reflect your personality and improve your quality of life.",
     "features": [
       "Remodelación de cocinas completas",
       "Renovación de baños modernos",
@@ -49,6 +50,7 @@
     "description": "Diseño y construcción de terrazas, pérgolas, patios, cercas y otras estructuras para tu patio trasero.",
     "description_en": "Design and construction of decks, pergolas, patios, fences, and other backyard structures.",
     "fullDescription": "Creamos espacios exteriores funcionales y hermosos que extienden tu hogar hacia el exterior. Desde terrazas de madera hasta pérgolas elegantes, transformamos tu patio trasero en un oasis de relajación y entretenimiento.",
+    "fullDescription_en": "We create functional and beautiful outdoor spaces that extend your home to the outside. From wooden decks to elegant pergolas, we transform your backyard into an oasis of relaxation and entertainment.",
     "features": [
       "Construcción de terrazas de madera y composite",
       "Diseño e instalación de pérgolas",
@@ -89,6 +91,7 @@
     "description": "Proyectos residenciales personalizados, desde ampliaciones hasta reparaciones estructurales y nuevas construcciones.",
     "description_en": "Custom residential projects, from additions to structural repairs and new builds.",
     "fullDescription": "Ofrecemos servicios completos de construcción residencial, desde ampliaciones y reparaciones estructurales hasta construcciones nuevas. Nuestro equipo maneja cada proyecto con los más altos estándares de calidad y cumplimiento de códigos.",
+    "fullDescription_en": "We offer complete residential construction services, from additions and structural repairs to new builds. Our team handles each project with the highest quality standards and code compliance.",
     "features": [
       "Ampliaciones residenciales",
       "Reparaciones estructurales",
@@ -129,6 +132,7 @@
     "description": "Mantenimiento integral, actualizaciones y reparaciones para todas las áreas del hogar, interior y exterior.",
     "description_en": "Comprehensive maintenance, updates, and fixes for all areas of the home, inside and out.",
     "fullDescription": "Proporcionamos servicios completos de mantenimiento, mejoras y reparaciones para mantener tu hogar en perfectas condiciones. Desde reparaciones menores hasta actualizaciones importantes, cubrimos todas las necesidades de tu propiedad.",
+    "fullDescription_en": "We provide complete maintenance, improvement, and repair services to keep your home in perfect condition. From minor repairs to major updates, we cover all your property's needs.",
     "features": [
       "Mantenimiento preventivo",
       "Reparaciones de plomería",
