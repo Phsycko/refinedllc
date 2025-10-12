@@ -35,7 +35,7 @@ interface ServiceDetailProps {
 }
 
 export default function ServiceDetail({ service }: ServiceDetailProps) {
-  const { language } = useLanguage()
+  const { language, t } = useLanguage()
 
   // Get the correct translations based on language
   const title = language === 'en' && service.title_en ? service.title_en : service.title
@@ -49,9 +49,9 @@ export default function ServiceDetail({ service }: ServiceDetailProps) {
       <div className="bg-gray-50 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           <div className="flex items-center justify-center space-x-1 sm:space-x-2 text-center">
-            <span className="text-xs sm:text-sm text-gray-600">¿Interesado en aprender más?</span>
+            <span className="text-xs sm:text-sm text-gray-600">{t.serviceDetail.interested}</span>
             <a href="/contacto" className="text-xs sm:text-sm text-gray-800 hover:text-accent transition-colors font-medium">
-              Cuéntanos sobre tu proyecto
+              {t.serviceDetail.tellUs}
             </a>
             <svg className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -65,7 +65,7 @@ export default function ServiceDetail({ service }: ServiceDetailProps) {
         {/* Breadcrumb */}
         <nav className="mb-6 sm:mb-8">
           <div className="flex items-center space-x-2 text-xs sm:text-sm text-gray-500">
-            <span>Galería de Servicios</span>
+            <span>{language === 'en' ? 'Services Gallery' : 'Galería de Servicios'}</span>
             <span>/</span>
             <span className="text-gray-900 font-medium">{title}</span>
           </div>
@@ -83,7 +83,7 @@ export default function ServiceDetail({ service }: ServiceDetailProps) {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                   </svg>
                   <p className="text-xs sm:text-sm text-secondary/50 font-medium">
-                    {title} - Vista Principal
+                    {title} - {t.serviceDetail.mainView}
                   </p>
                 </div>
               </div>
@@ -114,31 +114,31 @@ export default function ServiceDetail({ service }: ServiceDetailProps) {
             <div className="space-y-3 sm:space-y-4">
               {service.layout && (
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                  <span className="text-sm sm:text-base text-gray-600">Layout:</span>
+                  <span className="text-sm sm:text-base text-gray-600">{t.serviceDetail.layout}</span>
                   <span className="text-sm sm:text-base font-medium text-gray-900 text-right">{service.layout}</span>
                 </div>
               )}
               {service.size && (
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                  <span className="text-sm sm:text-base text-gray-600">Tamaño:</span>
+                  <span className="text-sm sm:text-base text-gray-600">{t.serviceDetail.size}</span>
                   <span className="text-sm sm:text-base font-medium text-gray-900 text-right">{service.size}</span>
                 </div>
               )}
               {service.buildingType && (
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                  <span className="text-sm sm:text-base text-gray-600">Tipo de Edificio:</span>
+                  <span className="text-sm sm:text-base text-gray-600">{t.serviceDetail.buildingType}</span>
                   <span className="text-sm sm:text-base font-medium text-gray-900 text-right">{service.buildingType}</span>
                 </div>
               )}
               {service.location && (
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                  <span className="text-sm sm:text-base text-gray-600">Ubicación:</span>
+                  <span className="text-sm sm:text-base text-gray-600">{t.serviceDetail.location}</span>
                   <span className="text-sm sm:text-base font-medium text-gray-900 text-right">{service.location}</span>
                 </div>
               )}
               {service.allInCost && (
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                  <span className="text-sm sm:text-base text-gray-600">Costo Total:</span>
+                  <span className="text-sm sm:text-base text-gray-600">{t.serviceDetail.totalCost}</span>
                   <span className="text-sm sm:text-base font-medium text-gray-900 text-right">{service.allInCost}</span>
                 </div>
               )}
@@ -148,9 +148,9 @@ export default function ServiceDetail({ service }: ServiceDetailProps) {
             {service.beforeImages && (
               <div className="space-y-3 sm:space-y-4">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-base sm:text-lg font-medium text-gray-900">Imágenes Antes</h3>
+                  <h3 className="text-base sm:text-lg font-medium text-gray-900">{t.serviceDetail.beforeImages}</h3>
                   <button className="px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors">
-                    Ver Imágenes Antes
+                    {t.serviceDetail.viewBeforeImages}
                   </button>
                 </div>
                 <div className="flex space-x-3 sm:space-x-4">
@@ -170,7 +170,7 @@ export default function ServiceDetail({ service }: ServiceDetailProps) {
             {/* Review Section */}
             {service.review && (
               <div className="space-y-3 sm:space-y-4">
-                <h3 className="text-base sm:text-lg font-medium text-gray-900">Reseña</h3>
+                <h3 className="text-base sm:text-lg font-medium text-gray-900">{t.serviceDetail.review}</h3>
                 <div className="space-y-2">
                   <div className="flex space-x-1">
                     {[...Array(service.review.stars)].map((_, i) => (

@@ -132,6 +132,19 @@ export const es = {
     requestQuote: "Solicitar cotización",
     learnMore: "Aprender más",
     readMore: "Leer más",
+  },
+  serviceDetail: {
+    interested: "¿Interesado en aprender más?",
+    tellUs: "Cuéntanos sobre tu proyecto",
+    mainView: "Vista Principal",
+    beforeImages: "Imágenes Antes",
+    viewBeforeImages: "Ver Imágenes Antes",
+    review: "Reseña",
+    layout: "Layout:",
+    size: "Tamaño:",
+    buildingType: "Tipo de Edificio:",
+    location: "Ubicación:",
+    totalCost: "Costo Total:",
   }
 }
 

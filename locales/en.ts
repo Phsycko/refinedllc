@@ -132,6 +132,19 @@ export const en = {
     requestQuote: "Request quote",
     learnMore: "Learn more",
     readMore: "Read more",
+  },
+  serviceDetail: {
+    interested: "Interested in learning more?",
+    tellUs: "Tell us about your project",
+    mainView: "Main View",
+    beforeImages: "Before Images",
+    viewBeforeImages: "View Before Images",
+    review: "Review",
+    layout: "Layout:",
+    size: "Size:",
+    buildingType: "Building Type:",
+    location: "Location:",
+    totalCost: "Total Cost:",
   }
 }
 
