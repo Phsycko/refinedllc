@@ -11,9 +11,9 @@ export default function Footer() {
   return (
     <footer className="bg-primary text-gray-300">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {/* Logo y eslogan */}
-          <div className="col-span-1 md:col-span-2">
+          <div>
             <Link href="/" className="flex items-center space-x-3">
               <div className="relative h-12 w-12 bg-accent rounded-lg flex items-center justify-center">
                 <span className="text-2xl font-bold text-white">R</span>
@@ -26,33 +26,6 @@ export default function Footer() {
             <p className="mt-4 text-sm text-gray-400 max-w-md">
               {companyData.description}
             </p>
-          </div>
-
-          {/* Enlaces rápidos */}
-          <div>
-            <h3 className="text-sm font-semibold text-white mb-4">{t.footer.links}</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/servicios" className="text-sm hover:text-accent transition-colors">
-                  {t.nav.services}
-                </Link>
-              </li>
-              <li>
-                <Link href="/proyectos" className="text-sm hover:text-accent transition-colors">
-                  {t.nav.projects}
-                </Link>
-              </li>
-              <li>
-                <Link href="/sobre" className="text-sm hover:text-accent transition-colors">
-                  {t.nav.about}
-                </Link>
-              </li>
-              <li>
-                <Link href="/contacto" className="text-sm hover:text-accent transition-colors">
-                  {t.nav.contact}
-                </Link>
-              </li>
-            </ul>
           </div>
 
           {/* Contacto */}
