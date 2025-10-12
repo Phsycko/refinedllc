@@ -44,10 +44,6 @@ interface ServiceDetailProps {
 
 export default function ServiceDetail({ service }: ServiceDetailProps) {
   const { language, t } = useLanguage()
-  
-  // Debug logging
-  console.log('ServiceDetail - Current language:', language)
-  console.log('ServiceDetail - Service data:', service)
 
   // Get the correct translations based on language
   const title = language === 'en' && service.title_en ? service.title_en : service.title
