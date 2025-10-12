@@ -4,6 +4,8 @@ import Link from 'next/link'
 import servicesData from '@/content/services.json'
 import { useLanguage } from '@/contexts/LanguageContext'
 
+// Services page with simple grid layout
+
 export default function ServicesPage() {
   const { t, language } = useLanguage()
 
