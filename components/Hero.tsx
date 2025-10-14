@@ -29,38 +29,15 @@ export default function Hero({
       style={
         backgroundImage
           ? {
-              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${backgroundImage})`,
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${backgroundImage})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
             }
           : {
-              background: `
-                linear-gradient(135deg, 
-                  #0f172a 0%, 
-                  #1e293b 25%, 
-                  #334155 50%, 
-                  #1e293b 75%, 
-                  #0f172a 100%
-                ),
-                radial-gradient(circle at 30% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 70% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.05) 0%, transparent 70%)
-              `
+              background: '#1e293b'
             }
       }
     >
-      {/* Decorative Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-white/5 rounded-full blur-xl"></div>
-        <div className="absolute top-1/3 right-1/4 w-24 h-24 bg-blue-400/10 rounded-full blur-lg"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-40 h-40 bg-purple-400/10 rounded-full blur-xl"></div>
-        <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-cyan-400/15 rounded-full blur-md"></div>
-        
-        {/* Geometric shapes to simulate modern architecture */}
-        <div className="absolute top-1/3 left-1/2 w-64 h-2 bg-white/10 transform -rotate-12"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-48 h-2 bg-white/10 transform rotate-12"></div>
-        <div className="absolute top-2/3 left-1/4 w-32 h-1 bg-white/15 transform -rotate-45"></div>
-      </div>
 
       {/* Header Spacer */}
       <div className="h-20"></div>
