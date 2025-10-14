@@ -38,6 +38,9 @@ export default function Hero({
             }
       }
     >
+      {/* Header Spacer */}
+      <div className="h-20"></div>
+      
       {/* Main Content */}
       <div className="flex-1 flex flex-col justify-center">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

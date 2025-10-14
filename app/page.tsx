@@ -25,6 +25,7 @@ export default function HomePage() {
           text: t.hero.ourServices,
           href: '/servicios',
         }}
+        backgroundImage="/images/hero/construction-hero.jpg"
       />
       
       <ServicesGrid />
