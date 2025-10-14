@@ -19,7 +19,7 @@ export default function HomePage() {
         subtitle={t.hero.subtitle}
         primaryCTA={{
           text: t.hero.viewProjects,
-          href: '/proyectos',
+          href: '/contacto',
         }}
         secondaryCTA={{
           text: t.hero.ourServices,

@@ -8,10 +8,16 @@ export const en = {
     quote: "Get a Free Quote",
   },
   hero: {
-    title: "Transforming Visions into Reality",
-    subtitle: "World-class architectural design and construction. Over 9 years creating exceptional spaces that exceed expectations.",
-    viewProjects: "View Projects",
-    ourServices: "Our Services",
+    title: "From dream designs to flawless finishes",
+    subtitle: "We specialize in residential and commercial renovations that blend functionality with beauty. With years of experience, a passion for design, and a commitment to quality, we take pride in creating spaces that inspire.",
+    viewProjects: "Get An Instant Estimate ➤",
+    ourServices: "Learn More",
+    attributes: {
+      quality: "Quality",
+      innovation: "Innovation",
+      expertise: "Expertise",
+      reliability: "Reliability",
+    },
   },
   services: {
     title: "Our Services",
