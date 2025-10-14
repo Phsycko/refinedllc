@@ -23,6 +23,37 @@
 }
 
 @layer utilities {
+  /* Background animations */
+  @keyframes zoomInOut {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes slowPan {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-zoom-slow {
+    animation: zoomInOut 20s ease-in-out infinite;
+  }
+
+  .animate-pan-slow {
+    animation: slowPan 30s ease-in-out infinite;
+    background-size: 110% 110%;
+  }
+
   /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 8px;

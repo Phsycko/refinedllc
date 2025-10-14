@@ -25,7 +25,7 @@ export default function Hero({
   const { t } = useLanguage()
   return (
     <section
-      className="relative min-h-screen flex flex-col"
+      className="relative min-h-screen flex flex-col animate-zoom-slow animate-pan-slow"
       style={
         backgroundImage
           ? {
