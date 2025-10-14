@@ -42,7 +42,7 @@ export default function Hero({
       <div className="h-20"></div>
       
       {/* Main Content */}
-      <div className="flex-1 flex flex-col justify-center">
+      <div className="flex-1 flex flex-col justify-center pt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
             <h1 className="text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl mb-6">
@@ -56,7 +56,7 @@ export default function Hero({
                 {primaryCTA && (
                   <Link
                     href={primaryCTA.href}
-                    className="inline-flex items-center px-8 py-4 text-lg font-semibold text-black bg-gray-300 rounded-lg hover:bg-gray-200 transition-colors duration-200"
+                    className="inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-primary border border-white rounded-lg hover:bg-primary-dark transition-colors duration-200"
                   >
                     {primaryCTA.text}
                   </Link>
@@ -64,7 +64,7 @@ export default function Hero({
                 {secondaryCTA && (
                   <Link
                     href={secondaryCTA.href}
-                    className="inline-flex items-center px-8 py-4 text-lg font-semibold text-white border border-white rounded-lg hover:bg-white/10 transition-colors duration-200"
+                    className="inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-primary border border-white rounded-lg hover:bg-primary-dark transition-colors duration-200"
                   >
                     {secondaryCTA.text}
                   </Link>

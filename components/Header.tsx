@@ -23,7 +23,7 @@ export default function Header() {
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
-            <div className="relative h-12 w-12 bg-primary rounded-lg flex items-center justify-center">
+            <div className="relative h-12 w-12 bg-primary rounded-lg border border-white flex items-center justify-center">
               <span className="text-2xl font-bold text-white">R</span>
             </div>
             <div className="hidden sm:block">
