@@ -1,13 +1,23 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
 import LanguageToggle from './LanguageToggle'
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
   const { t } = useLanguage()
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const navItems = [
     { href: '/', label: t.nav.home },
@@ -18,7 +28,7 @@ export default function Header() {
   ]
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'}`}>
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
@@ -27,8 +37,8 @@ export default function Header() {
               <span className="text-2xl font-bold text-white">R</span>
             </div>
             <div className="hidden sm:block">
-              <div className="text-xl font-bold text-white">Refined LLC</div>
-              <div className="text-xs text-gray-300">Exceeding Expectations</div>
+              <div className={`text-xl font-bold transition-colors duration-300 ${isScrolled ? 'text-primary' : 'text-white'}`}>Refined LLC</div>
+              <div className={`text-xs transition-colors duration-300 ${isScrolled ? 'text-secondary' : 'text-gray-300'}`}>Exceeding Expectations</div>
             </div>
           </Link>
 
@@ -38,7 +48,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-white transition-colors hover:text-gray-300"
+                className={`text-sm font-medium transition-colors duration-300 ${isScrolled ? 'text-secondary hover:text-primary' : 'text-white hover:text-gray-300'}`}
               >
                 {item.label}
               </Link>
@@ -55,7 +65,7 @@ export default function Header() {
           {/* Mobile menu button */}
           <button
             type="button"
-            className="md:hidden rounded-md p-2 text-white hover:bg-white/10"
+            className={`md:hidden rounded-md p-2 transition-colors duration-300 ${isScrolled ? 'text-secondary hover:bg-gray-100' : 'text-white hover:bg-white/10'}`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <span className="sr-only">Abrir menú</span>
