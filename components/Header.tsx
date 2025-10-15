@@ -69,7 +69,7 @@ export default function Header() {
                 <img 
                   src="/logo.png" 
                   alt="Refined LLC" 
-                  className="h-full w-auto filter brightness-0 invert"
+                  className="h-full w-auto"
                 />
               </div>
             </Link>

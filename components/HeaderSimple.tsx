@@ -37,7 +37,7 @@ export default function HeaderSimple() {
               <img 
                 src="/logo.png" 
                 alt="Refined LLC" 
-                className={`h-full w-auto transition-all duration-300 ${isScrolled ? 'filter brightness-0' : 'filter brightness-0 invert'}`}
+                className="h-full w-auto"
               />
             </div>
           </Link>
