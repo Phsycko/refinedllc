@@ -67,7 +67,7 @@ export default function Header() {
             <Link href="/" className="flex items-center space-x-3">
               <div className="h-12 w-auto">
                 <img 
-                  src="/logo.svg" 
+                  src="/logo.png" 
                   alt="Refined LLC" 
                   className="h-full w-auto filter brightness-0 invert"
                 />
