@@ -30,7 +30,6 @@ export default function RootLayout({
     <html lang="es" className={inter.variable}>
       <body className="font-sans antialiased bg-background text-primary">
         <LanguageProvider>
-          <HeaderSimple />
           <main className="min-h-screen">
             {children}
           </main>
