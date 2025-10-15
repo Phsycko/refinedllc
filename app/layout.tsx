@@ -14,6 +14,11 @@ export const metadata: Metadata = {
   title: "Refined LLC - Exceeding Expectations",
   description: "Firma líder en diseño arquitectónico y construcción, comprometida con la excelencia en cada proyecto.",
   keywords: "arquitectura, construcción, diseño, remodelación, Los Angeles, California",
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({
