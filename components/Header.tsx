@@ -202,10 +202,10 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Tarjeta de servicios - RESPONSIVE para móvil y desktop */}
+        {/* Tarjeta de servicios - TAMAÑO FIJO */}
         <div className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 z-20">
-          <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-3 sm:p-6 max-w-[calc(100vw-2rem)] sm:max-w-none">
-            <div className="flex items-center space-x-3 sm:space-x-6">
+          <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-3 sm:p-6 w-[280px] sm:w-[380px] h-[80px] sm:h-[100px]">
+            <div className="flex items-center justify-between h-full">
               {/* Botones de navegación a la izquierda */}
               <div className="flex flex-col space-y-1 sm:space-y-2">
                 <button
@@ -226,8 +226,8 @@ export default function Header() {
                 </button>
               </div>
 
-              {/* Contenido central */}
-              <div className="text-left flex-1 min-w-0">
+              {/* Contenido central - TAMAÑO FIJO */}
+              <div className="text-left w-[140px] sm:w-[200px] px-2 sm:px-4">
                 <h3 className="text-sm sm:text-xl font-bold text-black mb-0.5 sm:mb-1 truncate">
                   {language === 'en' ? services[currentServiceIndex].nameEn : services[currentServiceIndex].name}
                 </h3>
