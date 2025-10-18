@@ -8,7 +8,7 @@ import LanguageToggle from './LanguageToggle'
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [currentServiceIndex, setCurrentServiceIndex] = useState(0)
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
 
   // Array de servicios con sus imágenes
   const services = [
@@ -206,7 +206,7 @@ export default function Header() {
         <div className="fixed bottom-8 right-8 z-[99999] bg-green-500 p-6 rounded-lg shadow-2xl">
           <div className="text-white text-center">
             <h3 className="text-xl font-bold mb-2">
-              {t.language === 'en' ? services[currentServiceIndex].nameEn : services[currentServiceIndex].name}
+              {language === 'en' ? services[currentServiceIndex].nameEn : services[currentServiceIndex].name}
             </h3>
             <p className="text-sm mb-4">
               {services[currentServiceIndex].price}
