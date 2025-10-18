@@ -213,7 +213,7 @@ export default function Header() {
                   className="w-6 h-6 sm:w-8 sm:h-8 bg-gray-50 border border-gray-300 rounded flex items-center justify-center text-black hover:bg-gray-100 transition-colors"
                 >
                   <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                   </svg>
                 </button>
                 <button
@@ -221,7 +221,7 @@ export default function Header() {
                   className="w-6 h-6 sm:w-8 sm:h-8 bg-gray-50 border border-gray-300 rounded flex items-center justify-center text-black hover:bg-gray-100 transition-colors"
                 >
                   <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </button>
               </div>
