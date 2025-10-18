@@ -202,7 +202,7 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Botones de servicios en la parte inferior derecha */}
+        {/* Botones de servicios en la parte inferior derecha - Carousel Component */}
         <div className="absolute bottom-8 right-8 z-20">
           <div className="bg-white/95 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden">
             <div className="flex">
