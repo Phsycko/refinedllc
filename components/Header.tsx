@@ -94,7 +94,7 @@ export default function Header() {
           <div className="flex h-20 items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-3">
-              <div className="h-24 w-auto">
+                     <div className="h-32 w-auto">
                 <img 
                   src="/logo.png" 
                   alt="Refined LLC" 
