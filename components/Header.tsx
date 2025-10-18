@@ -202,57 +202,49 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Botones de servicios en la parte inferior derecha - Carousel Component */}
+        {/* Botones de servicios en la parte inferior derecha */}
         <div className="absolute bottom-8 right-8 z-20">
-          <div className="bg-white/95 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden">
-            <div className="flex">
-              {/* Lista de servicios */}
-              <div className="flex flex-col">
-                {services.map((service, index) => (
-                  <button
-                    key={service.id}
-                    onClick={() => setCurrentServiceIndex(index)}
-                    className={`flex items-center justify-between px-4 py-3 transition-all duration-300 text-left min-w-[200px] border-b border-gray-200 last:border-b-0 ${
-                      index === currentServiceIndex
-                        ? 'bg-accent text-white'
-                        : 'bg-white hover:bg-gray-50 text-primary'
-                    }`}
-                  >
-                    <div>
-                      <div className="font-semibold text-sm">
-                        {t.language === 'en' ? service.nameEn : service.name}
-                      </div>
-                      <div className={`text-xs ${
-                        index === currentServiceIndex ? 'text-white/80' : 'text-secondary'
-                      }`}>
-                        {service.price}
-                      </div>
-                    </div>
-                    <svg 
-                      className={`w-4 h-4 transition-transform duration-300 ${
-                        index === currentServiceIndex ? 'rotate-90' : ''
-                      }`}
-                      fill="none" 
-                      viewBox="0 0 24 24" 
-                      stroke="currentColor"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </button>
-                ))}
+          <div className="bg-white rounded-lg shadow-lg p-4">
+            <div className="flex items-center space-x-4">
+              {/* Botones de navegación izquierda */}
+              <div className="flex flex-col space-y-1">
+                <button 
+                  onClick={() => setCurrentServiceIndex(Math.max(0, currentServiceIndex - 1))}
+                  className="w-8 h-8 flex items-center justify-center bg-gray-100 hover:bg-gray-200 rounded"
+                >
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+                  </svg>
+                </button>
+                <button 
+                  onClick={() => setCurrentServiceIndex(Math.min(services.length - 1, currentServiceIndex + 1))}
+                  className="w-8 h-8 flex items-center justify-center bg-gray-100 hover:bg-gray-200 rounded"
+                >
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+              </div>
+              
+              {/* Información del servicio actual */}
+              <div className="text-center">
+                <div className="font-bold text-lg text-primary">
+                  {t.language === 'en' ? services[currentServiceIndex].nameEn : services[currentServiceIndex].name}
+                </div>
+                <div className="text-sm text-secondary">
+                  {services[currentServiceIndex].price}
+                </div>
               </div>
               
               {/* Botón grande a la derecha */}
-              <div className="flex flex-col justify-center px-6 bg-gray-50 border-l border-gray-200">
-                <Link
-                  href={services[currentServiceIndex].href}
-                  className="flex items-center justify-center w-12 h-12 bg-accent hover:bg-accent-dark text-white rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
-                >
-                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
-              </div>
+              <Link
+                href={services[currentServiceIndex].href}
+                className="w-12 h-12 bg-accent hover:bg-accent-dark text-white rounded-full flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
             </div>
           </div>
         </div>
