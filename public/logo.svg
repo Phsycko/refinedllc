@@ -1,0 +1,29 @@
+<svg width="200" height="80" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle for contrast -->
+  <circle cx="100" cy="40" r="38" fill="white" opacity="0.9"/>
+  
+  <!-- House icon integrated into the "D" of REFINED -->
+  <g transform="translate(120, 25)">
+    <!-- House base -->
+    <rect x="0" y="8" width="12" height="8" fill="#1e40af" stroke="#1e40af" stroke-width="0.5"/>
+    <!-- House roof -->
+    <polygon points="6,2 0,8 12,8" fill="#1e40af" stroke="#1e40af" stroke-width="0.5"/>
+    <!-- House door -->
+    <rect x="4" y="12" width="4" height="4" fill="white"/>
+  </g>
+  
+  <!-- REFINED text in elegant script style -->
+  <text x="20" y="35" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="white" stroke="#1e40af" stroke-width="0.5">
+    REFINED
+  </text>
+  
+  <!-- LLC text -->
+  <text x="20" y="50" font-family="Arial, sans-serif" font-size="8" font-weight="normal" fill="#1e40af" letter-spacing="2px">
+    LLC
+  </text>
+  
+  <!-- Tagline -->
+  <text x="20" y="60" font-family="Arial, sans-serif" font-size="6" font-weight="normal" fill="#1e40af" letter-spacing="1px">
+    EXCEEDING EXPECTATIONS
+  </text>
+</svg>
