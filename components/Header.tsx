@@ -13,36 +13,36 @@ export default function Header() {
   // Array de servicios con sus imágenes
   const services = [
     {
-      id: 'jardines',
-      name: 'Jardines',
-      nameEn: 'Gardens',
-      image: '/images/services-carousel/remodelacion.jpg',
-      price: 'Desde $8,000',
-      href: '/servicios/jardines'
-    },
-    {
-      id: 'extensiones',
-      name: 'Extensiones',
-      nameEn: 'Extensions',
-      image: '/images/services-carousel/construccion.jpg',
-      price: 'Desde $25,000',
-      href: '/servicios/extensiones'
-    },
-    {
       id: 'outdoor-living',
-      name: 'Espacios Exteriores',
+      name: 'Outdoor Living Space',
       nameEn: 'Outdoor Living Space',
       image: '/images/services-carousel/diseno.jpg',
       price: 'Desde $12,000',
       href: '/servicios/outdoor-living'
     },
     {
-      id: 'bathroom',
+      id: 'spaces',
+      name: 'Espacios',
+      nameEn: 'Spaces',
+      image: '/images/services-carousel/remodelacion.jpg',
+      price: 'Desde $15,000',
+      href: '/servicios/spaces'
+    },
+    {
+      id: 'bathrooms',
       name: 'Baños',
-      nameEn: 'Bathroom',
+      nameEn: 'Bathrooms',
       image: '/images/services-carousel/mantenimiento.jpg',
       price: 'Desde $10,000',
-      href: '/servicios/bathroom'
+      href: '/servicios/bathrooms'
+    },
+    {
+      id: 'kitchen',
+      name: 'Cocinas',
+      nameEn: 'Kitchen',
+      image: '/images/services-carousel/construccion.jpg',
+      price: 'Desde $20,000',
+      href: '/servicios/kitchen'
     }
   ]
 
