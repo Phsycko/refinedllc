@@ -210,7 +210,7 @@ export default function Header() {
               <div className="flex flex-col space-y-2">
                 <button
                   onClick={() => setCurrentServiceIndex((prev) => prev === 0 ? services.length - 1 : prev - 1)}
-                  className="w-8 h-8 bg-gray-100 border border-gray-300 rounded flex items-center justify-center text-black hover:bg-gray-200 transition-colors"
+                  className="w-8 h-8 bg-white border border-gray-300 rounded flex items-center justify-center text-black hover:bg-gray-50 transition-colors"
                 >
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
@@ -218,7 +218,7 @@ export default function Header() {
                 </button>
                 <button
                   onClick={() => setCurrentServiceIndex((prev) => prev === services.length - 1 ? 0 : prev + 1)}
-                  className="w-8 h-8 bg-gray-100 border border-gray-300 rounded flex items-center justify-center text-black hover:bg-gray-200 transition-colors"
+                  className="w-8 h-8 bg-white border border-gray-300 rounded flex items-center justify-center text-black hover:bg-gray-50 transition-colors"
                 >
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -239,7 +239,7 @@ export default function Header() {
               {/* Botón grande a la derecha */}
               <Link
                 href={services[currentServiceIndex].href}
-                className="w-12 h-12 bg-gray-100 border border-gray-300 rounded-full flex items-center justify-center text-black hover:bg-gray-200 transition-colors"
+                className="w-12 h-12 bg-white border border-gray-300 rounded-full flex items-center justify-center text-black hover:bg-gray-50 transition-colors"
               >
                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
