@@ -202,7 +202,7 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Tarjeta de servicios profesional - Solo en header */}
+        {/* TARJETA BLANCA PROFESIONAL - FORZAR ACTUALIZACIÓN */}
         <div className="absolute bottom-8 right-8 z-20">
           <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-6 min-w-[380px]">
             <div className="flex items-center justify-between">
