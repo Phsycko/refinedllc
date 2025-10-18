@@ -7,26 +7,51 @@ import LanguageToggle from './LanguageToggle'
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [currentServiceIndex, setCurrentServiceIndex] = useState(0)
   const { t } = useLanguage()
 
-  // Array de imágenes para el carrusel
-  const headerImages = [
-    '/images/header/header1.jpg',
-    '/images/header/header2.jpg',
-    '/images/header/header3.jpg'
+  // Array de servicios con sus imágenes
+  const services = [
+    {
+      id: 'remodelacion',
+      name: 'Remodelación',
+      nameEn: 'Remodeling',
+      image: '/images/services-carousel/remodelacion.jpg',
+      price: 'Desde $15,000'
+    },
+    {
+      id: 'construccion',
+      name: 'Construcción',
+      nameEn: 'Construction',
+      image: '/images/services-carousel/construccion.jpg',
+      price: 'Desde $50,000'
+    },
+    {
+      id: 'diseno',
+      name: 'Diseño',
+      nameEn: 'Design',
+      image: '/images/services-carousel/diseno.jpg',
+      price: 'Desde $5,000'
+    },
+    {
+      id: 'mantenimiento',
+      name: 'Mantenimiento',
+      nameEn: 'Maintenance',
+      image: '/images/services-carousel/mantenimiento.jpg',
+      price: 'Desde $2,000'
+    }
   ]
 
-  // Efecto para cambiar imágenes automáticamente cada 5 segundos
+  // Efecto para cambiar imágenes automáticamente cada 8 segundos
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => 
-        prevIndex === headerImages.length - 1 ? 0 : prevIndex + 1
+      setCurrentServiceIndex((prevIndex) => 
+        prevIndex === services.length - 1 ? 0 : prevIndex + 1
       )
-    }, 5000)
+    }, 8000)
 
     return () => clearInterval(interval)
-  }, [headerImages.length])
+  }, [services.length])
 
   const navItems = [
     { href: '/', label: t.nav.home },
@@ -40,16 +65,16 @@ export default function Header() {
     <header className="relative w-full h-screen overflow-hidden">
       {/* Carrusel de imágenes */}
       <div className="absolute inset-0">
-        {headerImages.map((image, index) => (
+        {services.map((service, index) => (
           <div
-            key={index}
+            key={service.id}
             className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+              index === currentServiceIndex ? 'opacity-100' : 'opacity-0'
             }`}
           >
             <img
-              src={image}
-              alt={`Header image ${index + 1}`}
+              src={service.image}
+              alt={service.name}
               className="w-full h-full object-cover"
             />
           </div>
@@ -169,6 +194,46 @@ export default function Header() {
               >
                 {t.hero.ourServices}
               </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Botones de servicios en la parte inferior derecha */}
+        <div className="absolute bottom-8 right-8 z-20">
+          <div className="bg-white/90 backdrop-blur-sm rounded-lg p-4 shadow-lg">
+            <div className="flex flex-col space-y-2">
+              {services.map((service, index) => (
+                <button
+                  key={service.id}
+                  onClick={() => setCurrentServiceIndex(index)}
+                  className={`flex items-center justify-between px-4 py-3 rounded-md transition-all duration-300 text-left min-w-[200px] ${
+                    index === currentServiceIndex
+                      ? 'bg-accent text-white'
+                      : 'bg-white/80 hover:bg-white text-primary'
+                  }`}
+                >
+                  <div>
+                    <div className="font-semibold text-sm">
+                      {t.language === 'en' ? service.nameEn : service.name}
+                    </div>
+                    <div className={`text-xs ${
+                      index === currentServiceIndex ? 'text-white/80' : 'text-secondary'
+                    }`}>
+                      {service.price}
+                    </div>
+                  </div>
+                  <svg 
+                    className={`w-4 h-4 transition-transform duration-300 ${
+                      index === currentServiceIndex ? 'rotate-90' : ''
+                    }`}
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              ))}
             </div>
           </div>
         </div>
