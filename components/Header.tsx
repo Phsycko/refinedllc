@@ -202,36 +202,36 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Tarjeta de servicios - EXACTA con bordes */}
-        <div className="absolute bottom-8 right-8 z-20">
-          <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-6">
-            <div className="flex items-center space-x-6">
+        {/* Tarjeta de servicios - RESPONSIVE para móvil y desktop */}
+        <div className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 z-20">
+          <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-3 sm:p-6 max-w-[calc(100vw-2rem)] sm:max-w-none">
+            <div className="flex items-center space-x-3 sm:space-x-6">
               {/* Botones de navegación a la izquierda */}
-              <div className="flex flex-col space-y-2">
+              <div className="flex flex-col space-y-1 sm:space-y-2">
                 <button
                   onClick={() => setCurrentServiceIndex((prev) => prev === 0 ? services.length - 1 : prev - 1)}
-                  className="w-8 h-8 bg-gray-50 border border-gray-300 rounded flex items-center justify-center text-black hover:bg-gray-100 transition-colors"
+                  className="w-6 h-6 sm:w-8 sm:h-8 bg-gray-50 border border-gray-300 rounded flex items-center justify-center text-black hover:bg-gray-100 transition-colors"
                 >
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
                   </svg>
                 </button>
                 <button
                   onClick={() => setCurrentServiceIndex((prev) => prev === services.length - 1 ? 0 : prev + 1)}
-                  className="w-8 h-8 bg-gray-50 border border-gray-300 rounded flex items-center justify-center text-black hover:bg-gray-100 transition-colors"
+                  className="w-6 h-6 sm:w-8 sm:h-8 bg-gray-50 border border-gray-300 rounded flex items-center justify-center text-black hover:bg-gray-100 transition-colors"
                 >
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
               </div>
 
               {/* Contenido central */}
-              <div className="text-left">
-                <h3 className="text-xl font-bold text-black mb-1">
+              <div className="text-left flex-1 min-w-0">
+                <h3 className="text-sm sm:text-xl font-bold text-black mb-0.5 sm:mb-1 truncate">
                   {language === 'en' ? services[currentServiceIndex].nameEn : services[currentServiceIndex].name}
                 </h3>
-                <p className="text-sm text-gray-600 uppercase tracking-wider font-medium">
+                <p className="text-xs sm:text-sm text-gray-600 uppercase tracking-wider font-medium truncate">
                   {services[currentServiceIndex].price}
                 </p>
               </div>
@@ -239,9 +239,9 @@ export default function Header() {
               {/* Botón grande a la derecha */}
               <Link
                 href={services[currentServiceIndex].href}
-                className="w-12 h-12 bg-gray-50 border border-gray-300 rounded-full flex items-center justify-center text-black hover:bg-gray-100 transition-colors"
+                className="w-8 h-8 sm:w-12 sm:h-12 bg-gray-50 border border-gray-300 rounded-full flex items-center justify-center text-black hover:bg-gray-100 transition-colors flex-shrink-0"
               >
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-4 h-4 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </Link>
