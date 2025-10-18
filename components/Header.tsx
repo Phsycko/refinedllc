@@ -202,8 +202,8 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Tarjeta de servicios profesional */}
-        <div className="absolute bottom-8 right-8 z-20">
+        {/* Tarjeta de servicios profesional - FORZAR ACTUALIZACIÓN */}
+        <div className="fixed bottom-8 right-8 z-[9999]">
           <div className="bg-white rounded-2xl shadow-2xl p-8 min-w-[400px] border border-gray-100">
             <div className="flex items-center justify-between">
               {/* Contenido principal */}
