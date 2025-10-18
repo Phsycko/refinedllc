@@ -124,20 +124,20 @@ export default function Header() {
             </div>
 
             {/* Mobile menu button */}
-            <button
-              type="button"
-              className="md:hidden rounded-md p-2 text-white hover:bg-white/10 transition-colors duration-300"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              <span className="sr-only">Abrir menú</span>
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
+                     <button
+                       type="button"
+                       className="md:hidden rounded-md p-3 text-white hover:bg-white/10 transition-colors duration-300"
+                       onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                     >
+                       <span className="sr-only">Abrir menú</span>
+                       <svg
+                         className="h-8 w-8"
+                         fill="none"
+                         viewBox="0 0 24 24"
+                         strokeWidth="1.5"
+                         stroke="currentColor"
+                         aria-hidden="true"
+                       >
                 {mobileMenuOpen ? (
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 ) : (
