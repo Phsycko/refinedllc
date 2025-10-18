@@ -65,15 +65,15 @@ export default function HeaderSimple() {
           {/* Mobile menu button */}
                    <button
                      type="button"
-                     className={`md:hidden rounded-md p-4 transition-colors duration-300 ${isScrolled ? 'text-secondary hover:bg-gray-100' : 'text-white hover:bg-white/10'}`}
+                     className={`md:hidden rounded-md p-5 transition-colors duration-300 ${isScrolled ? 'text-secondary hover:bg-gray-100' : 'text-white hover:bg-white/10'}`}
                      onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                    >
                      <span className="sr-only">Abrir menú</span>
                      <svg
-                       className="h-10 w-10"
+                       className="h-12 w-12"
                        fill="none"
                        viewBox="0 0 24 24"
-                       strokeWidth="2"
+                       strokeWidth="2.5"
                        stroke="currentColor"
                        aria-hidden="true"
                      >
