@@ -202,9 +202,9 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Tarjeta de servicios - TAMAÑO FIJO */}
-        <div className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 z-20">
-          <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-3 sm:p-6 w-[360px] sm:w-[480px] h-[80px] sm:h-[100px]">
+        {/* Tarjeta de servicios - PEGADA A LA ESQUINA */}
+        <div className="absolute bottom-0 right-0 z-20">
+          <div className="bg-white rounded-tl-lg shadow-lg border border-gray-200 p-3 sm:p-6 w-[360px] sm:w-[480px] h-[80px] sm:h-[100px]">
             <div className="flex items-center justify-between h-full">
               {/* Botones de navegación a la izquierda */}
               <div className="flex flex-col space-y-1 sm:space-y-2">
