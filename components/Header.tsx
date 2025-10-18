@@ -204,7 +204,7 @@ export default function Header() {
 
         {/* Botones de servicios en la parte inferior derecha */}
         <div className="absolute bottom-8 right-8 z-20">
-          <div className="bg-white rounded-lg shadow-lg p-4">
+          <div className="bg-white rounded-lg shadow-lg p-4 border-2 border-red-500">
             <div className="flex items-center space-x-4">
               {/* Botones de navegación izquierda */}
               <div className="flex flex-col space-y-1">
