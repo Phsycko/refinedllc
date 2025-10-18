@@ -204,7 +204,7 @@ export default function Header() {
 
         {/* Tarjeta de servicios - PEGADA A LA ESQUINA */}
         <div className="absolute bottom-0 right-0 z-20">
-          <div className="bg-white rounded-tl-lg shadow-lg border border-gray-200 p-3 sm:p-6 w-[360px] sm:w-[480px] h-[80px] sm:h-[100px]">
+          <div className="bg-white rounded-tl-lg shadow-lg border border-gray-200 p-4 sm:p-8 w-[420px] sm:w-[560px] h-[100px] sm:h-[120px]">
             <div className="flex items-center justify-between h-full">
               {/* Botones de navegación a la izquierda */}
               <div className="flex flex-col space-y-1 sm:space-y-2">
