@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import servicesData from '@/content/services.json'
 import { useLanguage } from '@/contexts/LanguageContext'
+import HeaderSimple from '@/components/HeaderSimple'
 
 // Services page with simple grid layout
 
@@ -11,6 +12,7 @@ export default function ServicesPage() {
 
   return (
     <>
+      <HeaderSimple />
       <section className="bg-primary py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
