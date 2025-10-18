@@ -202,33 +202,54 @@ export default function Header() {
           </div>
         </div>
 
-        {/* TARJETA DE SERVICIOS - CAMBIO DRÁSTICO PARA VERIFICAR */}
-        <div className="fixed bottom-8 right-8 z-[99999] bg-green-500 p-6 rounded-lg shadow-2xl">
-          <div className="text-white text-center">
-            <h3 className="text-xl font-bold mb-2">
-              {language === 'en' ? services[currentServiceIndex].nameEn : services[currentServiceIndex].name}
-            </h3>
-            <p className="text-sm mb-4">
-              {services[currentServiceIndex].price}
-            </p>
-            <div className="flex items-center justify-center space-x-4">
-              <button
-                onClick={() => setCurrentServiceIndex((prev) => prev === 0 ? services.length - 1 : prev - 1)}
-                className="w-8 h-8 bg-white text-green-500 rounded-full flex items-center justify-center"
-              >
-                ↑
-              </button>
-              <button
-                onClick={() => setCurrentServiceIndex((prev) => prev === services.length - 1 ? 0 : prev + 1)}
-                className="w-8 h-8 bg-white text-green-500 rounded-full flex items-center justify-center"
-              >
-                ↓
-              </button>
+        {/* Tarjeta de servicios profesional - Solo en header */}
+        <div className="absolute bottom-8 right-8 z-20">
+          <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-6 min-w-[380px]">
+            <div className="flex items-center justify-between">
+              {/* Botones de navegación a la izquierda */}
+              <div className="flex flex-col space-y-2">
+                <button
+                  onClick={() => setCurrentServiceIndex((prev) => prev === 0 ? services.length - 1 : prev - 1)}
+                  className="w-8 h-8 bg-white border border-gray-300 rounded flex items-center justify-center hover:bg-gray-50 transition-colors"
+                >
+                  <svg className="w-4 h-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+                <button
+                  onClick={() => setCurrentServiceIndex((prev) => prev === services.length - 1 ? 0 : prev + 1)}
+                  className="w-8 h-8 bg-white border border-gray-300 rounded flex items-center justify-center hover:bg-gray-50 transition-colors"
+                >
+                  <svg className="w-4 h-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+              </div>
+
+              {/* Línea separadora */}
+              <div className="w-px h-12 bg-gray-200 mx-4"></div>
+
+              {/* Contenido principal */}
+              <div className="flex-1">
+                <h3 className="text-xl font-bold text-gray-900 mb-1">
+                  {language === 'en' ? services[currentServiceIndex].nameEn : services[currentServiceIndex].name}
+                </h3>
+                <p className="text-sm text-gray-600 uppercase tracking-wider font-medium">
+                  {services[currentServiceIndex].price}
+                </p>
+              </div>
+
+              {/* Línea separadora */}
+              <div className="w-px h-12 bg-gray-200 mx-4"></div>
+
+              {/* Botón grande a la derecha */}
               <Link
                 href={services[currentServiceIndex].href}
-                className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center"
+                className="w-12 h-12 bg-white border border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-50 transition-colors"
               >
-                →
+                <svg className="w-5 h-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
               </Link>
             </div>
           </div>
