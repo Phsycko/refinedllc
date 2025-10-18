@@ -13,32 +13,36 @@ export default function Header() {
   // Array de servicios con sus imágenes
   const services = [
     {
-      id: 'remodelacion',
-      name: 'Remodelación',
-      nameEn: 'Remodeling',
+      id: 'jardines',
+      name: 'Jardines',
+      nameEn: 'Gardens',
       image: '/images/services-carousel/remodelacion.jpg',
-      price: 'Desde $15,000'
+      price: 'Desde $8,000',
+      href: '/servicios/jardines'
     },
     {
-      id: 'construccion',
-      name: 'Construcción',
-      nameEn: 'Construction',
+      id: 'extensiones',
+      name: 'Extensiones',
+      nameEn: 'Extensions',
       image: '/images/services-carousel/construccion.jpg',
-      price: 'Desde $50,000'
+      price: 'Desde $25,000',
+      href: '/servicios/extensiones'
     },
     {
-      id: 'diseno',
-      name: 'Diseño',
-      nameEn: 'Design',
+      id: 'outdoor-living',
+      name: 'Espacios Exteriores',
+      nameEn: 'Outdoor Living Space',
       image: '/images/services-carousel/diseno.jpg',
-      price: 'Desde $5,000'
+      price: 'Desde $12,000',
+      href: '/servicios/outdoor-living'
     },
     {
-      id: 'mantenimiento',
-      name: 'Mantenimiento',
-      nameEn: 'Maintenance',
+      id: 'bathroom',
+      name: 'Baños',
+      nameEn: 'Bathroom',
       image: '/images/services-carousel/mantenimiento.jpg',
-      price: 'Desde $2,000'
+      price: 'Desde $10,000',
+      href: '/servicios/bathroom'
     }
   ]
 
@@ -200,40 +204,55 @@ export default function Header() {
 
         {/* Botones de servicios en la parte inferior derecha */}
         <div className="absolute bottom-8 right-8 z-20">
-          <div className="bg-white/90 backdrop-blur-sm rounded-lg p-4 shadow-lg">
-            <div className="flex flex-col space-y-2">
-              {services.map((service, index) => (
-                <button
-                  key={service.id}
-                  onClick={() => setCurrentServiceIndex(index)}
-                  className={`flex items-center justify-between px-4 py-3 rounded-md transition-all duration-300 text-left min-w-[200px] ${
-                    index === currentServiceIndex
-                      ? 'bg-accent text-white'
-                      : 'bg-white/80 hover:bg-white text-primary'
-                  }`}
-                >
-                  <div>
-                    <div className="font-semibold text-sm">
-                      {t.language === 'en' ? service.nameEn : service.name}
-                    </div>
-                    <div className={`text-xs ${
-                      index === currentServiceIndex ? 'text-white/80' : 'text-secondary'
-                    }`}>
-                      {service.price}
-                    </div>
-                  </div>
-                  <svg 
-                    className={`w-4 h-4 transition-transform duration-300 ${
-                      index === currentServiceIndex ? 'rotate-90' : ''
+          <div className="bg-white/95 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden">
+            <div className="flex">
+              {/* Lista de servicios */}
+              <div className="flex flex-col">
+                {services.map((service, index) => (
+                  <button
+                    key={service.id}
+                    onClick={() => setCurrentServiceIndex(index)}
+                    className={`flex items-center justify-between px-4 py-3 transition-all duration-300 text-left min-w-[200px] border-b border-gray-200 last:border-b-0 ${
+                      index === currentServiceIndex
+                        ? 'bg-accent text-white'
+                        : 'bg-white hover:bg-gray-50 text-primary'
                     }`}
-                    fill="none" 
-                    viewBox="0 0 24 24" 
-                    stroke="currentColor"
                   >
+                    <div>
+                      <div className="font-semibold text-sm">
+                        {t.language === 'en' ? service.nameEn : service.name}
+                      </div>
+                      <div className={`text-xs ${
+                        index === currentServiceIndex ? 'text-white/80' : 'text-secondary'
+                      }`}>
+                        {service.price}
+                      </div>
+                    </div>
+                    <svg 
+                      className={`w-4 h-4 transition-transform duration-300 ${
+                        index === currentServiceIndex ? 'rotate-90' : ''
+                      }`}
+                      fill="none" 
+                      viewBox="0 0 24 24" 
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                ))}
+              </div>
+              
+              {/* Botón grande a la derecha */}
+              <div className="flex flex-col justify-center px-6 bg-gray-50 border-l border-gray-200">
+                <Link
+                  href={services[currentServiceIndex].href}
+                  className="flex items-center justify-center w-12 h-12 bg-accent hover:bg-accent-dark text-white rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+                >
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                </button>
-              ))}
+                </Link>
+              </div>
             </div>
           </div>
         </div>
