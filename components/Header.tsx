@@ -202,46 +202,46 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Tarjeta de servicios en la parte inferior derecha */}
+        {/* Tarjeta de servicios profesional */}
         <div className="absolute bottom-8 right-8 z-20">
-          <div className="bg-white rounded-lg shadow-lg p-6 min-w-[320px]">
+          <div className="bg-white rounded-2xl shadow-2xl p-8 min-w-[400px] border border-gray-100">
             <div className="flex items-center justify-between">
-              {/* Contenido central */}
-              <div className="flex-1 text-center">
-                <h3 className="text-xl font-bold text-primary mb-2">
+              {/* Contenido principal */}
+              <div className="flex-1">
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">
                   {t.language === 'en' ? services[currentServiceIndex].nameEn : services[currentServiceIndex].name}
                 </h3>
-                <p className="text-sm text-secondary uppercase tracking-wide">
+                <p className="text-sm text-gray-600 uppercase tracking-wider font-medium">
                   {services[currentServiceIndex].price}
                 </p>
               </div>
               
-              {/* Botones de navegación */}
-              <div className="flex flex-col items-center space-y-4 ml-6">
-                {/* Botones pequeños a la izquierda */}
-                <div className="flex flex-col space-y-2">
+              {/* Controles de navegación */}
+              <div className="flex items-center space-x-6">
+                {/* Botones de navegación */}
+                <div className="flex flex-col space-y-3">
                   <button
                     onClick={() => setCurrentServiceIndex((prev) => prev === 0 ? services.length - 1 : prev - 1)}
-                    className="w-8 h-8 flex items-center justify-center border border-gray-300 rounded-full hover:bg-gray-50 transition-colors"
+                    className="w-10 h-10 flex items-center justify-center bg-gray-100 hover:bg-gray-200 rounded-full transition-all duration-200 group"
                   >
-                    <svg className="w-4 h-4 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-gray-600 group-hover:text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                     </svg>
                   </button>
                   <button
                     onClick={() => setCurrentServiceIndex((prev) => prev === services.length - 1 ? 0 : prev + 1)}
-                    className="w-8 h-8 flex items-center justify-center border border-gray-300 rounded-full hover:bg-gray-50 transition-colors"
+                    className="w-10 h-10 flex items-center justify-center bg-gray-100 hover:bg-gray-200 rounded-full transition-all duration-200 group"
                   >
-                    <svg className="w-4 h-4 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-gray-600 group-hover:text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </button>
                 </div>
                 
-                {/* Botón grande a la derecha */}
+                {/* Botón principal */}
                 <Link
                   href={services[currentServiceIndex].href}
-                  className="w-16 h-16 flex items-center justify-center bg-accent hover:bg-accent-dark text-white rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="w-20 h-20 flex items-center justify-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
                 >
                   <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
