@@ -202,23 +202,59 @@ export default function Header() {
           </div>
         </div>
 
-        {/* TEST COMPONENT - Botones de servicios */}
-        <div className="fixed bottom-8 right-8 z-[9999] bg-red-500 p-4 rounded-lg">
-          <div className="text-white font-bold">
-            TEST COMPONENT
+        {/* Tarjeta de servicios en la parte inferior derecha */}
+        <div className="absolute bottom-8 right-8 z-20">
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div className="flex">
+              {/* Lista de servicios */}
+              <div className="flex flex-col">
+                {services.map((service, index) => (
+                  <button
+                    key={service.id}
+                    onClick={() => setCurrentServiceIndex(index)}
+                    className={`flex items-center justify-between px-4 py-3 transition-all duration-300 text-left min-w-[200px] border-b border-gray-200 last:border-b-0 ${
+                      index === currentServiceIndex
+                        ? 'bg-accent text-white'
+                        : 'bg-white hover:bg-gray-50 text-primary'
+                    }`}
+                  >
+                    <div>
+                      <div className="font-semibold text-sm">
+                        {t.language === 'en' ? service.nameEn : service.name}
+                      </div>
+                      <div className={`text-xs ${
+                        index === currentServiceIndex ? 'text-white/80' : 'text-secondary'
+                      }`}>
+                        {service.price}
+                      </div>
+                    </div>
+                    <svg 
+                      className={`w-4 h-4 transition-transform duration-300 ${
+                        index === currentServiceIndex ? 'rotate-90' : ''
+                      }`}
+                      fill="none" 
+                      viewBox="0 0 24 24" 
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                ))}
+              </div>
+              
+              {/* Botón grande a la derecha */}
+              <div className="flex flex-col justify-center px-6 bg-gray-50 border-l border-gray-200">
+                <Link
+                  href={services[currentServiceIndex].href}
+                  className="flex items-center justify-center w-12 h-12 bg-accent hover:bg-accent-dark text-white rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+                >
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
           </div>
-          <div className="text-white">
-            {services[currentServiceIndex].name}
-          </div>
-          <div className="text-white">
-            {services[currentServiceIndex].price}
-          </div>
-          <button 
-            onClick={() => setCurrentServiceIndex((prev) => (prev + 1) % services.length)}
-            className="bg-white text-red-500 px-2 py-1 rounded mt-2"
-          >
-            Next
-          </button>
         </div>
       </div>
     </header>
