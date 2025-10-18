@@ -204,7 +204,7 @@ export default function Header() {
 
         {/* Tarjeta de servicios - TAMAÑO FIJO */}
         <div className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 z-20">
-          <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-3 sm:p-6 w-[280px] sm:w-[380px] h-[80px] sm:h-[100px]">
+          <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-3 sm:p-6 w-[320px] sm:w-[420px] h-[80px] sm:h-[100px]">
             <div className="flex items-center justify-between h-full">
               {/* Botones de navegación a la izquierda */}
               <div className="flex flex-col space-y-1 sm:space-y-2">
@@ -213,7 +213,7 @@ export default function Header() {
                   className="w-6 h-6 sm:w-8 sm:h-8 bg-gray-50 border border-gray-300 rounded flex items-center justify-center text-black hover:bg-gray-100 transition-colors"
                 >
                   <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
                   </svg>
                 </button>
                 <button
@@ -221,13 +221,13 @@ export default function Header() {
                   className="w-6 h-6 sm:w-8 sm:h-8 bg-gray-50 border border-gray-300 rounded flex items-center justify-center text-black hover:bg-gray-100 transition-colors"
                 >
                   <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
               </div>
 
-              {/* Contenido central - TAMAÑO FIJO */}
-              <div className="text-left w-[140px] sm:w-[200px] px-2 sm:px-4">
+              {/* Contenido central - MÁS ANCHO */}
+              <div className="text-left w-[180px] sm:w-[240px] px-2 sm:px-4">
                 <h3 className="text-sm sm:text-xl font-bold text-black mb-0.5 sm:mb-1 truncate">
                   {language === 'en' ? services[currentServiceIndex].nameEn : services[currentServiceIndex].name}
                 </h3>
