@@ -202,51 +202,49 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Tarjeta de servicios - Diseño de la segunda imagen */}
+        {/* Tarjeta de servicios - Diseño EXACTO de la imagen */}
         <div className="absolute bottom-8 right-8 z-20">
-          <div className="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
-            <div className="flex items-center">
-              {/* Sección izquierda - Botones de navegación */}
-              <div className="flex flex-col p-4 border-r border-gray-200">
-                <button
-                  onClick={() => setCurrentServiceIndex((prev) => prev === 0 ? services.length - 1 : prev - 1)}
-                  className="w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded flex items-center justify-center mb-2 transition-colors"
-                >
-                  <svg className="w-4 h-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
-                  </svg>
-                </button>
-                <button
-                  onClick={() => setCurrentServiceIndex((prev) => prev === services.length - 1 ? 0 : prev + 1)}
-                  className="w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded flex items-center justify-center transition-colors"
-                >
-                  <svg className="w-4 h-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-              </div>
+          <div className="bg-white rounded-lg shadow-lg p-4 flex items-center space-x-4">
+            {/* Botones de navegación a la izquierda */}
+            <div className="flex flex-col space-y-2">
+              <button
+                onClick={() => setCurrentServiceIndex((prev) => prev === 0 ? services.length - 1 : prev - 1)}
+                className="w-10 h-10 bg-gray-100 border border-gray-300 rounded flex items-center justify-center text-gray-700 hover:bg-gray-200 transition-colors"
+              >
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+                </svg>
+              </button>
+              <button
+                onClick={() => setCurrentServiceIndex((prev) => prev === services.length - 1 ? 0 : prev + 1)}
+                className="w-10 h-10 bg-gray-100 border border-gray-300 rounded flex items-center justify-center text-gray-700 hover:bg-gray-200 transition-colors"
+              >
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+            </div>
 
-              {/* Sección central - Información del servicio */}
-              <div className="flex-1 px-6 py-4 text-center border-r border-gray-200">
-                <h3 className="text-xl font-bold text-gray-900 mb-1">
-                  {language === 'en' ? services[currentServiceIndex].nameEn : services[currentServiceIndex].name}
-                </h3>
-                <p className="text-sm text-gray-600 uppercase tracking-wider font-medium">
-                  {services[currentServiceIndex].price}
-                </p>
-              </div>
+            {/* Contenido central */}
+            <div className="text-center px-4">
+              <h3 className="text-xl font-bold text-gray-900 mb-1">
+                {language === 'en' ? services[currentServiceIndex].nameEn : services[currentServiceIndex].name}
+              </h3>
+              <p className="text-sm text-gray-600 uppercase tracking-wider font-medium">
+                {services[currentServiceIndex].price}
+              </p>
+            </div>
 
-              {/* Sección derecha - Botón de acción */}
-              <div className="p-4">
-                <Link
-                  href={services[currentServiceIndex].href}
-                  className="w-12 h-12 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center transition-colors"
-                >
-                  <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
-              </div>
+            {/* Botón grande a la derecha */}
+            <div>
+              <Link
+                href={services[currentServiceIndex].href}
+                className="w-16 h-16 bg-gray-100 border border-gray-300 rounded-full flex items-center justify-center text-gray-700 hover:bg-gray-200 transition-colors shadow-md"
+              >
+                <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
             </div>
           </div>
         </div>
