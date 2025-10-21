@@ -8,16 +8,10 @@ export const en = {
     quote: "Get a Free Quote",
   },
   hero: {
-    title: "From dream designs to flawless finishes",
-    subtitle: "We specialize in residential and commercial renovations that blend functionality with beauty. With years of experience, a passion for design, and a commitment to quality, we take pride in creating spaces that inspire.",
-    viewProjects: "Get An Instant Estimate ➤",
-    ourServices: "Learn More",
-    attributes: {
-      quality: "Quality",
-      innovation: "Innovation",
-      expertise: "Expertise",
-      reliability: "Reliability",
-    },
+    title: "Transforming Visions into Reality",
+    subtitle: "World-class architectural design and construction. Over 9 years creating exceptional spaces that exceed expectations.",
+    viewProjects: "View Projects",
+    ourServices: "Our Services",
   },
   services: {
     title: "Our Services",
@@ -138,19 +132,6 @@ export const en = {
     requestQuote: "Request quote",
     learnMore: "Learn more",
     readMore: "Read more",
-  },
-  serviceDetail: {
-    interested: "Interested in learning more?",
-    tellUs: "Tell us about your project",
-    mainView: "Main View",
-    beforeImages: "Before Images",
-    viewBeforeImages: "View Before Images",
-    review: "Review",
-    layout: "Layout:",
-    size: "Size:",
-    buildingType: "Building Type:",
-    location: "Location:",
-    totalCost: "Total Cost:",
   }
 }
 

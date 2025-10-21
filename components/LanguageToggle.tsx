@@ -12,7 +12,7 @@ export default function LanguageToggle() {
         className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${
           language === 'es'
             ? 'bg-accent text-white'
-            : 'text-white hover:bg-white/10'
+            : 'text-secondary hover:bg-gray-100'
         }`}
         aria-label="Cambiar a Español"
       >
@@ -23,7 +23,7 @@ export default function LanguageToggle() {
         className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${
           language === 'en'
             ? 'bg-accent text-white'
-            : 'text-white hover:bg-white/10'
+            : 'text-secondary hover:bg-gray-100'
         }`}
         aria-label="Switch to English"
       >

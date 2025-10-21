@@ -1,230 +1,99 @@
 [
   {
     "id": 1,
-    "slug": "outdoor-living",
-    "title": "Outdoor Living Space",
-    "title_en": "Outdoor Living Space",
-    "category": "Espacios Exteriores",
-    "category_en": "Outdoor Living",
-    "description": "Diseño y construcción de terrazas, pérgolas, patios, cercas y otras estructuras para tu patio trasero.",
-    "description_en": "Design and construction of decks, pergolas, patios, fences, and other backyard structures.",
-    "fullDescription": "Creamos espacios exteriores funcionales y hermosos que extienden tu hogar hacia el exterior. Desde terrazas de madera hasta pérgolas elegantes, transformamos tu patio trasero en un oasis de relajación y entretenimiento.",
-    "fullDescription_en": "We create functional and beautiful outdoor spaces that extend your home to the outside. From wooden decks to elegant pergolas, we transform your backyard into an oasis of relaxation and entertainment.",
+    "slug": "diseno-arquitectonico",
+    "title": "Diseño Arquitectónico",
+    "title_en": "Architectural Design",
+    "category": "Arquitectura",
+    "category_en": "Architecture",
+    "description": "Creamos espacios únicos que combinan funcionalidad y estética, adaptados a tus necesidades específicas.",
+    "description_en": "We create unique spaces that combine functionality and aesthetics, tailored to your specific needs.",
+    "fullDescription": "Nuestro equipo de arquitectos altamente calificados transforma tus ideas en diseños arquitectónicos excepcionales. Trabajamos estrechamente contigo desde el concepto inicial hasta los planos finales, asegurando que cada detalle refleje tu visión mientras cumplimos con todas las normativas y códigos de construcción.",
     "features": [
-      "Construcción de terrazas de madera y composite",
-      "Diseño e instalación de pérgolas",
-      "Creación de patios y áreas de descanso",
-      "Instalación de cercas y vallas",
-      "Estructuras de soporte para plantas",
-      "Iluminación exterior",
-      "Mantenimiento y reparaciones"
+      "Diseño conceptual y desarrollo de planos",
+      "Modelado 3D y renders fotorrealistas",
+      "Cumplimiento de códigos y normativas",
+      "Diseño sostenible y eficiencia energética",
+      "Asesoría durante todo el proceso"
     ],
-    "features_en": [
-      "Wood and composite deck construction",
-      "Pergola design and installation",
-      "Patio and relaxation area creation",
-      "Fence and gate installation",
-      "Plant support structures",
-      "Outdoor lighting",
-      "Maintenance and repairs"
-    ],
-    "image": "/images/services/outdoor-spaces.jpg",
+    "image": "/images/services/arquitectura.jpg",
     "gallery": [
-      "/images/projects/deck-construction-1.jpg",
-      "/images/projects/pergola-1.jpg",
-      "/images/projects/patio-1.jpg"
+      "/images/projects/casa-moderna-1.jpg",
+      "/images/projects/casa-moderna-2.jpg"
     ],
-    "price": "Desde $12,000",
-    "price_en": "From $12,000",
-    "layout": "Espacio Exterior",
-    "layout_en": "Outdoor Space",
-    "size": "Variable según patio",
-    "size_en": "Variable per yard",
-    "buildingType": "Estructura Exterior",
-    "buildingType_en": "Outdoor Structure",
-    "location": "Área Metropolitana",
-    "location_en": "Metropolitan Area",
-    "allInCost": "$12K-50K",
-    "allInCost_en": "$12K-50K",
-    "beforeImages": [
-      "/images/projects/before-outdoor-1.jpg"
-    ],
-    "review": {
-      "stars": 5,
-      "text": "Nuestra nueva terraza es el lugar perfecto para relajarse. La calidad de construcción es excelente.",
-      "text_en": "Our new deck is the perfect place to relax. The construction quality is excellent.",
-      "author": "John Smith"
-    }
+    "price": "Desde $5,000"
   },
   {
     "id": 2,
-    "slug": "spaces",
-    "title": "Espacios",
-    "title_en": "Spaces",
-    "category": "Espacios Interiores",
-    "category_en": "Interior Spaces",
-    "description": "Diseño y remodelación de espacios interiores personalizados para maximizar funcionalidad y belleza.",
-    "description_en": "Design and remodeling of custom interior spaces to maximize functionality and beauty.",
-    "fullDescription": "Transformamos cualquier espacio interior en un ambiente funcional y hermoso. Desde salas de estar hasta oficinas en casa, creamos espacios que se adaptan perfectamente a tu estilo de vida.",
-    "fullDescription_en": "We transform any interior space into a functional and beautiful environment. From living rooms to home offices, we create spaces that perfectly adapt to your lifestyle.",
+    "slug": "construccion-residencial",
+    "title": "Construcción Residencial",
+    "title_en": "Residential Construction",
+    "category": "Construcción",
+    "category_en": "Construction",
+    "description": "Construcción de hogares de alta calidad con los más altos estándares de la industria.",
+    "description_en": "High-quality home construction with the highest industry standards.",
+    "fullDescription": "Especializados en construcción residencial de lujo, desde casas unifamiliares hasta desarrollos residenciales completos. Nuestro equipo gestiona cada fase del proyecto con precisión, desde la preparación del terreno hasta los acabados finales.",
     "features": [
-      "Diseño de espacios interiores",
-      "Remodelación de salas",
-      "Creación de oficinas en casa",
-      "Diseño de dormitorios",
-      "Espacios de almacenamiento",
-      "Iluminación interior",
-      "Acabados personalizados"
+      "Gestión completa de proyectos",
+      "Materiales de primera calidad",
+      "Control de calidad riguroso",
+      "Cumplimiento de plazos",
+      "Garantía de construcción"
     ],
-    "features_en": [
-      "Interior space design",
-      "Living room remodeling",
-      "Home office creation",
-      "Bedroom design",
-      "Storage spaces",
-      "Interior lighting",
-      "Custom finishes"
-    ],
-    "image": "/images/services/interior-spaces.jpg",
+    "image": "/images/services/construccion.jpg",
     "gallery": [
-      "/images/projects/living-room-1.jpg",
-      "/images/projects/home-office-1.jpg",
-      "/images/projects/bedroom-1.jpg"
+      "/images/projects/residencial-1.jpg",
+      "/images/projects/residencial-2.jpg"
     ],
-    "price": "Desde $15,000",
-    "price_en": "From $15,000",
-    "layout": "Espacio Interior",
-    "layout_en": "Interior Space",
-    "size": "Variable según espacio",
-    "size_en": "Variable per space",
-    "buildingType": "Espacio Interior",
-    "buildingType_en": "Interior Space",
-    "location": "Área Metropolitana",
-    "location_en": "Metropolitan Area",
-    "allInCost": "$15K-80K",
-    "allInCost_en": "$15K-80K",
-    "beforeImages": [
-      "/images/projects/before-interior-1.jpg"
-    ],
-    "review": {
-      "stars": 5,
-      "text": "El diseño de nuestro espacio de trabajo en casa es perfecto. Muy funcional y hermoso.",
-      "text_en": "Our home workspace design is perfect. Very functional and beautiful.",
-      "author": "Ana Martínez"
-    }
+    "price": "Cotización personalizada"
   },
   {
     "id": 3,
-    "slug": "bathrooms",
-    "title": "Baños",
-    "title_en": "Bathrooms",
-    "category": "Remodelación de Baños",
-    "category_en": "Bathroom Remodeling",
-    "description": "Remodelación completa de baños con diseños modernos, funcionales y de alta calidad.",
-    "description_en": "Complete bathroom remodeling with modern, functional, and high-quality designs.",
-    "fullDescription": "Transformamos tu baño en un espacio de lujo y relajación. Desde diseños modernos hasta acabados de alta gama, creamos baños que combinan funcionalidad con elegancia.",
-    "fullDescription_en": "We transform your bathroom into a space of luxury and relaxation. From modern designs to high-end finishes, we create bathrooms that combine functionality with elegance.",
+    "slug": "remodelacion-interior",
+    "title": "Remodelación Interior",
+    "title_en": "Interior Remodeling",
+    "category": "Remodelación",
+    "category_en": "Remodeling",
+    "description": "Transformamos espacios existentes en ambientes modernos y funcionales.",
+    "description_en": "We transform existing spaces into modern and functional environments.",
+    "fullDescription": "Renovamos y actualizamos espacios interiores con diseños innovadores que maximizan la funcionalidad y el estilo. Ya sea una cocina, baño o renovación completa de tu hogar, trabajamos con atención meticulosa al detalle.",
     "features": [
-      "Remodelación completa de baños",
-      "Instalación de duchas modernas",
-      "Gabinetes y encimeras personalizados",
-      "Pisos y azulejos de alta calidad",
-      "Iluminación especializada",
-      "Plomería y electricidad",
-      "Acabados de lujo"
+      "Diseño de interiores personalizado",
+      "Renovación de cocinas y baños",
+      "Optimización de espacios",
+      "Selección de materiales y acabados",
+      "Mínima interrupción de tu rutina"
     ],
-    "features_en": [
-      "Complete bathroom remodeling",
-      "Modern shower installation",
-      "Custom cabinets and countertops",
-      "High-quality flooring and tiles",
-      "Specialized lighting",
-      "Plumbing and electrical",
-      "Luxury finishes"
-    ],
-    "image": "/images/services/bathroom-remodel.jpg",
+    "image": "/images/services/remodelacion.jpg",
     "gallery": [
-      "/images/projects/bathroom-remodel-1.jpg",
-      "/images/projects/modern-bathroom-1.jpg",
-      "/images/projects/luxury-bathroom-1.jpg"
+      "/images/projects/remodelacion-1.jpg",
+      "/images/projects/remodelacion-2.jpg"
     ],
-    "price": "Desde $10,000",
-    "price_en": "From $10,000",
-    "layout": "Baño Completo",
-    "layout_en": "Complete Bathroom",
-    "size": "Variable según baño",
-    "size_en": "Variable per bathroom",
-    "buildingType": "Baño Residencial",
-    "buildingType_en": "Residential Bathroom",
-    "location": "Área Metropolitana",
-    "location_en": "Metropolitan Area",
-    "allInCost": "$10K-60K",
-    "allInCost_en": "$10K-60K",
-    "beforeImages": [
-      "/images/projects/before-bathroom-1.jpg"
-    ],
-    "review": {
-      "stars": 5,
-      "text": "Nuestro nuevo baño es increíble. El diseño es moderno y la calidad de construcción excelente.",
-      "text_en": "Our new bathroom is incredible. The design is modern and the construction quality excellent.",
-      "author": "Roberto García"
-    }
+    "price": "Desde $15,000"
   },
   {
     "id": 4,
-    "slug": "kitchen",
-    "title": "Cocinas",
-    "title_en": "Kitchen",
-    "category": "Remodelación de Cocinas",
-    "category_en": "Kitchen Remodeling",
-    "description": "Diseño y remodelación de cocinas modernas, funcionales y elegantes para tu hogar.",
-    "description_en": "Design and remodeling of modern, functional, and elegant kitchens for your home.",
-    "fullDescription": "Creamos cocinas que son el corazón de tu hogar. Desde diseños contemporáneos hasta estilos clásicos, transformamos tu cocina en un espacio funcional y hermoso donde disfrutar cocinar y compartir.",
-    "fullDescription_en": "We create kitchens that are the heart of your home. From contemporary designs to classic styles, we transform your kitchen into a functional and beautiful space to enjoy cooking and sharing.",
+    "slug": "construccion-comercial",
+    "title": "Construcción Comercial",
+    "title_en": "Commercial Construction",
+    "category": "Construcción",
+    "category_en": "Construction",
+    "description": "Proyectos comerciales que impulsan tu negocio con diseño funcional y atractivo.",
+    "description_en": "Commercial projects that boost your business with functional and attractive design.",
+    "fullDescription": "Desarrollamos espacios comerciales que no solo cumplen con tus requisitos operacionales, sino que también crean una experiencia excepcional para tus clientes. Desde oficinas hasta locales comerciales.",
     "features": [
-      "Diseño de cocinas personalizado",
-      "Gabinetes y encimeras de alta calidad",
-      "Electrodomésticos modernos",
-      "Iluminación especializada",
-      "Pisos y azulejos",
-      "Plomería y electricidad",
-      "Acabados de lujo"
+      "Diseño enfocado en la experiencia del cliente",
+      "Construcción adaptada a tu marca",
+      "Cumplimiento de normativas comerciales",
+      "Gestión de permisos y licencias",
+      "Entrega a tiempo"
     ],
-    "features_en": [
-      "Custom kitchen design",
-      "High-quality cabinets and countertops",
-      "Modern appliances",
-      "Specialized lighting",
-      "Flooring and tiles",
-      "Plumbing and electrical",
-      "Luxury finishes"
-    ],
-    "image": "/images/services/kitchen-remodel.jpg",
+    "image": "/images/services/comercial.jpg",
     "gallery": [
-      "/images/projects/kitchen-remodel-1.jpg",
-      "/images/projects/modern-kitchen-1.jpg",
-      "/images/projects/luxury-kitchen-1.jpg"
+      "/images/projects/comercial-1.jpg",
+      "/images/projects/comercial-2.jpg"
     ],
-    "price": "Desde $20,000",
-    "price_en": "From $20,000",
-    "layout": "Cocina Completa",
-    "layout_en": "Complete Kitchen",
-    "size": "Variable según cocina",
-    "size_en": "Variable per kitchen",
-    "buildingType": "Cocina Residencial",
-    "buildingType_en": "Residential Kitchen",
-    "location": "Área Metropolitana",
-    "location_en": "Metropolitan Area",
-    "allInCost": "$20K-100K",
-    "allInCost_en": "$20K-100K",
-    "beforeImages": [
-      "/images/projects/before-kitchen-1.jpg"
-    ],
-    "review": {
-      "stars": 5,
-      "text": "Nuestra nueva cocina es perfecta. El diseño es funcional y los acabados de primera calidad.",
-      "text_en": "Our new kitchen is perfect. The design is functional and the finishes are top quality.",
-      "author": "Laura Fernández"
-    }
+    "price": "Cotización personalizada"
   }
 ]
+

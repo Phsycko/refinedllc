@@ -8,19 +8,19 @@ export default function ServicesGrid() {
   const { t, language } = useLanguage()
 
   return (
-    <section className="bg-white py-12 sm:py-16 lg:py-24">
+    <section className="bg-white py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-primary sm:text-4xl">
             {t.services.title}
           </h2>
-          <p className="mt-3 sm:mt-4 text-base sm:text-lg text-secondary max-w-2xl mx-auto px-4">
+          <p className="mt-4 text-lg text-secondary max-w-2xl mx-auto">
             {t.services.subtitle}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {servicesData.map((service) => {
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {servicesData.map((service: any) => {
             const title = language === 'en' && service.title_en ? service.title_en : service.title
             const description = language === 'en' && service.description_en ? service.description_en : service.description
             
@@ -30,23 +30,23 @@ export default function ServicesGrid() {
                 href={`/servicios/${service.slug}`}
                 className="group relative overflow-hidden rounded-lg bg-background shadow-md transition-all hover:shadow-xl hover:scale-105"
               >
-                <div className="p-3 sm:p-4 flex flex-col h-full">
-                  <div className="mb-2 sm:mb-3">
-                    <div className="inline-flex items-center justify-center rounded-lg bg-accent/10 p-1.5 sm:p-2">
-                      <svg className="h-5 w-5 sm:h-6 sm:w-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div className="p-6">
+                  <div className="mb-4">
+                    <div className="inline-flex items-center justify-center rounded-lg bg-accent/10 p-3">
+                      <svg className="h-8 w-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                       </svg>
                     </div>
                   </div>
-                  <h3 className="text-base sm:text-lg font-semibold text-primary group-hover:text-accent transition-colors leading-tight mb-2">
+                  <h3 className="text-xl font-semibold text-primary group-hover:text-accent transition-colors">
                     {title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-secondary line-clamp-3 leading-relaxed flex-grow">
+                  <p className="mt-2 text-sm text-secondary line-clamp-3">
                     {description}
                   </p>
-                  <div className="mt-3 flex items-center text-accent font-medium text-xs sm:text-sm">
+                  <div className="mt-4 flex items-center text-accent font-medium text-sm">
                     <span>{t.common.viewMore}</span>
-                    <svg className="ml-1 h-3 w-3 sm:h-4 sm:w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </div>
@@ -56,10 +56,10 @@ export default function ServicesGrid() {
           })}
         </div>
 
-        <div className="mt-8 sm:mt-12 text-center px-4">
+        <div className="mt-12 text-center">
           <Link
             href="/servicios"
-            className="inline-flex items-center rounded-md bg-primary px-6 py-3 text-sm sm:text-base font-semibold text-white shadow-sm transition-all hover:bg-primary-light hover:shadow-md w-full sm:w-auto justify-center"
+            className="inline-flex items-center rounded-md bg-primary px-6 py-3 text-base font-semibold text-white shadow-sm transition-all hover:bg-primary-light hover:shadow-md"
           >
             {t.services.viewAllServices}
           </Link>

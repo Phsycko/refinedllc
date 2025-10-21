@@ -16,7 +16,7 @@ export default function Header() {
       id: 'outdoor-living',
       name: 'Outdoor Living Space',
       nameEn: 'Outdoor Living Space',
-      image: '/images/services-carousel/diseno.jpg',
+      image: '/images/hero/new-hero-image.jpg',
       price: 'Desde $12,000',
       href: '/servicios/outdoor-living'
     },
@@ -24,7 +24,7 @@ export default function Header() {
       id: 'spaces',
       name: 'Espacios',
       nameEn: 'Spaces',
-      image: '/images/services-carousel/remodelacion.jpg',
+      image: '/images/hero/new-hero-image.jpg',
       price: 'Desde $15,000',
       href: '/servicios/spaces'
     },
@@ -32,7 +32,7 @@ export default function Header() {
       id: 'bathrooms',
       name: 'Baños',
       nameEn: 'Bathrooms',
-      image: '/images/services-carousel/mantenimiento.jpg',
+      image: '/images/hero/new-hero-image.jpg',
       price: 'Desde $10,000',
       href: '/servicios/bathrooms'
     },
@@ -40,7 +40,7 @@ export default function Header() {
       id: 'kitchen',
       name: 'Cocinas',
       nameEn: 'Kitchen',
-      image: '/images/services-carousel/construccion.jpg',
+      image: '/images/hero/new-hero-image.jpg',
       price: 'Desde $20,000',
       href: '/servicios/kitchen'
     }
@@ -94,7 +94,7 @@ export default function Header() {
           <div className="flex h-20 items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-3">
-                     <div className="h-32 w-auto">
+              <div className="h-32 w-auto">
                 <img 
                   src="/logo.png" 
                   alt="Refined LLC" 
@@ -124,20 +124,20 @@ export default function Header() {
             </div>
 
             {/* Mobile menu button */}
-                     <button
-                       type="button"
-                       className="md:hidden rounded-md p-3 text-white hover:bg-white/10 transition-colors duration-300"
-                       onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                     >
-                       <span className="sr-only">Abrir menú</span>
-                       <svg
-                         className="h-9 w-9"
-                         fill="none"
-                         viewBox="0 0 24 24"
-                         strokeWidth="2"
-                         stroke="currentColor"
-                         aria-hidden="true"
-                       >
+            <button
+              type="button"
+              className="md:hidden rounded-md p-3 text-white hover:bg-white/10 transition-colors duration-300"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              <span className="sr-only">Abrir menú</span>
+              <svg
+                className="h-9 w-9"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="2"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
                 {mobileMenuOpen ? (
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 ) : (

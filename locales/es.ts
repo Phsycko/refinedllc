@@ -8,16 +8,10 @@ export const es = {
     quote: "Cotiza Gratis",
   },
   hero: {
-    title: "De diseños soñados a acabados perfectos",
-    subtitle: "Nos especializamos en renovaciones residenciales y comerciales que combinan funcionalidad con belleza. Con años de experiencia, pasión por el diseño y compromiso con la calidad, nos enorgullece crear espacios que inspiran.",
-    viewProjects: "Obtener Cotización Instantánea ➤",
-    ourServices: "Conocer Más",
-    attributes: {
-      quality: "Calidad",
-      innovation: "Innovación",
-      expertise: "Experiencia",
-      reliability: "Confiabilidad",
-    },
+    title: "Transformando Visiones en Realidad",
+    subtitle: "Diseño arquitectónico y construcción de clase mundial. Más de 9 años creando espacios excepcionales que superan expectativas.",
+    viewProjects: "Ver Proyectos",
+    ourServices: "Nuestros Servicios",
   },
   services: {
     title: "Nuestros Servicios",
@@ -138,19 +132,6 @@ export const es = {
     requestQuote: "Solicitar cotización",
     learnMore: "Aprender más",
     readMore: "Leer más",
-  },
-  serviceDetail: {
-    interested: "¿Interesado en aprender más?",
-    tellUs: "Cuéntanos sobre tu proyecto",
-    mainView: "Vista Principal",
-    beforeImages: "Imágenes Antes",
-    viewBeforeImages: "Ver Imágenes Antes",
-    review: "Reseña",
-    layout: "Layout:",
-    size: "Tamaño:",
-    buildingType: "Tipo de Edificio:",
-    location: "Ubicación:",
-    totalCost: "Costo Total:",
   }
 }
 
