@@ -82,143 +82,144 @@ export default function Header() {
   ]
 
   return (
-    <header className="relative w-full h-screen overflow-hidden">
-      {/* Carrusel de imágenes */}
-      <div className="absolute inset-0">
-        {services.map((service, index) => (
-          <div
-            key={service.id}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentServiceIndex ? 'opacity-100' : 'opacity-0'
-            }`}
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={service.image}
-              alt={service.name}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        ))}
-      </div>
+    <>
+      {/* Header fijo que aparece al hacer scroll */}
+      <nav className={`fixed top-0 left-0 right-0 z-50 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-white/95 backdrop-blur-sm shadow-lg opacity-100' 
+          : 'bg-transparent opacity-0 pointer-events-none'
+      }`}>
+        <div className="flex h-20 items-center justify-between">
+          {/* Logo */}
+          <Link href="/" className="flex items-center space-x-3">
+            <div className="h-32 w-auto">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img 
+                src="/logo.jpg" 
+                alt="Refined LLC" 
+                className={`h-full w-auto transition-all duration-300 ${
+                  isScrolled ? 'filter brightness-0' : 'filter brightness-0 invert'
+                }`}
+              />
+            </div>
+          </Link>
 
-      {/* Overlay oscuro semitransparente */}
-      <div className="absolute inset-0 bg-black/40" />
-
-             {/* Contenido del header superpuesto */}
-             <div className="relative z-10 flex flex-col h-full">
-               <nav className={`mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full transition-all duration-300 ${
-                 isScrolled 
-                   ? 'bg-white/95 backdrop-blur-sm shadow-lg opacity-100' 
-                   : 'bg-transparent opacity-0 pointer-events-none'
-               }`}>
-                 <div className="flex h-20 items-center justify-between">
-                   {/* Logo */}
-                   <Link href="/" className="flex items-center space-x-3">
-                     <div className="h-32 w-auto">
-                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                       <img 
-                         src="/logo.jpg" 
-                         alt="Refined LLC" 
-                         className={`h-full w-auto transition-all duration-300 ${
-                           isScrolled ? 'filter brightness-0' : 'filter brightness-0 invert'
-                         }`}
-                       />
-                     </div>
-                   </Link>
-
-                   {/* Desktop Navigation */}
-                   <div className="hidden md:flex md:items-center md:space-x-6">
-                     {navItems.map((item) => (
-                       <Link
-                         key={item.href}
-                         href={item.href}
-                         className={`text-sm font-medium transition-colors duration-300 ${
-                           isScrolled 
-                             ? 'text-gray-900 hover:text-gray-600' 
-                             : 'text-white hover:text-gray-300'
-                         }`}
-                       >
-                         {item.label}
-                       </Link>
-                     ))}
-                     <LanguageToggle />
-                     <Link
-                       href="/contacto"
-                       className={`rounded-md px-6 py-2.5 text-sm font-semibold shadow-sm transition-all hover:shadow-md ${
-                         isScrolled
-                           ? 'bg-accent text-white hover:bg-accent-dark'
-                           : 'bg-accent text-white hover:bg-accent-dark'
-                       }`}
-                     >
-                       {t.nav.quote}
-                     </Link>
-                   </div>
-
-                   {/* Mobile menu button */}
-                   <button
-                     type="button"
-                     className={`md:hidden rounded-md p-3 transition-colors duration-300 ${
-                       isScrolled 
-                         ? 'text-gray-900 hover:bg-gray-100' 
-                         : 'text-white hover:bg-white/10'
-                     }`}
-                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                   >
-              <span className="sr-only">Abrir menú</span>
-              <svg
-                className="h-9 w-9"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="2"
-                stroke="currentColor"
-                aria-hidden="true"
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex md:items-center md:space-x-6">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`text-sm font-medium transition-colors duration-300 ${
+                  isScrolled 
+                    ? 'text-gray-900 hover:text-gray-600' 
+                    : 'text-white hover:text-gray-300'
+                }`}
               >
-                {mobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                )}
-              </svg>
-            </button>
+                {item.label}
+              </Link>
+            ))}
+            <LanguageToggle />
+            <Link
+              href="/contacto"
+              className={`rounded-md px-6 py-2.5 text-sm font-semibold shadow-sm transition-all hover:shadow-md ${
+                isScrolled
+                  ? 'bg-accent text-white hover:bg-accent-dark'
+                  : 'bg-accent text-white hover:bg-accent-dark'
+              }`}
+            >
+              {t.nav.quote}
+            </Link>
           </div>
 
-                 {/* Mobile menu */}
-                 {mobileMenuOpen && (
-                   <div className="md:hidden">
-                     <div className={`px-2 pb-3 pt-2 space-y-1 backdrop-blur-sm border-t rounded-b-lg transition-all duration-300 ${
-                       isScrolled 
-                         ? 'bg-white/95 border-gray-200' 
-                         : 'bg-black/50 border-white/20'
-                     }`}>
-                       {navItems.map((item) => (
-                         <Link
-                           key={item.href}
-                           href={item.href}
-                           className={`block px-3 py-2 text-base font-medium rounded-md transition-colors duration-300 ${
-                             isScrolled
-                               ? 'text-gray-900 hover:bg-gray-100'
-                               : 'text-white hover:bg-white/10'
-                           }`}
-                           onClick={() => setMobileMenuOpen(false)}
-                         >
-                           {item.label}
-                         </Link>
-                       ))}
-                       <div className="px-3 py-2">
-                         <LanguageToggle />
-                       </div>
-                       <Link
-                         href="/contacto"
-                         className="block w-full px-3 py-2 text-center text-base font-medium text-white bg-accent hover:bg-accent-dark rounded-md"
-                         onClick={() => setMobileMenuOpen(false)}
-                       >
-                         {t.nav.quote}
-                       </Link>
-                     </div>
-                   </div>
-                 )}
-        </nav>
+          {/* Mobile menu button */}
+          <button
+            type="button"
+            className={`md:hidden rounded-md p-3 transition-colors duration-300 ${
+              isScrolled 
+                ? 'text-gray-900 hover:bg-gray-100' 
+                : 'text-white hover:bg-white/10'
+            }`}
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            <span className="sr-only">Abrir menú</span>
+            <svg
+              className="h-9 w-9"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="2"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              {mobileMenuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              )}
+            </svg>
+          </button>
+        </div>
+
+        {/* Mobile menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden">
+            <div className={`px-2 pb-3 pt-2 space-y-1 backdrop-blur-sm border-t rounded-b-lg transition-all duration-300 ${
+              isScrolled 
+                ? 'bg-white/95 border-gray-200' 
+                : 'bg-black/50 border-white/20'
+            }`}>
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`block px-3 py-2 text-base font-medium rounded-md transition-colors duration-300 ${
+                    isScrolled
+                      ? 'text-gray-900 hover:bg-gray-100'
+                      : 'text-white hover:bg-white/10'
+                  }`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
+              <div className="px-3 py-2">
+                <LanguageToggle />
+              </div>
+              <Link
+                href="/contacto"
+                className="block w-full px-3 py-2 text-center text-base font-medium text-white bg-accent hover:bg-accent-dark rounded-md"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {t.nav.quote}
+              </Link>
+            </div>
+          </div>
+        )}
+      </nav>
+
+      {/* Hero section con carrusel */}
+      <header className="relative w-full h-screen overflow-hidden">
+        {/* Carrusel de imágenes */}
+        <div className="absolute inset-0">
+          {services.map((service, index) => (
+            <div
+              key={service.id}
+              className={`absolute inset-0 transition-opacity duration-1000 ${
+                index === currentServiceIndex ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={service.image}
+                alt={service.name}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Overlay oscuro semitransparente */}
+        <div className="absolute inset-0 bg-black/40" />
 
         {/* Contenido centrado verticalmente */}
         <div className="flex-1 flex items-center justify-center">
@@ -294,5 +295,6 @@ export default function Header() {
         </div>
       </div>
     </header>
+    </>
   )
 }
