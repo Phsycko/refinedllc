@@ -62,14 +62,14 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY
-      console.log('Scroll position:', scrollTop) // Debug
-      setIsScrolled(scrollTop > 50)
+      // Scroll más suave - aparece gradualmente
+      setIsScrolled(scrollTop > 20)
     }
 
     // Verificar posición inicial
     handleScroll()
     
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -84,11 +84,12 @@ export default function Header() {
   return (
     <>
       {/* Header fijo que aparece al hacer scroll */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full transition-all duration-300 ${
+      <nav className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-500 ease-in-out ${
         isScrolled 
-          ? 'bg-white/95 backdrop-blur-sm shadow-lg opacity-100' 
-          : 'bg-transparent opacity-0 pointer-events-none'
+          ? 'bg-white/95 backdrop-blur-sm shadow-lg opacity-100 transform translate-y-0' 
+          : 'bg-transparent opacity-0 pointer-events-none transform -translate-y-full'
       }`}>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
@@ -195,6 +196,7 @@ export default function Header() {
             </div>
           </div>
         )}
+        </div>
       </nav>
 
       {/* Hero section con carrusel */}
