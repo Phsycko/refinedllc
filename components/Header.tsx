@@ -16,7 +16,7 @@ export default function Header() {
       id: 'outdoor-living',
       name: 'Outdoor Living Space',
       nameEn: 'Outdoor Living Space',
-      image: '/images/hero/new-hero-image.jpg',
+      image: '/images/services-carousel/diseno.jpg',
       price: 'Desde $12,000',
       href: '/servicios/outdoor-living'
     },
@@ -24,7 +24,7 @@ export default function Header() {
       id: 'spaces',
       name: 'Espacios',
       nameEn: 'Spaces',
-      image: '/images/hero/new-hero-image.jpg',
+      image: '/images/services-carousel/remodelacion.jpg',
       price: 'Desde $15,000',
       href: '/servicios/spaces'
     },
@@ -32,7 +32,7 @@ export default function Header() {
       id: 'bathrooms',
       name: 'Baños',
       nameEn: 'Bathrooms',
-      image: '/images/hero/new-hero-image.jpg',
+      image: '/images/services-carousel/mantenimiento.jpg',
       price: 'Desde $10,000',
       href: '/servicios/bathrooms'
     },
@@ -40,7 +40,7 @@ export default function Header() {
       id: 'kitchen',
       name: 'Cocinas',
       nameEn: 'Kitchen',
-      image: '/images/hero/new-hero-image.jpg',
+      image: '/images/services-carousel/construccion.jpg',
       price: 'Desde $20,000',
       href: '/servicios/kitchen'
     }
