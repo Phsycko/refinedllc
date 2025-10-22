@@ -8,7 +8,7 @@ export default function ServicesPage() {
   const { t, language } = useLanguage()
   
   // Agrupar servicios por categoría
-  const categories = Array.from(new Set(servicesData.map((s: any) => 
+  const categories = Array.from(new Set(servicesData.map((s) => 
     language === 'en' && s.category_en ? s.category_en : s.category
   )))
 
@@ -30,7 +30,7 @@ export default function ServicesPage() {
       <section className="bg-background py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {categories.map((category) => {
-            const categoryServices = servicesData.filter((s: any) => {
+            const categoryServices = servicesData.filter((s) => {
               const serviceCategory = language === 'en' && s.category_en ? s.category_en : s.category
               return serviceCategory === category
             })
@@ -41,7 +41,7 @@ export default function ServicesPage() {
                   {category}
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {categoryServices.map((service: any) => {
+                  {categoryServices.map((service) => {
                     const title = language === 'en' && service.title_en ? service.title_en : service.title
                     const description = language === 'en' && service.description_en ? service.description_en : service.description
                     const serviceCategory = language === 'en' && service.category_en ? service.category_en : service.category

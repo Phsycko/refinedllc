@@ -11,7 +11,7 @@ export default function ProjectsPage() {
   
   // Obtener categorías únicas traducidas
   const categoriesSet = new Set<string>()
-  projectsData.forEach((p: any) => {
+  projectsData.forEach((p) => {
     const category = language === 'en' && p.category_en ? p.category_en : p.category
     categoriesSet.add(category)
   })
@@ -20,7 +20,7 @@ export default function ProjectsPage() {
   // Filtrar proyectos por categoría seleccionada
   const filteredProjects = selectedCategory === 'all' 
     ? projectsData 
-    : projectsData.filter((p: any) => {
+    : projectsData.filter((p) => {
         const projectCategory = language === 'en' && p.category_en ? p.category_en : p.category
         return projectCategory === selectedCategory
       })
@@ -71,7 +71,7 @@ export default function ProjectsPage() {
 
           {/* Grid de proyectos */}
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {filteredProjects.map((project: any) => {
+            {filteredProjects.map((project) => {
               const title = language === 'en' && project.title_en ? project.title_en : project.title
               const description = language === 'en' && project.description_en ? project.description_en : project.description
               const category = language === 'en' && project.category_en ? project.category_en : project.category

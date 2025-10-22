@@ -20,7 +20,7 @@ export default function ServicesGrid() {
         </div>
 
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {servicesData.map((service: any) => {
+          {servicesData.map((service) => {
             const title = language === 'en' && service.title_en ? service.title_en : service.title
             const description = language === 'en' && service.description_en ? service.description_en : service.description
             

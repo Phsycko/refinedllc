@@ -76,6 +76,7 @@ export default function Header() {
               index === currentServiceIndex ? 'opacity-100' : 'opacity-0'
             }`}
           >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={service.image}
               alt={service.name}
@@ -95,8 +96,9 @@ export default function Header() {
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-3">
               <div className="h-32 w-auto">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
-                  src="/logo.png" 
+                  src="/logo.jpg" 
                   alt="Refined LLC" 
                   className="h-full w-auto"
                 />
