@@ -62,9 +62,13 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY
+      console.log('Scroll position:', scrollTop) // Debug
       setIsScrolled(scrollTop > 50)
     }
 
+    // Verificar posición inicial
+    handleScroll()
+    
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -104,7 +108,9 @@ export default function Header() {
              {/* Contenido del header superpuesto */}
              <div className="relative z-10 flex flex-col h-full">
                <nav className={`mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full transition-all duration-300 ${
-                 isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg opacity-100' : 'bg-transparent opacity-0'
+                 isScrolled 
+                   ? 'bg-white/95 backdrop-blur-sm shadow-lg opacity-100' 
+                   : 'bg-transparent opacity-0 pointer-events-none'
                }`}>
                  <div className="flex h-20 items-center justify-between">
                    {/* Logo */}
