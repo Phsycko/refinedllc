@@ -105,7 +105,7 @@ export default function Header() {
              <div className="relative z-10 flex flex-col h-full">
                <nav className={`mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full transition-all duration-300 ${
                  isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
-               }`}>
+               } ${!isScrolled ? 'opacity-0' : 'opacity-100'}`}>
                  <div className="flex h-20 items-center justify-between">
                    {/* Logo */}
                    <Link href="/" className="flex items-center space-x-3">
