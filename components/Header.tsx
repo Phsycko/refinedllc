@@ -221,8 +221,10 @@ export default function Header() {
         {/* Overlay oscuro semitransparente */}
         <div className="absolute inset-0 bg-black/40" />
 
-        {/* Contenido centrado verticalmente */}
-        <div className="flex-1 flex items-center justify-center">
+        {/* Contenido del hero */}
+        <div className="relative z-10 flex flex-col h-full">
+          {/* Contenido centrado verticalmente */}
+          <div className="flex-1 flex items-center justify-center">
           <div className="text-center text-white max-w-4xl mx-auto px-4">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               {t.hero.title}
@@ -291,6 +293,7 @@ export default function Header() {
                 </svg>
               </Link>
             </div>
+          </div>
           </div>
         </div>
       </div>
