@@ -227,7 +227,7 @@ export default function Header() {
         <div className="relative z-10 flex flex-col h-full">
           {/* Contenido alineado a la izquierda - Diseño profesional */}
           <div className="flex-1 flex items-center justify-start">
-            <div className="text-left text-white max-w-4xl px-8 lg:px-12">
+            <div className="text-left text-white max-w-4xl px-8 lg:px-12 ml-8 lg:ml-16">
               {/* Título principal - Diseño elegante */}
               <h1 className="text-4xl md:text-6xl font-light mb-6 leading-[0.9] tracking-tight">
                 <span className="block font-extralight text-white/95">Transforming</span>
