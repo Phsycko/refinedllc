@@ -225,31 +225,30 @@ export default function Header() {
 
         {/* Contenido del hero */}
         <div className="relative z-10 flex flex-col h-full">
-          {/* Contenido centrado verticalmente */}
+          {/* Contenido centrado verticalmente - Estilo minimalista */}
           <div className="flex-1 flex items-center justify-center">
-          <div className="text-center text-white max-w-4xl mx-auto px-4">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              {t.hero.title}
-            </h1>
-            <p className="text-lg md:text-xl mb-8 text-gray-200 max-w-2xl mx-auto">
-              {t.hero.subtitle}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contacto"
-                className="bg-accent hover:bg-accent-dark text-white font-semibold py-3 px-8 rounded-md transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                {t.hero.viewProjects}
-              </Link>
-              <Link
-                href="/servicios"
-                className="border-2 border-white text-white hover:bg-white hover:text-primary font-semibold py-3 px-8 rounded-md transition-all duration-300"
-              >
-                {t.hero.ourServices}
-              </Link>
+            <div className="text-center text-white max-w-5xl mx-auto px-6">
+              {/* Lema/Subtítulo */}
+              <div className="text-sm uppercase tracking-widest text-white/90 mb-4 font-medium">
+                CERTIFIED HAMPSHIRE BUILDERS
+              </div>
+              
+              {/* Título principal */}
+              <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+                Let's start your<br />renovation.
+              </h1>
+              
+              {/* Botón CTA */}
+              <div className="flex justify-center">
+                <Link
+                  href="/contacto"
+                  className="bg-white text-gray-900 font-semibold py-4 px-8 rounded-md transition-all duration-300 hover:bg-gray-100 text-lg"
+                >
+                  TALK TO US
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
 
         {/* Tarjeta de servicios - PEGADA A LA ESQUINA */}
         <div className="absolute bottom-0 right-0 z-20">
