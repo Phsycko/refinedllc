@@ -228,23 +228,29 @@ export default function Header() {
           {/* Contenido centrado verticalmente - Estilo minimalista */}
           <div className="flex-1 flex items-center justify-center">
             <div className="text-center text-white max-w-5xl mx-auto px-6">
-              {/* Lema/Subtítulo */}
-              <div className="text-sm uppercase tracking-widest text-white/90 mb-4 font-medium">
-                CERTIFIED HAMPSHIRE BUILDERS
-              </div>
-              
               {/* Título principal */}
               <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
-                Let&apos;s start your<br />renovation.
+                {t.hero.title}
               </h1>
               
-              {/* Botón CTA */}
-              <div className="flex justify-center">
+              {/* Subtítulo */}
+              <p className="text-lg md:text-xl mb-8 text-gray-200 max-w-2xl mx-auto">
+                {t.hero.subtitle}
+              </p>
+              
+              {/* Botones CTA */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/contacto"
                   className="bg-white text-gray-900 font-semibold py-4 px-8 rounded-md transition-all duration-300 hover:bg-gray-100 text-lg"
                 >
-                  TALK TO US
+                  {t.hero.viewProjects}
+                </Link>
+                <Link
+                  href="/servicios"
+                  className="border-2 border-white text-white hover:bg-white hover:text-gray-900 font-semibold py-4 px-8 rounded-md transition-all duration-300 text-lg"
+                >
+                  {t.hero.ourServices}
                 </Link>
               </div>
             </div>
