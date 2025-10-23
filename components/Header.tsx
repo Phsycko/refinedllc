@@ -225,26 +225,30 @@ export default function Header() {
 
         {/* Contenido del hero */}
         <div className="relative z-10 flex flex-col h-full">
-          {/* Contenido alineado a la izquierda - Estilo minimalista */}
+          {/* Contenido alineado a la izquierda - Diseño profesional */}
           <div className="flex-1 flex items-center justify-start">
-            <div className="text-left text-white max-w-5xl px-6">
-              {/* Título principal */}
-              <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
-                {t.hero.title}
+            <div className="text-left text-white max-w-4xl px-8 lg:px-12">
+              {/* Título principal - Diseño elegante */}
+              <h1 className="text-6xl md:text-8xl font-light mb-6 leading-[0.9] tracking-tight">
+                <span className="block font-extralight text-white/95">Transforming</span>
+                <span className="block font-light text-white/90">Visions into</span>
+                <span className="block font-bold text-white text-7xl md:text-9xl mt-2">Reality</span>
               </h1>
               
-              {/* Subtítulo */}
-              <p className="text-lg md:text-xl mb-8 text-gray-200 max-w-2xl">
-                {t.hero.subtitle}
+              {/* Subtítulo - Tipografía refinada */}
+              <p className="text-xl md:text-2xl mb-10 text-white/85 font-light leading-relaxed max-w-3xl">
+                World-class architectural design and construction.<br />
+                <span className="text-white/75">Over 9 years creating exceptional spaces that exceed expectations.</span>
               </p>
               
-              {/* Botón CTA único */}
+              {/* Botón CTA - Diseño profesional */}
               <div className="flex justify-start">
                 <Link
                   href="/contacto"
-                  className="bg-white text-gray-900 font-semibold py-4 px-8 rounded-md transition-all duration-300 hover:bg-gray-100 text-lg"
+                  className="group relative bg-white text-gray-900 font-medium py-5 px-10 rounded-sm transition-all duration-500 hover:bg-gray-50 text-lg tracking-wide uppercase letter-spacing-wider shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
-                  TALK TO US
+                  <span className="relative z-10">TALK TO US</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-gray-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-sm"></div>
                 </Link>
               </div>
             </div>
