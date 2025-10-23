@@ -245,7 +245,7 @@ export default function Header() {
               <div className="flex justify-start">
                 <Link
                   href="/contacto"
-                  className="group relative bg-white text-gray-900 font-medium py-5 px-10 rounded-sm transition-all duration-500 hover:bg-gray-50 text-lg tracking-wide uppercase letter-spacing-wider shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  className="group relative bg-white text-gray-900 font-medium py-3 px-6 rounded-sm transition-all duration-500 hover:bg-gray-50 text-base tracking-wide uppercase letter-spacing-wider shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
                   <span className="relative z-10">TALK TO US</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-gray-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-sm"></div>
