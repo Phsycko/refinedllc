@@ -225,32 +225,26 @@ export default function Header() {
 
         {/* Contenido del hero */}
         <div className="relative z-10 flex flex-col h-full">
-          {/* Contenido centrado verticalmente - Estilo minimalista */}
-          <div className="flex-1 flex items-center justify-center">
-            <div className="text-center text-white max-w-5xl mx-auto px-6">
+          {/* Contenido alineado a la izquierda - Estilo minimalista */}
+          <div className="flex-1 flex items-center justify-start">
+            <div className="text-left text-white max-w-5xl px-6">
               {/* Título principal */}
               <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
                 {t.hero.title}
               </h1>
               
               {/* Subtítulo */}
-              <p className="text-lg md:text-xl mb-8 text-gray-200 max-w-2xl mx-auto">
+              <p className="text-lg md:text-xl mb-8 text-gray-200 max-w-2xl">
                 {t.hero.subtitle}
               </p>
               
-              {/* Botones CTA */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              {/* Botón CTA único */}
+              <div className="flex justify-start">
                 <Link
                   href="/contacto"
                   className="bg-white text-gray-900 font-semibold py-4 px-8 rounded-md transition-all duration-300 hover:bg-gray-100 text-lg"
                 >
-                  {t.hero.viewProjects}
-                </Link>
-                <Link
-                  href="/servicios"
-                  className="border-2 border-white text-white hover:bg-white hover:text-gray-900 font-semibold py-4 px-8 rounded-md transition-all duration-300 text-lg"
-                >
-                  {t.hero.ourServices}
+                  TALK TO US
                 </Link>
               </div>
             </div>
