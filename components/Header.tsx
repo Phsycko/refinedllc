@@ -60,10 +60,18 @@ export default function Header() {
 
   // Efecto para detectar scroll
   useEffect(() => {
+    let ticking = false
+    
     const handleScroll = () => {
-      const scrollTop = window.scrollY
-      // Scroll más suave - aparece gradualmente
-      setIsScrolled(scrollTop > 20)
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrollTop = window.scrollY
+          // Scroll más sutil - aparece gradualmente
+          setIsScrolled(scrollTop > 30)
+          ticking = false
+        })
+        ticking = true
+      }
     }
 
     // Verificar posición inicial
@@ -84,10 +92,10 @@ export default function Header() {
   return (
     <>
       {/* Header fijo que aparece al hacer scroll */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-500 ease-in-out ${
+      <nav className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-700 ease-out ${
         isScrolled 
-          ? 'bg-white/95 backdrop-blur-sm shadow-lg opacity-100 transform translate-y-0' 
-          : 'bg-transparent opacity-0 pointer-events-none transform -translate-y-full'
+          ? 'bg-white/90 backdrop-blur-md shadow-xl opacity-100 transform translate-y-0' 
+          : 'bg-transparent opacity-0 pointer-events-none transform -translate-y-2'
       }`}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
