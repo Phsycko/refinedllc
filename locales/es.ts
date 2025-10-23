@@ -132,6 +132,22 @@ export const es = {
     requestQuote: "Solicitar cotización",
     learnMore: "Aprender más",
     readMore: "Leer más",
+  },
+  featured: {
+    title: "Por Qué Elegirnos",
+    subtitle: "Nuestra experiencia y compromiso nos distinguen en cada proyecto",
+    feature1: {
+      title: "Diseño Personalizado",
+      description: "Cada proyecto es único. Creamos diseños personalizados que reflejan tu estilo y necesidades específicas."
+    },
+    feature2: {
+      title: "Calidad Garantizada",
+      description: "Utilizamos materiales de primera calidad y técnicas de construcción probadas para garantizar resultados duraderos."
+    },
+    feature3: {
+      title: "Entrega Puntual",
+      description: "Cumplimos con los plazos establecidos sin comprometer la calidad del trabajo realizado."
+    }
   }
 }
 

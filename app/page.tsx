@@ -2,6 +2,7 @@
 
 import Hero from '@/components/Hero'
 import ServicesGrid from '@/components/ServicesGrid'
+import FeaturedSection from '@/components/FeaturedSection'
 import ProcessSteps from '@/components/ProcessSteps'
 import ProjectsGrid from '@/components/ProjectsGrid'
 import TestimonialList from '@/components/TestimonialList'
@@ -28,6 +29,8 @@ export default function HomePage() {
       />
       
       <ServicesGrid />
+      
+      <FeaturedSection />
       
       <ProcessSteps />
       
