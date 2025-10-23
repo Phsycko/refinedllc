@@ -229,14 +229,14 @@ export default function Header() {
           <div className="flex-1 flex items-center justify-start">
             <div className="text-left text-white max-w-4xl px-8 lg:px-12">
               {/* Título principal - Diseño elegante */}
-              <h1 className="text-6xl md:text-8xl font-light mb-6 leading-[0.9] tracking-tight">
+              <h1 className="text-4xl md:text-6xl font-light mb-6 leading-[0.9] tracking-tight">
                 <span className="block font-extralight text-white/95">Transforming</span>
                 <span className="block font-light text-white/90">Visions into</span>
-                <span className="block font-bold text-white text-7xl md:text-9xl mt-2">Reality</span>
+                <span className="block font-bold text-white text-5xl md:text-7xl mt-2">Reality</span>
               </h1>
               
               {/* Subtítulo - Tipografía refinada */}
-              <p className="text-xl md:text-2xl mb-10 text-white/85 font-light leading-relaxed max-w-3xl">
+              <p className="text-lg md:text-xl mb-8 text-white/85 font-light leading-relaxed max-w-2xl">
                 World-class architectural design and construction.<br />
                 <span className="text-white/75">Over 9 years creating exceptional spaces that exceed expectations.</span>
               </p>
