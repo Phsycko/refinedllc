@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
-import HeaderSimple from "@/components/HeaderSimple";
 import Footer from "@/components/Footer";
 
 const inter = Inter({ 
@@ -25,7 +24,6 @@ export default function RootLayout({
     <html lang="es" className={inter.variable}>
       <body className="font-sans antialiased bg-background text-primary">
         <LanguageProvider>
-          <HeaderSimple />
           <main className="min-h-screen">
             {children}
           </main>
