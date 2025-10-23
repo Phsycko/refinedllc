@@ -235,7 +235,7 @@ export default function Header() {
               
               {/* Título principal */}
               <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
-                Let's start your<br />renovation.
+                Let&apos;s start your<br />renovation.
               </h1>
               
               {/* Botón CTA */}
