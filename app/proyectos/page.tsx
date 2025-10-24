@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import projectsData from '@/content/projects.json'
 import { useLanguage } from '@/contexts/LanguageContext'
+import HeaderSimple from '@/components/HeaderSimple'
 
 export default function ProjectsPage() {
   const { t, language } = useLanguage()
@@ -27,6 +28,7 @@ export default function ProjectsPage() {
 
   return (
     <>
+      <HeaderSimple />
       <section className="bg-primary py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">

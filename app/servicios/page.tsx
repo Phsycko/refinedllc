@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import servicesData from '@/content/services.json'
 import { useLanguage } from '@/contexts/LanguageContext'
+import HeaderSimple from '@/components/HeaderSimple'
 
 export default function ServicesPage() {
   const { t, language } = useLanguage()
@@ -14,6 +15,7 @@ export default function ServicesPage() {
 
   return (
     <>
+      <HeaderSimple />
       <section className="bg-primary py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">

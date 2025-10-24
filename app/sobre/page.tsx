@@ -5,6 +5,7 @@ import companyDataEn from '@/content/company-en.json'
 import ValueStats from '@/components/ValueStats'
 import CTASection from '@/components/CTASection'
 import { useLanguage } from '@/contexts/LanguageContext'
+import HeaderSimple from '@/components/HeaderSimple'
 
 export default function AboutPage() {
   const { t, language } = useLanguage()
@@ -12,6 +13,7 @@ export default function AboutPage() {
 
   return (
     <>
+      <HeaderSimple />
       {/* Hero Section */}
       <section className="bg-primary py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
