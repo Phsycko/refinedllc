@@ -16,6 +16,9 @@
     "services": ["Diseño Arquitectónico", "Construcción Residencial", "Diseño de Interiores"],
     "featured": true,
     "mainImage": "/images/projects/villa-pacific-main.jpg",
+    "beforeImages": [
+      "/images/projects/villa-pacific-before.jpg"
+    ],
     "gallery": [
       "/images/projects/villa-pacific-1.jpg",
       "/images/projects/villa-pacific-2.jpg",
@@ -48,6 +51,9 @@
     "services": ["Diseño Arquitectónico", "Construcción Comercial", "Remodelación Interior"],
     "featured": true,
     "mainImage": "/images/projects/tech-hub-main.jpg",
+    "beforeImages": [
+      "/images/projects/tech-hub-before.jpg"
+    ],
     "gallery": [
       "/images/projects/tech-hub-1.jpg",
       "/images/projects/tech-hub-2.jpg",
