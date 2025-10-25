@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import projectsData from '@/content/projects.json'
 import ProjectGallery from '@/components/ProjectGallery'
 import CTASection from '@/components/CTASection'
+import HeaderSimple from '@/components/HeaderSimple'
 
 export const revalidate = 1800
 
@@ -37,6 +38,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
   return (
     <>
+      <HeaderSimple />
       {/* Hero Section */}
       <section className="relative bg-primary py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

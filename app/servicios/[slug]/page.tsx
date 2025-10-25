@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import servicesData from '@/content/services.json'
 import ProjectGallery from '@/components/ProjectGallery'
 import CTASection from '@/components/CTASection'
+import HeaderSimple from '@/components/HeaderSimple'
 
 export const revalidate = 1800
 
@@ -37,6 +38,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 
   return (
     <>
+      <HeaderSimple />
       <section className="bg-primary py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
