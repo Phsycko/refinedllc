@@ -16,10 +16,11 @@
       "Diseño sostenible y eficiencia energética",
       "Asesoría durante todo el proceso"
     ],
-    "image": "/images/services/arquitectura.jpg",
+    "image": "/images/services/outdoor-spaces.jpg",
     "gallery": [
-      "/images/projects/casa-moderna-1.jpg",
-      "/images/projects/casa-moderna-2.jpg"
+      "/images/projects/deck-construction-1.jpg",
+      "/images/projects/pergola-1.jpg",
+      "/images/projects/patio-1.jpg"
     ],
     "price": "Desde $5,000"
   },
@@ -40,10 +41,10 @@
       "Cumplimiento de plazos",
       "Garantía de construcción"
     ],
-    "image": "/images/services/construccion.jpg",
+    "image": "/images/services/remodelacion-interior.jpg",
     "gallery": [
-      "/images/projects/residencial-1.jpg",
-      "/images/projects/residencial-2.jpg"
+      "/images/projects/kitchen-remodel-1.jpg",
+      "/images/projects/bathroom-remodel-1.jpg"
     ],
     "price": "Cotización personalizada"
   },
@@ -64,10 +65,11 @@
       "Selección de materiales y acabados",
       "Mínima interrupción de tu rutina"
     ],
-    "image": "/images/services/remodelacion.jpg",
+    "image": "/images/services/bathroom-remodel.jpg",
     "gallery": [
-      "/images/projects/remodelacion-1.jpg",
-      "/images/projects/remodelacion-2.jpg"
+      "/images/projects/bathroom-remodel-1.jpg",
+      "/images/projects/bathroom-remodel-2.jpg",
+      "/images/projects/bathroom-remodel-3.jpg"
     ],
     "price": "Desde $15,000"
   },
@@ -88,10 +90,11 @@
       "Gestión de permisos y licencias",
       "Entrega a tiempo"
     ],
-    "image": "/images/services/comercial.jpg",
+    "image": "/images/services/kitchen-remodel.jpg",
     "gallery": [
-      "/images/projects/comercial-1.jpg",
-      "/images/projects/comercial-2.jpg"
+      "/images/projects/kitchen-remodel-1.jpg",
+      "/images/projects/kitchen-remodel-2.jpg",
+      "/images/projects/kitchen-remodel-3.jpg"
     ],
     "price": "Cotización personalizada"
   }
