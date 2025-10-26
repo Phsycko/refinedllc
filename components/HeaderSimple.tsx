@@ -23,7 +23,7 @@ export default function HeaderSimple() {
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
-            <div className="h-16 w-auto">
+            <div className="h-20 w-auto">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img 
                 src="/logo.jpg" 
