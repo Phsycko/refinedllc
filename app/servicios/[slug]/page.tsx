@@ -9,7 +9,7 @@ import { useLanguage } from '@/contexts/LanguageContext'
 
 export const revalidate = 1800
 
-export default function ServiceDetailPage({ params }: { slug: string }) {
+export default function ServiceDetailPage({ params }: { params: { slug: string } }) {
   const { t, language } = useLanguage()
   const { slug } = params
   const service = servicesData.find((s) => s.slug === slug)

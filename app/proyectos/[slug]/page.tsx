@@ -10,7 +10,7 @@ import { useLanguage } from '@/contexts/LanguageContext'
 
 export const revalidate = 1800
 
-export default function ProjectDetailPage({ params }: { slug: string }) {
+export default function ProjectDetailPage({ params }: { params: { slug: string } }) {
   const { t, language } = useLanguage()
   const { slug } = params
   const project = projectsData.find((p) => p.slug === slug)
