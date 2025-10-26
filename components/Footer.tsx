@@ -1,12 +1,14 @@
 'use client'
 
 import Link from 'next/link'
-import companyData from '@/content/company.json'
+import companyDataEs from '@/content/company.json'
+import companyDataEn from '@/content/company-en.json'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
+  const companyData = language === 'en' ? companyDataEn : companyDataEs
 
   return (
     <footer className="bg-primary text-gray-300">
