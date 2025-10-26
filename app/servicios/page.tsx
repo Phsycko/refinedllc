@@ -58,7 +58,7 @@ export default function ServicesPage() {
                         <div className="aspect-[16/9] bg-gradient-to-br from-primary to-secondary relative overflow-hidden">
                           <Image
                             src={service.image}
-                            alt={serviceTitle}
+                            alt={title}
                             fill
                             className="object-cover group-hover:scale-105 transition-transform duration-300"
                           />
