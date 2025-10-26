@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import servicesData from '@/content/services.json'
 import { useLanguage } from '@/contexts/LanguageContext'
 import HeaderSimple from '@/components/HeaderSimple'
@@ -55,11 +56,12 @@ export default function ServicesPage() {
                         className="group bg-white rounded-lg shadow-md hover:shadow-xl transition-all overflow-hidden"
                       >
                         <div className="aspect-[16/9] bg-gradient-to-br from-primary to-secondary relative overflow-hidden">
-                          <div className="absolute inset-0 flex items-center justify-center">
-                            <svg className="h-20 w-20 text-white/20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                            </svg>
-                          </div>
+                          <Image
+                            src={service.image}
+                            alt={serviceTitle}
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-300"
+                          />
                           <div className="absolute top-4 right-4">
                             <span className="inline-flex items-center rounded-full bg-accent px-3 py-1 text-xs font-semibold text-white">
                               {serviceCategory}

@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import servicesData from '@/content/services.json'
 import { useLanguage } from '@/contexts/LanguageContext'
 
@@ -30,14 +31,15 @@ export default function ServicesGrid() {
                 href={`/servicios/${service.slug}`}
                 className="group relative overflow-hidden rounded-lg bg-background shadow-md transition-all hover:shadow-xl hover:scale-105"
               >
+                <div className="aspect-[4/3] relative overflow-hidden rounded-t-lg">
+                  <Image
+                    src={service.image}
+                    alt={title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
                 <div className="p-6">
-                  <div className="mb-4">
-                    <div className="inline-flex items-center justify-center rounded-lg bg-accent/10 p-3">
-                      <svg className="h-8 w-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                      </svg>
-                    </div>
-                  </div>
                   <h3 className="text-xl font-semibold text-primary group-hover:text-accent transition-colors">
                     {title}
                   </h3>
