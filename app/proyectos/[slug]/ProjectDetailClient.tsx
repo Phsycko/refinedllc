@@ -1,0 +1,197 @@
+'use client'
+
+import ProjectGallery from '@/components/ProjectGallery'
+import BeforeAfterSlider from '@/components/BeforeAfterSlider'
+import CTASection from '@/components/CTASection'
+import HeaderSimple from '@/components/HeaderSimple'
+import { useLanguage } from '@/contexts/LanguageContext'
+
+interface Project {
+  id: number
+  slug: string
+  title: string
+  title_en?: string
+  category: string
+  category_en?: string
+  location: string
+  location_en?: string
+  year: number
+  area: string
+  description: string
+  description_en?: string
+  fullDescription: string
+  fullDescription_en?: string
+  services: string[]
+  services_en?: string[]
+  featured: boolean
+  mainImage: string
+  beforeImages?: string[]
+  gallery: string[]
+  highlights?: string[]
+  highlights_en?: string[]
+}
+
+interface ProjectDetailClientProps {
+  project: Project
+}
+
+export default function ProjectDetailClient({ project }: ProjectDetailClientProps) {
+  const { t, language } = useLanguage()
+
+  return (
+    <>
+      <HeaderSimple />
+      {/* Hero Section */}
+      <section className="relative bg-primary py-20 sm:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="mb-4 flex items-center space-x-3">
+                <span className="inline-flex items-center rounded-full bg-accent px-4 py-1 text-sm font-semibold text-white">
+                  {language === 'en' && project.category_en ? project.category_en : project.category}
+                </span>
+                {project.featured && (
+                  <span className="inline-flex items-center rounded-full bg-white/20 backdrop-blur-sm px-4 py-1 text-sm font-semibold text-white">
+                    ★ {t.projectDetail.featured}
+                  </span>
+                )}
+              </div>
+              <h1 className="text-4xl font-bold text-white sm:text-5xl">
+                {language === 'en' && project.title_en ? project.title_en : project.title}
+              </h1>
+              <p className="mt-6 text-lg text-gray-300">
+                {language === 'en' && project.description_en ? project.description_en : project.description}
+              </p>
+              
+              <div className="mt-8 grid grid-cols-2 gap-6">
+                <div>
+                  <div className="text-sm text-gray-400">{t.projectDetail.location}</div>
+                  <div className="mt-1 text-white font-medium">{language === 'en' && project.location_en ? project.location_en : project.location}</div>
+                </div>
+                <div>
+                  <div className="text-sm text-gray-400">{t.projectDetail.year}</div>
+                  <div className="mt-1 text-white font-medium">{project.year}</div>
+                </div>
+                <div>
+                  <div className="text-sm text-gray-400">{t.projectDetail.area}</div>
+                  <div className="mt-1 text-white font-medium">{project.area}</div>
+                </div>
+                <div>
+                  <div className="text-sm text-gray-400">{t.projectDetail.category}</div>
+                  <div className="mt-1 text-white font-medium">{language === 'en' && project.category_en ? project.category_en : project.category}</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Before/After Slider */}
+            <BeforeAfterSlider 
+              beforeImage={project.beforeImages?.[0] || project.gallery[0]}
+              afterImage={project.gallery[0]}
+              beforeLabel={t.slider.before}
+              afterLabel={t.slider.after}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Project Details */}
+      <section className="bg-white py-16 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <div className="lg:col-span-2">
+              <h2 className="text-3xl font-bold text-primary mb-6">
+                {t.projectDetail.aboutProject}
+              </h2>
+              <div className="prose prose-lg max-w-none">
+                <p className="text-lg text-secondary leading-relaxed">
+                  {language === 'en' && project.fullDescription_en ? project.fullDescription_en : project.fullDescription}
+                </p>
+              </div>
+
+              {project.highlights && project.highlights.length > 0 && (
+                <div className="mt-12">
+                  <h3 className="text-2xl font-bold text-primary mb-6">
+                    {t.projectDetail.highlights}
+                  </h3>
+                  <div className="space-y-4">
+                    {project.highlights.map((highlight, index) => (
+                      <div key={index} className="flex items-start space-x-3">
+                        <div className="flex-shrink-0 mt-1">
+                          <div className="h-6 w-6 rounded-full bg-accent/10 flex items-center justify-center">
+                            <svg className="h-4 w-4 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                            </svg>
+                          </div>
+                        </div>
+                        <span className="text-secondary">
+                          {language === 'en' && project.highlights_en ? project.highlights_en[index] : highlight}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <div className="lg:col-span-1">
+              <div className="sticky top-24 space-y-6">
+                <div className="bg-background rounded-lg p-6 shadow-md">
+                  <h3 className="text-lg font-bold text-primary mb-4">
+                    {t.projectDetail.servicesUsed}
+                  </h3>
+                  <div className="space-y-2">
+                    {project.services.map((service, index) => (
+                      <div key={index} className="flex items-center space-x-2">
+                        <svg className="h-5 w-5 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-sm text-secondary">
+                          {language === 'en' && project.services_en ? project.services_en[index] : service}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="bg-accent/5 rounded-lg p-6 border-2 border-accent/20">
+                  <h3 className="text-lg font-bold text-primary mb-2">
+                    {t.projectDetail.similarProject}
+                  </h3>
+                  <p className="text-sm text-secondary mb-4">
+                    {t.projectDetail.similarProjectDesc}
+                  </p>
+                  <a
+                    href="/contacto"
+                    className="block w-full text-center rounded-md bg-accent px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-accent-dark transition-colors"
+                  >
+                    {t.projectDetail.requestQuote}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Gallery */}
+          {project.gallery && project.gallery.length > 0 && (
+            <div className="mt-16">
+              <h2 className="text-3xl font-bold text-primary mb-8">
+                {t.projectDetail.projectGallery}
+              </h2>
+              <ProjectGallery 
+                images={project.gallery} 
+                projectTitle={language === 'en' && project.title_en ? project.title_en : project.title} 
+              />
+            </div>
+          )}
+        </div>
+      </section>
+
+      <CTASection
+        title={t.projectDetail.discoverMore}
+        description={t.projectDetail.discoverMoreDesc}
+        buttonText={t.projectDetail.viewAllProjects}
+        buttonHref="/proyectos"
+      />
+    </>
+  )
+}

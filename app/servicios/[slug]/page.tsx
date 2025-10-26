@@ -1,94 +1,38 @@
-'use client'
-
 import { notFound } from 'next/navigation'
 import servicesData from '@/content/services.json'
-import ProjectGallery from '@/components/ProjectGallery'
-import CTASection from '@/components/CTASection'
-import HeaderSimple from '@/components/HeaderSimple'
-import { useLanguage } from '@/contexts/LanguageContext'
+import ServiceDetailClient from './ServiceDetailClient'
 
 export const revalidate = 1800
 
-export default function ServiceDetailPage({ params }: { params: { slug: string } }) {
-  const { t, language } = useLanguage()
-  const { slug } = params
+export async function generateStaticParams() {
+  return servicesData.map((service) => ({
+    slug: service.slug,
+  }))
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const service = servicesData.find((s) => s.slug === slug)
+  
+  if (!service) {
+    return {
+      title: 'Servicio no encontrado',
+    }
+  }
+
+  return {
+    title: `${service.title} - Refined LLC`,
+    description: service.description,
+  }
+}
+
+export default async function ServiceDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
   const service = servicesData.find((s) => s.slug === slug)
 
   if (!service) {
     notFound()
   }
 
-  return (
-    <>
-      <HeaderSimple />
-      <section className="bg-primary py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <div className="mb-4">
-              <span className="inline-flex items-center rounded-full bg-accent px-4 py-1 text-sm font-semibold text-white">
-                {language === 'en' && service.category_en ? service.category_en : service.category}
-              </span>
-            </div>
-            <h1 className="text-4xl font-bold text-white sm:text-5xl">
-              {language === 'en' && service.title_en ? service.title_en : service.title}
-            </h1>
-            <p className="mt-6 text-lg text-gray-300">
-              {language === 'en' && service.description_en ? service.description_en : service.description}
-            </p>
-            {service.price && (
-              <p className="mt-4 text-xl font-semibold text-accent">
-                {language === 'en' && service.price_en ? service.price_en : service.price}
-              </p>
-            )}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white py-16 sm:py-24">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="prose prose-lg max-w-none">
-            <p className="text-lg text-secondary leading-relaxed">
-              {language === 'en' && service.fullDescription_en ? service.fullDescription_en : service.fullDescription}
-            </p>
-          </div>
-
-          <div className="mt-12">
-            <h2 className="text-2xl font-bold text-primary mb-6">
-              {t.serviceDetail.serviceFeatures}
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {service.features.map((feature, index) => (
-                <div key={index} className="flex items-start space-x-3">
-                  <svg className="h-6 w-6 text-accent flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <span className="text-secondary">
-                    {language === 'en' && service.features_en ? service.features_en[index] : feature}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {service.gallery && service.gallery.length > 0 && (
-            <div className="mt-16">
-              <h2 className="text-2xl font-bold text-primary mb-6">
-                {t.serviceDetail.projectGallery}
-              </h2>
-              <ProjectGallery 
-                images={service.gallery} 
-                projectTitle={language === 'en' && service.title_en ? service.title_en : service.title} 
-              />
-            </div>
-          )}
-        </div>
-      </section>
-
-      <CTASection
-        title={t.serviceDetail.interestedTitle}
-        description={t.serviceDetail.interestedDesc}
-        buttonText={t.serviceDetail.requestQuote}
-      />
-    </>
-  )
+  return <ServiceDetailClient service={service} />
 }
