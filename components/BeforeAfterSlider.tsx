@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 interface BeforeAfterSliderProps {
   beforeImage: string
@@ -13,12 +14,16 @@ interface BeforeAfterSliderProps {
 export default function BeforeAfterSlider({ 
   beforeImage, 
   afterImage, 
-  beforeLabel = "Antes",
-  afterLabel = "Después"
+  beforeLabel,
+  afterLabel
 }: BeforeAfterSliderProps) {
+  const { t } = useLanguage()
   const [sliderPosition, setSliderPosition] = useState(50)
   const [isDragging, setIsDragging] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
+  
+  const finalBeforeLabel = beforeLabel || t.slider.before
+  const finalAfterLabel = afterLabel || t.slider.after
 
   const handleMouseDown = (e: React.MouseEvent) => {
     e.preventDefault()
@@ -108,7 +113,7 @@ export default function BeforeAfterSlider({
             priority
           />
           <div className="absolute top-4 left-4 bg-black/80 text-white px-4 py-2 rounded-lg text-sm font-semibold backdrop-blur-sm">
-            {beforeLabel}
+            {finalBeforeLabel}
           </div>
         </div>
 
@@ -125,7 +130,7 @@ export default function BeforeAfterSlider({
             priority
           />
           <div className="absolute top-4 right-4 bg-black/80 text-white px-4 py-2 rounded-lg text-sm font-semibold backdrop-blur-sm">
-            {afterLabel}
+            {finalAfterLabel}
           </div>
         </div>
 
@@ -150,7 +155,7 @@ export default function BeforeAfterSlider({
         {/* Instructions overlay */}
         {!isDragging && (
           <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/70 text-white px-4 py-2 rounded-lg text-xs font-medium backdrop-blur-sm">
-            Arrastra para comparar
+            {t.slider.dragToCompare}
           </div>
         )}
       </div>

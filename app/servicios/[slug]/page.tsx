@@ -1,35 +1,17 @@
+'use client'
+
 import { notFound } from 'next/navigation'
 import servicesData from '@/content/services.json'
 import ProjectGallery from '@/components/ProjectGallery'
 import CTASection from '@/components/CTASection'
 import HeaderSimple from '@/components/HeaderSimple'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export const revalidate = 1800
 
-export async function generateStaticParams() {
-  return servicesData.map((service) => ({
-    slug: service.slug,
-  }))
-}
-
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params
-  const service = servicesData.find((s) => s.slug === slug)
-  
-  if (!service) {
-    return {
-      title: 'Servicio no encontrado',
-    }
-  }
-
-  return {
-    title: `${service.title} - Refined LLC`,
-    description: service.description,
-  }
-}
-
-export default async function ServiceDetailPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params
+export default function ServiceDetailPage({ params }: { slug: string }) {
+  const { t, language } = useLanguage()
+  const { slug } = params
   const service = servicesData.find((s) => s.slug === slug)
 
   if (!service) {
@@ -44,18 +26,18 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           <div className="mx-auto max-w-3xl text-center">
             <div className="mb-4">
               <span className="inline-flex items-center rounded-full bg-accent px-4 py-1 text-sm font-semibold text-white">
-                {service.category}
+                {language === 'en' && service.category_en ? service.category_en : service.category}
               </span>
             </div>
             <h1 className="text-4xl font-bold text-white sm:text-5xl">
-              {service.title}
+              {language === 'en' && service.title_en ? service.title_en : service.title}
             </h1>
             <p className="mt-6 text-lg text-gray-300">
-              {service.description}
+              {language === 'en' && service.description_en ? service.description_en : service.description}
             </p>
             {service.price && (
               <p className="mt-4 text-xl font-semibold text-accent">
-                {service.price}
+                {language === 'en' && service.price_en ? service.price_en : service.price}
               </p>
             )}
           </div>
@@ -66,13 +48,13 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg max-w-none">
             <p className="text-lg text-secondary leading-relaxed">
-              {service.fullDescription}
+              {language === 'en' && service.fullDescription_en ? service.fullDescription_en : service.fullDescription}
             </p>
           </div>
 
           <div className="mt-12">
             <h2 className="text-2xl font-bold text-primary mb-6">
-              Características del Servicio
+              {t.serviceDetail.serviceFeatures}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {service.features.map((feature, index) => (
@@ -80,7 +62,9 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                   <svg className="h-6 w-6 text-accent flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <span className="text-secondary">{feature}</span>
+                  <span className="text-secondary">
+                    {language === 'en' && service.features_en ? service.features_en[index] : feature}
+                  </span>
                 </div>
               ))}
             </div>
@@ -89,18 +73,21 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           {service.gallery && service.gallery.length > 0 && (
             <div className="mt-16">
               <h2 className="text-2xl font-bold text-primary mb-6">
-                Galería de Proyectos
+                {t.serviceDetail.projectGallery}
               </h2>
-              <ProjectGallery images={service.gallery} projectTitle={service.title} />
+              <ProjectGallery 
+                images={service.gallery} 
+                projectTitle={language === 'en' && service.title_en ? service.title_en : service.title} 
+              />
             </div>
           )}
         </div>
       </section>
 
       <CTASection
-        title="¿Interesado en este servicio?"
-        description="Contáctanos para una consulta gratuita y descubre cómo podemos ayudarte con tu proyecto."
-        buttonText="Solicitar cotización"
+        title={t.serviceDetail.interestedTitle}
+        description={t.serviceDetail.interestedDesc}
+        buttonText={t.serviceDetail.requestQuote}
       />
     </>
   )
