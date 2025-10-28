@@ -62,7 +62,8 @@
       "/images/projects/kitchen-remodel-1.jpg",
       "/images/projects/bathroom-remodel-1.jpg"
     ],
-    "price": "Cotización personalizada"
+    "price": "Cotización personalizada",
+    "price_en": "Custom Quote"
   },
   {
     "id": 3,
@@ -128,7 +129,8 @@
       "/images/projects/kitchen-remodel-2.jpg",
       "/images/projects/kitchen-remodel-3.jpg"
     ],
-    "price": "Cotización personalizada"
+    "price": "Cotización personalizada",
+    "price_en": "Custom Quote"
   }
 ]
 

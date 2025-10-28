@@ -4,7 +4,7 @@ import testimonialsData from '@/content/testimonials.json'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function TestimonialList() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
 
   return (
     <section className="bg-background py-16 sm:py-24">
@@ -44,7 +44,7 @@ export default function TestimonialList() {
                   {testimonial.name}
                 </p>
                 <p className="text-xs text-secondary mt-1">
-                  {testimonial.role}
+                  {language === 'en' && testimonial.role_en ? testimonial.role_en : testimonial.role}
                 </p>
                 <p className="text-xs text-accent mt-1">
                   {testimonial.project}

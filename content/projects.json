@@ -32,6 +32,13 @@
       "Piscina infinita con vista al mar",
       "Cocina gourmet de chef",
       "Home theater y gimnasio privado"
+    ],
+    "highlights_en": [
+      "LEED certified sustainable design",
+      "Integrated home automation system",
+      "Infinity pool with ocean view",
+      "Gourmet chef's kitchen",
+      "Private home theater and gym"
     ]
   },
   {
@@ -66,6 +73,13 @@
       "Sistemas de videoconferencia avanzados",
       "Cocina y área de cafetería",
       "Diseño biofílico con plantas integradas"
+    ],
+    "highlights_en": [
+      "Flexible workspaces",
+      "Smart LED lighting",
+      "Advanced videoconferencing systems",
+      "Kitchen and cafeteria area",
+      "Biophilic design with integrated plants"
     ]
   },
   {
@@ -96,6 +110,13 @@
       "Pisos de roble europeo",
       "Terraza con cocina exterior",
       "Sistema de iluminación automatizado"
+    ],
+    "highlights_en": [
+      "Designer Italian kitchen",
+      "Calacatta marble in bathrooms",
+      "European oak flooring",
+      "Terrace with outdoor kitchen",
+      "Automated lighting system"
     ]
   },
   {
@@ -126,6 +147,13 @@
       "Aislamiento de alta eficiencia",
       "Espacios de almacenamiento inteligentes",
       "Patio trasero con área de juegos"
+    ],
+    "highlights_en": [
+      "Integrated solar panels",
+      "Rainwater collection system",
+      "High-efficiency insulation",
+      "Smart storage spaces",
+      "Backyard with play area"
     ]
   }
 ]
