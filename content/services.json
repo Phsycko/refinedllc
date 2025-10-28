@@ -9,12 +9,20 @@
     "description": "Creamos espacios únicos que combinan funcionalidad y estética, adaptados a tus necesidades específicas.",
     "description_en": "We create unique spaces that combine functionality and aesthetics, tailored to your specific needs.",
     "fullDescription": "Nuestro equipo de arquitectos altamente calificados transforma tus ideas en diseños arquitectónicos excepcionales. Trabajamos estrechamente contigo desde el concepto inicial hasta los planos finales, asegurando que cada detalle refleje tu visión mientras cumplimos con todas las normativas y códigos de construcción.",
+    "fullDescription_en": "Our highly qualified team of architects transforms your ideas into exceptional architectural designs. We work closely with you from the initial concept to the final plans, ensuring that every detail reflects your vision while complying with all regulations and building codes.",
     "features": [
       "Diseño conceptual y desarrollo de planos",
       "Modelado 3D y renders fotorrealistas",
       "Cumplimiento de códigos y normativas",
       "Diseño sostenible y eficiencia energética",
       "Asesoría durante todo el proceso"
+    ],
+    "features_en": [
+      "Conceptual design and plan development",
+      "3D modeling and photorealistic renders",
+      "Code compliance and regulations",
+      "Sustainable design and energy efficiency",
+      "Guidance throughout the entire process"
     ],
     "image": "/images/services/outdoor-spaces.jpg",
     "gallery": [
@@ -34,12 +42,20 @@
     "description": "Construcción de hogares de alta calidad con los más altos estándares de la industria.",
     "description_en": "High-quality home construction with the highest industry standards.",
     "fullDescription": "Especializados en construcción residencial de lujo, desde casas unifamiliares hasta desarrollos residenciales completos. Nuestro equipo gestiona cada fase del proyecto con precisión, desde la preparación del terreno hasta los acabados finales.",
+    "fullDescription_en": "Specialized in luxury residential construction, from single-family homes to complete residential developments. Our team manages each phase of the project with precision, from land preparation to final finishes.",
     "features": [
       "Gestión completa de proyectos",
       "Materiales de primera calidad",
       "Control de calidad riguroso",
       "Cumplimiento de plazos",
       "Garantía de construcción"
+    ],
+    "features_en": [
+      "Complete project management",
+      "First-class materials",
+      "Rigorous quality control",
+      "Deadline compliance",
+      "Construction warranty"
     ],
     "image": "/images/services/remodelacion-interior.jpg",
     "gallery": [
@@ -58,12 +74,20 @@
     "description": "Transformamos espacios existentes en ambientes modernos y funcionales.",
     "description_en": "We transform existing spaces into modern and functional environments.",
     "fullDescription": "Renovamos y actualizamos espacios interiores con diseños innovadores que maximizan la funcionalidad y el estilo. Ya sea una cocina, baño o renovación completa de tu hogar, trabajamos con atención meticulosa al detalle.",
+    "fullDescription_en": "We renovate and update interior spaces with innovative designs that maximize functionality and style. Whether it's a kitchen, bathroom, or complete home renovation, we work with meticulous attention to detail.",
     "features": [
       "Diseño de interiores personalizado",
       "Renovación de cocinas y baños",
       "Optimización de espacios",
       "Selección de materiales y acabados",
       "Mínima interrupción de tu rutina"
+    ],
+    "features_en": [
+      "Custom interior design",
+      "Kitchen and bathroom renovation",
+      "Space optimization",
+      "Material and finish selection",
+      "Minimal disruption to your routine"
     ],
     "image": "/images/services/bathroom-remodel.jpg",
     "gallery": [
@@ -83,12 +107,20 @@
     "description": "Proyectos comerciales que impulsan tu negocio con diseño funcional y atractivo.",
     "description_en": "Commercial projects that boost your business with functional and attractive design.",
     "fullDescription": "Desarrollamos espacios comerciales que no solo cumplen con tus requisitos operacionales, sino que también crean una experiencia excepcional para tus clientes. Desde oficinas hasta locales comerciales.",
+    "fullDescription_en": "We develop commercial spaces that not only meet your operational requirements, but also create an exceptional experience for your customers. From offices to commercial premises.",
     "features": [
       "Diseño enfocado en la experiencia del cliente",
       "Construcción adaptada a tu marca",
       "Cumplimiento de normativas comerciales",
       "Gestión de permisos y licencias",
       "Entrega a tiempo"
+    ],
+    "features_en": [
+      "Customer experience-focused design",
+      "Brand-adapted construction",
+      "Commercial regulation compliance",
+      "Permit and license management",
+      "On-time delivery"
     ],
     "image": "/images/services/kitchen-remodel.jpg",
     "gallery": [
