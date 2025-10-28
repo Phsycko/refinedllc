@@ -16,13 +16,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   
   if (!project) {
     return {
-      title: 'Proyecto no encontrado',
+      title: 'Project not found',
     }
   }
 
   return {
-    title: `${project.title} - Refined LLC`,
-    description: project.description,
+    title: `${project.title_en || project.title} - Refined LLC`,
+    description: project.description_en || project.description,
   }
 }
 

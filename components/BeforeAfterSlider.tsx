@@ -107,7 +107,7 @@ export default function BeforeAfterSlider({
         <div className="absolute inset-0">
           <Image
             src={beforeImage}
-            alt="Before"
+            alt={finalBeforeLabel}
             fill
             className="object-cover"
             priority
@@ -124,7 +124,7 @@ export default function BeforeAfterSlider({
         >
           <Image
             src={afterImage}
-            alt="After"
+            alt={finalAfterLabel}
             fill
             className="object-cover"
             priority

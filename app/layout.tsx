@@ -11,8 +11,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Refined LLC - Exceeding Expectations",
-  description: "Firma líder en diseño arquitectónico y construcción, comprometida con la excelencia en cada proyecto.",
-  keywords: "arquitectura, construcción, diseño, remodelación, Los Angeles, California",
+  description: "Leading architectural design and construction firm, committed to excellence in every project.",
+  keywords: "architecture, construction, design, remodeling, Los Angeles, California",
 };
 
 export default function RootLayout({

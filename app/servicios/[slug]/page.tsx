@@ -16,13 +16,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   
   if (!service) {
     return {
-      title: 'Servicio no encontrado',
+      title: 'Service not found',
     }
   }
 
   return {
-    title: `${service.title} - Refined LLC`,
-    description: service.description,
+    title: `${service.title_en || service.title} - Refined LLC`,
+    description: service.description_en || service.description,
   }
 }
 
