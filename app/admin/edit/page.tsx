@@ -235,6 +235,18 @@ function CompanyEditor({ content, updateField }: CompanyEditorProps) {
 
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-2">
+          Año de Fundación
+        </label>
+        <input
+          type="number"
+          value={content.founded || ''}
+          onChange={(e) => updateField(['founded'], parseInt(e.target.value))}
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        />
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-2">
           Descripción
         </label>
         <textarea
@@ -293,6 +305,133 @@ function CompanyEditor({ content, updateField }: CompanyEditorProps) {
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
           </div>
+          <div className="md:col-span-2">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Horario de Atención
+            </label>
+            <input
+              type="text"
+              value={content.contact?.hours || ''}
+              onChange={(e) => updateField(['contact', 'hours'], e.target.value)}
+              placeholder="Lunes - Viernes: 9:00 AM - 6:00 PM"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="border-t pt-6">
+        <h3 className="text-lg font-semibold text-gray-900 mb-4">Estadísticas</h3>
+        <div className="space-y-4">
+          {content.stats?.map((stat: ContentData, index: number) => (
+            <div key={index} className="grid grid-cols-3 gap-4 p-4 bg-gray-50 rounded-lg">
+              <div>
+                <label className="block text-xs font-medium text-gray-600 mb-1">
+                  Label
+                </label>
+                <input
+                  type="text"
+                  value={stat.label || ''}
+                  onChange={(e) => {
+                    const newStats = [...content.stats]
+                    newStats[index] = { ...newStats[index], label: e.target.value }
+                    updateField(['stats'], newStats)
+                  }}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-medium text-gray-600 mb-1">
+                  Valor
+                </label>
+                <input
+                  type="text"
+                  value={stat.value || ''}
+                  onChange={(e) => {
+                    const newStats = [...content.stats]
+                    newStats[index] = { ...newStats[index], value: e.target.value }
+                    updateField(['stats'], newStats)
+                  }}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-medium text-gray-600 mb-1">
+                  Icono
+                </label>
+                <input
+                  type="text"
+                  value={stat.icon || ''}
+                  onChange={(e) => {
+                    const newStats = [...content.stats]
+                    newStats[index] = { ...newStats[index], icon: e.target.value }
+                    updateField(['stats'], newStats)
+                  }}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="border-t pt-6">
+        <h3 className="text-lg font-semibold text-gray-900 mb-4">Valores de la Empresa</h3>
+        <div className="space-y-4">
+          {content.values?.map((value: ContentData, index: number) => (
+            <div key={index} className="p-4 bg-gray-50 rounded-lg">
+              <div className="mb-2">
+                <label className="block text-xs font-medium text-gray-600 mb-1">
+                  Título
+                </label>
+                <input
+                  type="text"
+                  value={value.title || ''}
+                  onChange={(e) => {
+                    const newValues = [...content.values]
+                    newValues[index] = { ...newValues[index], title: e.target.value }
+                    updateField(['values'], newValues)
+                  }}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-medium text-gray-600 mb-1">
+                  Descripción
+                </label>
+                <textarea
+                  value={value.description || ''}
+                  onChange={(e) => {
+                    const newValues = [...content.values]
+                    newValues[index] = { ...newValues[index], description: e.target.value }
+                    updateField(['values'], newValues)
+                  }}
+                  rows={2}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="border-t pt-6">
+        <h3 className="text-lg font-semibold text-gray-900 mb-4">Licencias y Certificaciones</h3>
+        <div className="space-y-2">
+          {content.licenses?.map((license: string, index: number) => (
+            <div key={index}>
+              <input
+                type="text"
+                value={license || ''}
+                onChange={(e) => {
+                  const newLicenses = [...content.licenses]
+                  newLicenses[index] = e.target.value
+                  updateField(['licenses'], newLicenses)
+                }}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+            </div>
+          ))}
         </div>
       </div>
 
@@ -438,12 +577,48 @@ function ProjectsEditor({ content, setContent }: ProjectsEditorProps) {
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Categoría
+                Categoría (Español)
               </label>
               <input
                 type="text"
                 value={project.category || ''}
                 onChange={(e) => updateProject('category', e.target.value)}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Categoría (English)
+              </label>
+              <input
+                type="text"
+                value={project.category_en || ''}
+                onChange={(e) => updateProject('category_en', e.target.value)}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-3 gap-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Ubicación (Español)
+              </label>
+              <input
+                type="text"
+                value={project.location || ''}
+                onChange={(e) => updateProject('location', e.target.value)}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Ubicación (English)
+              </label>
+              <input
+                type="text"
+                value={project.location_en || ''}
+                onChange={(e) => updateProject('location_en', e.target.value)}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
@@ -458,6 +633,19 @@ function ProjectsEditor({ content, setContent }: ProjectsEditorProps) {
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Área / Tamaño
+            </label>
+            <input
+              type="text"
+              value={project.area || ''}
+              onChange={(e) => updateProject('area', e.target.value)}
+              placeholder="4,500 sq ft"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
           </div>
 
           <div>
@@ -480,6 +668,57 @@ function ProjectsEditor({ content, setContent }: ProjectsEditorProps) {
               value={project.description_en || ''}
               onChange={(e) => updateProject('description_en', e.target.value)}
               rows={3}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Descripción Completa (Español)
+            </label>
+            <textarea
+              value={project.fullDescription || ''}
+              onChange={(e) => updateProject('fullDescription', e.target.value)}
+              rows={4}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Servicios (separados por coma)
+            </label>
+            <input
+              type="text"
+              value={project.services?.join(', ') || ''}
+              onChange={(e) => updateProject('services', e.target.value.split(',').map((s: string) => s.trim()))}
+              placeholder="Diseño Arquitectónico, Construcción, Diseño de Interiores"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Highlights (Español) - separados por coma
+            </label>
+            <textarea
+              value={project.highlights?.join(', ') || ''}
+              onChange={(e) => updateProject('highlights', e.target.value.split(',').map((s: string) => s.trim()))}
+              rows={3}
+              placeholder="Diseño sostenible, Sistema domótica, Piscina infinita"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Highlights (English) - separados por coma
+            </label>
+            <textarea
+              value={project.highlights_en?.join(', ') || ''}
+              onChange={(e) => updateProject('highlights_en', e.target.value.split(',').map((s: string) => s.trim()))}
+              rows={3}
+              placeholder="Sustainable design, Home automation, Infinity pool"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
           </div>
@@ -517,6 +756,32 @@ function ProjectsEditor({ content, setContent }: ProjectsEditorProps) {
                 className="mt-2 h-32 w-auto object-cover rounded-lg"
               />
             )}
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Imágenes &quot;Before&quot; (separadas por coma)
+            </label>
+            <textarea
+              value={project.beforeImages?.join(', ') || ''}
+              onChange={(e) => updateProject('beforeImages', e.target.value.split(',').map((s: string) => s.trim()).filter((s: string) => s))}
+              rows={2}
+              placeholder="/images/projects/before-1.jpg, /images/projects/before-2.jpg"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Galería de Imágenes (separadas por coma)
+            </label>
+            <textarea
+              value={project.gallery?.join(', ') || ''}
+              onChange={(e) => updateProject('gallery', e.target.value.split(',').map((s: string) => s.trim()).filter((s: string) => s))}
+              rows={3}
+              placeholder="/images/projects/img-1.jpg, /images/projects/img-2.jpg, /images/projects/img-3.jpg"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
           </div>
         </div>
       )}
@@ -612,6 +877,56 @@ function ServicesEditor({ content, setContent }: ServicesEditorProps) {
             />
           </div>
 
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Descripción Completa (Español)
+            </label>
+            <textarea
+              value={service.fullDescription || ''}
+              onChange={(e) => updateService('fullDescription', e.target.value)}
+              rows={4}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Descripción Completa (English)
+            </label>
+            <textarea
+              value={service.fullDescription_en || ''}
+              onChange={(e) => updateService('fullDescription_en', e.target.value)}
+              rows={4}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Características (Español) - separadas por coma
+            </label>
+            <textarea
+              value={service.features?.join(', ') || ''}
+              onChange={(e) => updateService('features', e.target.value.split(',').map((s: string) => s.trim()))}
+              rows={3}
+              placeholder="Diseño conceptual, Modelado 3D, Cumplimiento normativas"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Características (English) - separadas por coma
+            </label>
+            <textarea
+              value={service.features_en?.join(', ') || ''}
+              onChange={(e) => updateService('features_en', e.target.value.split(',').map((s: string) => s.trim()))}
+              rows={3}
+              placeholder="Conceptual design, 3D modeling, Code compliance"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -635,6 +950,56 @@ function ServicesEditor({ content, setContent }: ServicesEditorProps) {
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Imagen Principal
+            </label>
+            <input
+              type="text"
+              value={service.image || ''}
+              onChange={(e) => updateService('image', e.target.value)}
+              placeholder="/images/services/..."
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Galería de Imágenes (separadas por coma)
+            </label>
+            <textarea
+              value={service.gallery?.join(', ') || ''}
+              onChange={(e) => updateService('gallery', e.target.value.split(',').map((s: string) => s.trim()).filter((s: string) => s))}
+              rows={2}
+              placeholder="/images/services/img-1.jpg, /images/services/img-2.jpg"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Categoría (Español)
+            </label>
+            <input
+              type="text"
+              value={service.category || ''}
+              onChange={(e) => updateService('category', e.target.value)}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Categoría (English)
+            </label>
+            <input
+              type="text"
+              value={service.category_en || ''}
+              onChange={(e) => updateService('category_en', e.target.value)}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
           </div>
         </div>
       )}
@@ -742,6 +1107,27 @@ function TestimonialsEditor({ content, setContent }: TestimonialsEditorProps) {
               onChange={(e) => updateTestimonial('rating', parseInt(e.target.value))}
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Foto del Cliente
+            </label>
+            <input
+              type="text"
+              value={testimonial.image || ''}
+              onChange={(e) => updateTestimonial('image', e.target.value)}
+              placeholder="/images/testimonials/..."
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+            {testimonial.image && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img 
+                src={testimonial.image} 
+                alt="Preview" 
+                className="mt-2 h-32 w-32 object-cover rounded-full"
+              />
+            )}
           </div>
         </div>
       )}
