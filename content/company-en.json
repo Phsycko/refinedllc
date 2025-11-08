@@ -4,6 +4,17 @@
   "founded": 2015,
   "description": "Refined LLC is a leading architectural design and construction firm, committed to excellence in every project. We specialize in transforming visions into tangible realities, exceeding our clients' expectations.",
   "mission": "Our mission is to create exceptional spaces that enhance people's lives, combining innovative design, superior quality craftsmanship, and an unwavering commitment to customer satisfaction.",
+  "hero": {
+    "title": {
+      "line1": "Transforming",
+      "line2": "Visions into",
+      "line3": "Reality"
+    },
+    "subtitle": "World-class architectural design and construction.",
+    "description": "Over 9 years creating exceptional spaces that exceed expectations.",
+    "ctaText": "TALK TO US",
+    "ctaLink": "/contacto"
+  },
   "values": [
     {
       "title": "Excellence",
@@ -63,6 +74,7 @@
     "twitter": "https://twitter.com/refinedllc"
   }
 }
+
 
 
 

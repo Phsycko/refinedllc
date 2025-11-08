@@ -195,3 +195,4 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
     </>
   )
 }
+

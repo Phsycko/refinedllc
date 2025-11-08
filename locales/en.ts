@@ -132,53 +132,6 @@ export const en = {
     requestQuote: "Request quote",
     learnMore: "Learn more",
     readMore: "Read more",
-  },
-  featured: {
-    title: "Why Choose Us",
-    subtitle: "Our experience and commitment distinguish us in every project",
-    feature1: {
-      title: "Custom Design",
-      description: "Every project is unique. We create custom designs that reflect your style and specific needs."
-    },
-    feature2: {
-      title: "Guaranteed Quality",
-      description: "We use premium materials and proven construction techniques to ensure lasting results."
-    },
-    feature3: {
-      title: "On-Time Delivery",
-      description: "We meet established deadlines without compromising the quality of work performed."
-    }
-  },
-  projectDetail: {
-    featured: "Featured",
-    location: "Location",
-    year: "Year",
-    area: "Area",
-    category: "Category", 
-    aboutProject: "About the Project",
-    highlights: "Key Highlights",
-    servicesUsed: "Services Used",
-    similarProject: "Similar project?",
-    similarProjectDesc: "Contact us to discuss how we can help you with your project.",
-    requestQuote: "Request Quote",
-    projectGallery: "Project Gallery",
-    discoverMore: "Discover more projects",
-    discoverMoreDesc: "Explore our complete portfolio of successful projects.",
-    viewAllProjects: "View all projects",
-    projectNotFound: "Project not found"
-  },
-  serviceDetail: {
-    serviceFeatures: "Service Features",
-    projectGallery: "Project Gallery",
-    interestedTitle: "Interested in this service?",
-    interestedDesc: "Contact us for a free consultation and discover how we can help you with your project.",
-    requestQuote: "Request quote",
-    serviceNotFound: "Service not found"
-  },
-  slider: {
-    before: "Before",
-    after: "After",
-    dragToCompare: "Drag to compare"
   }
 }
 

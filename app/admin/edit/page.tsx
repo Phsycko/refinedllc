@@ -24,6 +24,7 @@ export default function AdminEditPage() {
   const [loading, setLoading] = useState(false)
   const [saving, setSaving] = useState(false)
   const [message, setMessage] = useState('')
+  const [uploading, setUploading] = useState(false)
 
   // Cargar contenido
   const loadContent = useCallback(async () => {
@@ -65,6 +66,38 @@ export default function AdminEditPage() {
       setMessage('❌ Error al guardar el contenido')
     }
     setSaving(false)
+  }
+
+  const handleFileUpload = async (file: File, folder: string = 'general') => {
+    setUploading(true)
+    setMessage('')
+    
+    try {
+      const formData = new FormData()
+      formData.append('file', file)
+      formData.append('folder', folder)
+
+      const response = await fetch('/api/upload', {
+        method: 'POST',
+        body: formData,
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setMessage(`✅ Imagen subida: ${data.url}`)
+        return data.url
+      } else {
+        setMessage(`❌ ${data.error}`)
+        return null
+      }
+    } catch (error) {
+      console.error('Error uploading file:', error)
+      setMessage('❌ Error al subir la imagen')
+      return null
+    } finally {
+      setUploading(false)
+    }
   }
 
   const updateField = (path: string[], value: ContentData) => {
@@ -161,6 +194,50 @@ export default function AdminEditPage() {
 
           {/* Content Area */}
           <div className="lg:col-span-3">
+            {/* Upload de Imágenes */}
+            <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg shadow-sm p-6 mb-6">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 flex items-center">
+                <span className="text-2xl mr-2">📸</span>
+                Subir Imágenes
+              </h3>
+              <p className="text-sm text-gray-600 mb-4">Sube imágenes para proyectos, servicios o testimonios</p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                {['projects', 'services', 'testimonials', 'general'].map((folder) => (
+                  <div key={folder} className="bg-white p-4 rounded-lg border-2 border-dashed border-gray-300 hover:border-purple-400 transition-colors">
+                    <label className="cursor-pointer block text-center">
+                      <input
+                        type="file"
+                        accept="image/*"
+                        className="hidden"
+                        onChange={async (e) => {
+                          const file = e.target.files?.[0]
+                          if (file) {
+                            const url = await handleFileUpload(file, folder)
+                            if (url) {
+                              navigator.clipboard.writeText(url)
+                            }
+                          }
+                        }}
+                        disabled={uploading}
+                      />
+                      <div className="text-3xl mb-2">
+                        {folder === 'projects' && '🏗️'}
+                        {folder === 'services' && '⚙️'}
+                        {folder === 'testimonials' && '💬'}
+                        {folder === 'general' && '📁'}
+                      </div>
+                      <div className="text-sm font-medium text-gray-700 capitalize">{folder}</div>
+                      <div className="text-xs text-gray-500 mt-1">Clic para subir</div>
+                    </label>
+                  </div>
+                ))}
+              </div>
+              <p className="text-xs text-gray-500 mt-3">
+                💡 La URL se copiará automáticamente al portapapeles. Pégala en cualquier campo de imagen.
+              </p>
+            </div>
+
             <div className="bg-white rounded-lg shadow-sm p-6">
               {loading ? (
                 <div className="flex items-center justify-center py-12">
@@ -209,6 +286,129 @@ interface CompanyEditorProps {
 function CompanyEditor({ content, updateField }: CompanyEditorProps) {
   return (
     <div className="space-y-6">
+      <div className="border-b pb-6 mb-6 bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-lg">
+        <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
+          <span className="text-2xl mr-2">🎨</span>
+          Hero Principal (Página de Inicio)
+        </h3>
+        <p className="text-sm text-gray-600 mb-4">Este es el texto grande que aparece al entrar al sitio</p>
+        
+        <div className="space-y-4 bg-white p-4 rounded-lg">
+          <div className="grid grid-cols-3 gap-4">
+            <div>
+              <label className="block text-xs font-medium text-gray-600 mb-1">
+                Título - Línea 1
+              </label>
+              <input
+                type="text"
+                value={content.hero?.title?.line1 || ''}
+                onChange={(e) => {
+                  const newHero = { ...content.hero, title: { ...content.hero?.title, line1: e.target.value } }
+                  updateField(['hero'], newHero)
+                }}
+                placeholder="Transforming"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+            </div>
+            <div>
+              <label className="block text-xs font-medium text-gray-600 mb-1">
+                Título - Línea 2
+              </label>
+              <input
+                type="text"
+                value={content.hero?.title?.line2 || ''}
+                onChange={(e) => {
+                  const newHero = { ...content.hero, title: { ...content.hero?.title, line2: e.target.value } }
+                  updateField(['hero'], newHero)
+                }}
+                placeholder="Visions into"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+            </div>
+            <div>
+              <label className="block text-xs font-medium text-gray-600 mb-1">
+                Título - Línea 3 (Grande)
+              </label>
+              <input
+                type="text"
+                value={content.hero?.title?.line3 || ''}
+                onChange={(e) => {
+                  const newHero = { ...content.hero, title: { ...content.hero?.title, line3: e.target.value } }
+                  updateField(['hero'], newHero)
+                }}
+                placeholder="Reality"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent font-bold"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label className="block text-xs font-medium text-gray-600 mb-1">
+              Subtítulo
+            </label>
+            <input
+              type="text"
+              value={content.hero?.subtitle || ''}
+              onChange={(e) => {
+                const newHero = { ...content.hero, subtitle: e.target.value }
+                updateField(['hero'], newHero)
+              }}
+              placeholder="World-class architectural design and construction."
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+
+          <div>
+            <label className="block text-xs font-medium text-gray-600 mb-1">
+              Descripción
+            </label>
+            <input
+              type="text"
+              value={content.hero?.description || ''}
+              onChange={(e) => {
+                const newHero = { ...content.hero, description: e.target.value }
+                updateField(['hero'], newHero)
+              }}
+              placeholder="Over 9 years creating exceptional spaces..."
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="block text-xs font-medium text-gray-600 mb-1">
+                Texto del Botón
+              </label>
+              <input
+                type="text"
+                value={content.hero?.ctaText || ''}
+                onChange={(e) => {
+                  const newHero = { ...content.hero, ctaText: e.target.value }
+                  updateField(['hero'], newHero)
+                }}
+                placeholder="TALK TO US"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+            </div>
+            <div>
+              <label className="block text-xs font-medium text-gray-600 mb-1">
+                Link del Botón
+              </label>
+              <input
+                type="text"
+                value={content.hero?.ctaLink || ''}
+                onChange={(e) => {
+                  const newHero = { ...content.hero, ctaLink: e.target.value }
+                  updateField(['hero'], newHero)
+                }}
+                placeholder="/contacto"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-2">
           Nombre de la Empresa

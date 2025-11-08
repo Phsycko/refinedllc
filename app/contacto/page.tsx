@@ -4,14 +4,12 @@ import ContactForm from '@/components/ContactForm'
 import companyDataEs from '@/content/company.json'
 import companyDataEn from '@/content/company-en.json'
 import { useLanguage } from '@/contexts/LanguageContext'
-import HeaderSimple from '@/components/HeaderSimple'
 
 export default function ContactPage() {
   const { t, language } = useLanguage()
   const companyData = language === 'en' ? companyDataEn : companyDataEs
   return (
     <>
-      <HeaderSimple />
       <section className="bg-primary py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">

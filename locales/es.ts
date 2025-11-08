@@ -132,53 +132,6 @@ export const es = {
     requestQuote: "Solicitar cotización",
     learnMore: "Aprender más",
     readMore: "Leer más",
-  },
-  featured: {
-    title: "Por Qué Elegirnos",
-    subtitle: "Nuestra experiencia y compromiso nos distinguen en cada proyecto",
-    feature1: {
-      title: "Diseño Personalizado",
-      description: "Cada proyecto es único. Creamos diseños personalizados que reflejan tu estilo y necesidades específicas."
-    },
-    feature2: {
-      title: "Calidad Garantizada", 
-      description: "Utilizamos materiales de primera calidad y técnicas de construcción probadas para garantizar resultados duraderos."
-    },
-    feature3: {
-      title: "Entrega Puntual",
-      description: "Cumplimos con los plazos establecidos sin comprometer la calidad del trabajo realizado."
-    }
-  },
-  projectDetail: {
-    featured: "Destacado",
-    location: "Ubicación",
-    year: "Año",
-    area: "Área", 
-    category: "Categoría",
-    aboutProject: "Sobre el Proyecto",
-    highlights: "Aspectos Destacados",
-    servicesUsed: "Servicios Utilizados",
-    similarProject: "¿Proyecto similar?",
-    similarProjectDesc: "Contáctanos para discutir cómo podemos ayudarte con tu proyecto.",
-    requestQuote: "Solicitar Cotización",
-    projectGallery: "Galería del Proyecto",
-    discoverMore: "Descubre más proyectos",
-    discoverMoreDesc: "Explora nuestro portafolio completo de proyectos exitosos.",
-    viewAllProjects: "Ver todos los proyectos",
-    projectNotFound: "Proyecto no encontrado"
-  },
-  serviceDetail: {
-    serviceFeatures: "Características del Servicio",
-    projectGallery: "Galería de Proyectos", 
-    interestedTitle: "¿Interesado en este servicio?",
-    interestedDesc: "Contáctanos para una consulta gratuita y descubre cómo podemos ayudarte con tu proyecto.",
-    requestQuote: "Solicitar cotización",
-    serviceNotFound: "Servicio no encontrado"
-  },
-  slider: {
-    before: "Antes",
-    after: "Después",
-    dragToCompare: "Arrastra para comparar"
   }
 }
 
