@@ -339,6 +339,7 @@ function ProjectsEditor({ content, setContent }: ProjectsEditorProps) {
 
   const addProject = () => {
     const newProject = {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       id: Math.max(...content.map((p: any) => p.id)) + 1,
       slug: 'nuevo-proyecto',
       title: 'Nuevo Proyecto',
@@ -358,6 +359,7 @@ function ProjectsEditor({ content, setContent }: ProjectsEditorProps) {
 
   const deleteProject = () => {
     if (confirm('¿Estás seguro de eliminar este proyecto?')) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const newProjects = content.filter((_: any, i: number) => i !== selectedProject)
       setContent(newProjects)
       setSelectedProject(Math.max(0, selectedProject - 1))
@@ -374,6 +376,7 @@ function ProjectsEditor({ content, setContent }: ProjectsEditorProps) {
           onChange={(e) => setSelectedProject(parseInt(e.target.value))}
           className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         >
+          {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
           {content.map((proj: any, index: number) => (
             <option key={index} value={index}>
               {proj.title}
@@ -549,6 +552,7 @@ function ServicesEditor({ content, setContent }: ServicesEditorProps) {
           onChange={(e) => setSelectedService(parseInt(e.target.value))}
           className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         >
+          {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
           {content.map((serv: any, index: number) => (
             <option key={index} value={index}>
               {serv.title}
@@ -666,6 +670,7 @@ function TestimonialsEditor({ content, setContent }: TestimonialsEditorProps) {
           onChange={(e) => setSelectedTestimonial(parseInt(e.target.value))}
           className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         >
+          {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
           {content.map((test: any, index: number) => (
             <option key={index} value={index}>
               {test.name}
