@@ -86,9 +86,18 @@ export default function Footer() {
 
         {/* Redes sociales y copyright */}
         <div className="mt-8 border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-gray-400">
-            © {currentYear} Refined LLC. {t.footer.allRightsReserved}
-          </p>
+          <div className="flex items-center space-x-4">
+            <p className="text-sm text-gray-400">
+              © {currentYear} Refined LLC. {t.footer.allRightsReserved}
+            </p>
+            <Link 
+              href="/admin" 
+              className="text-xs text-gray-600 hover:text-accent transition-colors opacity-50 hover:opacity-100"
+              title="Panel de Administración"
+            >
+              🔐
+            </Link>
+          </div>
           <div className="flex space-x-6 mt-4 md:mt-0">
             {companyData.social.facebook && (
               <a href={companyData.social.facebook} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-accent transition-colors">
