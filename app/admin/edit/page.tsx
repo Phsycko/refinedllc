@@ -1,10 +1,13 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
 type ContentType = 'company' | 'projects' | 'services' | 'testimonials'
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type ContentData = any
 
 export default function AdminEditPage() {
   const router = useRouter()
@@ -17,17 +20,13 @@ export default function AdminEditPage() {
     }
   }, [router])
   const [contentType, setContentType] = useState<ContentType>('company')
-  const [content, setContent] = useState<any>(null)
+  const [content, setContent] = useState<ContentData>(null)
   const [loading, setLoading] = useState(false)
   const [saving, setSaving] = useState(false)
   const [message, setMessage] = useState('')
 
   // Cargar contenido
-  useEffect(() => {
-    loadContent()
-  }, [contentType])
-
-  const loadContent = async () => {
+  const loadContent = useCallback(async () => {
     setLoading(true)
     try {
       const response = await fetch(`/api/content/${contentType}`)
@@ -38,7 +37,11 @@ export default function AdminEditPage() {
       setMessage('Error al cargar el contenido')
     }
     setLoading(false)
-  }
+  }, [contentType])
+
+  useEffect(() => {
+    loadContent()
+  }, [loadContent])
 
   const saveContent = async () => {
     setSaving(true)
@@ -64,10 +67,11 @@ export default function AdminEditPage() {
     setSaving(false)
   }
 
-  const updateField = (path: string[], value: any) => {
-    setContent((prev: any) => {
+  const updateField = (path: string[], value: ContentData) => {
+    setContent((prev: ContentData) => {
       const newContent = { ...prev }
-      let current = newContent
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      let current: any = newContent
       
       for (let i = 0; i < path.length - 1; i++) {
         current = current[path[i]]
@@ -149,7 +153,7 @@ export default function AdminEditPage() {
               <div className="mt-8 pt-4 border-t border-gray-200">
                 <h4 className="text-sm font-medium text-gray-900 mb-2">💡 Ayuda</h4>
                 <p className="text-xs text-gray-600">
-                  Selecciona una sección, edita el contenido y haz clic en "Guardar Cambios"
+                  Selecciona una sección, edita el contenido y haz clic en &ldquo;Guardar Cambios&rdquo;
                 </p>
               </div>
             </div>
@@ -197,7 +201,12 @@ export default function AdminEditPage() {
 }
 
 // Componente para editar información de la empresa
-function CompanyEditor({ content, updateField }: any) {
+interface CompanyEditorProps {
+  content: ContentData
+  updateField: (path: string[], value: ContentData) => void
+}
+
+function CompanyEditor({ content, updateField }: CompanyEditorProps) {
   return (
     <div className="space-y-6">
       <div>
@@ -311,10 +320,15 @@ function CompanyEditor({ content, updateField }: any) {
 }
 
 // Componente para editar proyectos
-function ProjectsEditor({ content, setContent }: any) {
+interface ProjectsEditorProps {
+  content: ContentData
+  setContent: (content: ContentData) => void
+}
+
+function ProjectsEditor({ content, setContent }: ProjectsEditorProps) {
   const [selectedProject, setSelectedProject] = useState<number>(0)
 
-  const updateProject = (field: string, value: any) => {
+  const updateProject = (field: string, value: ContentData) => {
     const newProjects = [...content]
     newProjects[selectedProject] = {
       ...newProjects[selectedProject],
@@ -508,10 +522,15 @@ function ProjectsEditor({ content, setContent }: any) {
 }
 
 // Componente para editar servicios
-function ServicesEditor({ content, setContent }: any) {
+interface ServicesEditorProps {
+  content: ContentData
+  setContent: (content: ContentData) => void
+}
+
+function ServicesEditor({ content, setContent }: ServicesEditorProps) {
   const [selectedService, setSelectedService] = useState<number>(0)
 
-  const updateService = (field: string, value: any) => {
+  const updateService = (field: string, value: ContentData) => {
     const newServices = [...content]
     newServices[selectedService] = {
       ...newServices[selectedService],
@@ -620,10 +639,15 @@ function ServicesEditor({ content, setContent }: any) {
 }
 
 // Componente para editar testimonios
-function TestimonialsEditor({ content, setContent }: any) {
+interface TestimonialsEditorProps {
+  content: ContentData
+  setContent: (content: ContentData) => void
+}
+
+function TestimonialsEditor({ content, setContent }: TestimonialsEditorProps) {
   const [selectedTestimonial, setSelectedTestimonial] = useState<number>(0)
 
-  const updateTestimonial = (field: string, value: any) => {
+  const updateTestimonial = (field: string, value: ContentData) => {
     const newTestimonials = [...content]
     newTestimonials[selectedTestimonial] = {
       ...newTestimonials[selectedTestimonial],
