@@ -18,9 +18,9 @@ const config: Config = {
           light: '#475569',
         },
         accent: {
-          DEFAULT: '#F59E0B',
-          light: '#FCD34D',
-          dark: '#D97706',
+          DEFAULT: '#0066CC',
+          light: '#3B82F6',
+          dark: '#1E40AF',
         },
         background: '#F8FAFC',
       },
