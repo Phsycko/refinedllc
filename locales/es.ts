@@ -146,6 +146,10 @@ export const es = {
     interestedTitle: "¿Interesado en este servicio?",
     interestedDesc: "Contáctanos para discutir cómo podemos ayudarte con tu proyecto",
   },
+  slider: {
+    before: "Antes",
+    after: "Después",
+  },
   common: {
     viewAll: "Ver todos",
     viewMore: "Ver más",
