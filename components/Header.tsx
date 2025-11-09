@@ -14,41 +14,8 @@ export default function Header() {
   const { t, language } = useLanguage()
   const companyData = language === 'en' ? companyDataEn : companyDataEs
 
-  // Array de servicios con sus imágenes
-  const services = [
-    {
-      id: 'outdoor-living',
-      name: 'Outdoor Living Space',
-      nameEn: 'Outdoor Living Space',
-      image: '/images/services-carousel/diseno.jpg',
-      price: 'Desde $12,000',
-      href: '/servicios/outdoor-living'
-    },
-    {
-      id: 'spaces',
-      name: 'Espacios',
-      nameEn: 'Spaces',
-      image: '/images/services-carousel/remodelacion.jpg',
-      price: 'Desde $15,000',
-      href: '/servicios/spaces'
-    },
-    {
-      id: 'bathrooms',
-      name: 'Baños',
-      nameEn: 'Bathrooms',
-      image: '/images/services-carousel/mantenimiento.jpg',
-      price: 'Desde $10,000',
-      href: '/servicios/bathrooms'
-    },
-    {
-      id: 'kitchen',
-      name: 'Cocinas',
-      nameEn: 'Kitchen',
-      image: '/images/services-carousel/construccion.jpg',
-      price: 'Desde $20,000',
-      href: '/servicios/kitchen'
-    }
-  ]
+  // Array de servicios con sus imágenes - EDITABLE desde el panel de admin
+  const services = companyData.hero?.carouselServices || []
 
   // Efecto para cambiar imágenes automáticamente cada 8 segundos
   useEffect(() => {
@@ -292,10 +259,10 @@ export default function Header() {
               {/* Contenido central - ANCHO COMPLETO */}
               <div className="text-left w-[220px] sm:w-[300px] px-2 sm:px-4">
                 <h3 className="text-sm sm:text-xl font-bold text-white mb-0.5 sm:mb-1 truncate">
-                  {language === 'en' ? services[currentServiceIndex].nameEn : services[currentServiceIndex].name}
+                  {language === 'en' ? services[currentServiceIndex]?.nameEn : services[currentServiceIndex]?.name}
                 </h3>
                 <p className="text-xs sm:text-sm text-white/80 uppercase tracking-wider font-medium truncate">
-                  {services[currentServiceIndex].price}
+                  {language === 'en' ? services[currentServiceIndex]?.priceEn : services[currentServiceIndex]?.price}
                 </p>
               </div>
 

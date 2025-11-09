@@ -406,6 +406,88 @@ function CompanyEditor({ content, updateField }: CompanyEditorProps) {
               />
             </div>
           </div>
+
+          <div className="mt-4 border-t pt-4">
+            <h4 className="text-sm font-semibold text-gray-700 mb-3">Servicios del Carrusel (Hero)</h4>
+            <p className="text-xs text-gray-600 mb-3">Estos son los servicios que rotan en el Hero principal</p>
+            <div className="space-y-3">
+              {content.hero?.carouselServices?.map((service: ContentData, index: number) => (
+                <div key={index} className="grid grid-cols-5 gap-2 p-3 bg-white border border-gray-200 rounded-lg">
+                  <div>
+                    <label className="block text-xs text-gray-600 mb-1">Nombre (ES)</label>
+                    <input
+                      type="text"
+                      value={service.name || ''}
+                      onChange={(e) => {
+                        const newServices = [...content.hero.carouselServices]
+                        newServices[index] = { ...newServices[index], name: e.target.value }
+                        const newHero = { ...content.hero, carouselServices: newServices }
+                        updateField(['hero'], newHero)
+                      }}
+                      className="w-full px-2 py-1 border border-gray-300 rounded text-xs focus:ring-1 focus:ring-blue-500"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs text-gray-600 mb-1">Nombre (EN)</label>
+                    <input
+                      type="text"
+                      value={service.nameEn || ''}
+                      onChange={(e) => {
+                        const newServices = [...content.hero.carouselServices]
+                        newServices[index] = { ...newServices[index], nameEn: e.target.value }
+                        const newHero = { ...content.hero, carouselServices: newServices }
+                        updateField(['hero'], newHero)
+                      }}
+                      className="w-full px-2 py-1 border border-gray-300 rounded text-xs focus:ring-1 focus:ring-blue-500"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs text-gray-600 mb-1">Precio (ES)</label>
+                    <input
+                      type="text"
+                      value={service.price || ''}
+                      onChange={(e) => {
+                        const newServices = [...content.hero.carouselServices]
+                        newServices[index] = { ...newServices[index], price: e.target.value }
+                        const newHero = { ...content.hero, carouselServices: newServices }
+                        updateField(['hero'], newHero)
+                      }}
+                      className="w-full px-2 py-1 border border-gray-300 rounded text-xs focus:ring-1 focus:ring-blue-500"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs text-gray-600 mb-1">Precio (EN)</label>
+                    <input
+                      type="text"
+                      value={service.priceEn || ''}
+                      onChange={(e) => {
+                        const newServices = [...content.hero.carouselServices]
+                        newServices[index] = { ...newServices[index], priceEn: e.target.value }
+                        const newHero = { ...content.hero, carouselServices: newServices }
+                        updateField(['hero'], newHero)
+                      }}
+                      className="w-full px-2 py-1 border border-gray-300 rounded text-xs focus:ring-1 focus:ring-blue-500"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs text-gray-600 mb-1">Imagen</label>
+                    <input
+                      type="text"
+                      value={service.image || ''}
+                      onChange={(e) => {
+                        const newServices = [...content.hero.carouselServices]
+                        newServices[index] = { ...newServices[index], image: e.target.value }
+                        const newHero = { ...content.hero, carouselServices: newServices }
+                        updateField(['hero'], newHero)
+                      }}
+                      placeholder="/images/..."
+                      className="w-full px-2 py-1 border border-gray-300 rounded text-xs focus:ring-1 focus:ring-blue-500"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
@@ -630,6 +712,139 @@ function CompanyEditor({ content, updateField }: CompanyEditorProps) {
                 }}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="border-t pt-6">
+        <h3 className="text-lg font-semibold text-gray-900 mb-4">Proceso de Trabajo (5 Pasos)</h3>
+        <div className="grid grid-cols-2 gap-4 mb-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Título de la Sección
+            </label>
+            <input
+              type="text"
+              value={content.process?.title || ''}
+              onChange={(e) => {
+                const newProcess = { ...content.process, title: e.target.value }
+                updateField(['process'], newProcess)
+              }}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Título (English)
+            </label>
+            <input
+              type="text"
+              value={content.process?.title_en || ''}
+              onChange={(e) => {
+                const newProcess = { ...content.process, title_en: e.target.value }
+                updateField(['process'], newProcess)
+              }}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Subtítulo
+            </label>
+            <input
+              type="text"
+              value={content.process?.subtitle || ''}
+              onChange={(e) => {
+                const newProcess = { ...content.process, subtitle: e.target.value }
+                updateField(['process'], newProcess)
+              }}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Subtítulo (English)
+            </label>
+            <input
+              type="text"
+              value={content.process?.subtitle_en || ''}
+              onChange={(e) => {
+                const newProcess = { ...content.process, subtitle_en: e.target.value }
+                updateField(['process'], newProcess)
+              }}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          {content.process?.steps?.map((step: ContentData, index: number) => (
+            <div key={index} className="p-4 bg-gray-50 rounded-lg border border-gray-200">
+              <div className="flex items-center mb-3">
+                <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mr-3">
+                  {index + 1}
+                </div>
+                <h4 className="font-semibold text-gray-900">Paso {index + 1}</h4>
+              </div>
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="block text-xs text-gray-600 mb-1">Título (Español)</label>
+                  <input
+                    type="text"
+                    value={step.title || ''}
+                    onChange={(e) => {
+                      const newSteps = [...content.process.steps]
+                      newSteps[index] = { ...newSteps[index], title: e.target.value }
+                      const newProcess = { ...content.process, steps: newSteps }
+                      updateField(['process'], newProcess)
+                    }}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-1 focus:ring-blue-500"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs text-gray-600 mb-1">Título (English)</label>
+                  <input
+                    type="text"
+                    value={step.title_en || ''}
+                    onChange={(e) => {
+                      const newSteps = [...content.process.steps]
+                      newSteps[index] = { ...newSteps[index], title_en: e.target.value }
+                      const newProcess = { ...content.process, steps: newSteps }
+                      updateField(['process'], newProcess)
+                    }}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-1 focus:ring-blue-500"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs text-gray-600 mb-1">Descripción (Español)</label>
+                  <textarea
+                    value={step.description || ''}
+                    onChange={(e) => {
+                      const newSteps = [...content.process.steps]
+                      newSteps[index] = { ...newSteps[index], description: e.target.value }
+                      const newProcess = { ...content.process, steps: newSteps }
+                      updateField(['process'], newProcess)
+                    }}
+                    rows={2}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-1 focus:ring-blue-500"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs text-gray-600 mb-1">Descripción (English)</label>
+                  <textarea
+                    value={step.description_en || ''}
+                    onChange={(e) => {
+                      const newSteps = [...content.process.steps]
+                      newSteps[index] = { ...newSteps[index], description_en: e.target.value }
+                      const newProcess = { ...content.process, steps: newSteps }
+                      updateField(['process'], newProcess)
+                    }}
+                    rows={2}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-1 focus:ring-blue-500"
+                  />
+                </div>
+              </div>
             </div>
           ))}
         </div>
