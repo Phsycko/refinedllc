@@ -1,6 +1,5 @@
 'use client'
 
-import ProjectGallery from '@/components/ProjectGallery'
 import BeforeAfterSlider from '@/components/BeforeAfterSlider'
 import CTASection from '@/components/CTASection'
 import HeaderSimple from '@/components/HeaderSimple'
@@ -177,10 +176,18 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
               <h2 className="text-3xl font-bold text-primary mb-8">
                 {t.projectDetail.projectGallery}
               </h2>
-              <ProjectGallery 
-                images={project.gallery} 
-                projectTitle={language === 'en' && project.title_en ? project.title_en : project.title} 
-              />
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {project.gallery.map((image, index) => (
+                  <div key={index} className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={image}
+                      alt={`${language === 'en' && project.title_en ? project.title_en : project.title} - ${index + 1}`}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           )}
         </div>

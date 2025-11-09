@@ -1,6 +1,5 @@
 'use client'
 
-import ProjectGallery from '@/components/ProjectGallery'
 import CTASection from '@/components/CTASection'
 import HeaderSimple from '@/components/HeaderSimple'
 import { useLanguage } from '@/contexts/LanguageContext'
@@ -88,10 +87,18 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
               <h2 className="text-2xl font-bold text-primary mb-6">
                 {t.serviceDetail.projectGallery}
               </h2>
-              <ProjectGallery 
-                images={service.gallery} 
-                projectTitle={language === 'en' && service.title_en ? service.title_en : service.title} 
-              />
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {service.gallery.map((image, index) => (
+                  <div key={index} className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={image}
+                      alt={`${language === 'en' && service.title_en ? service.title_en : service.title} - ${index + 1}`}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           )}
         </div>
