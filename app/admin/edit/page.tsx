@@ -115,6 +115,48 @@ export default function AdminEditPage() {
     })
   }
 
+  // Componente helper para upload de imágenes integrado
+  const ImageUploadInput = ({ 
+    value, 
+    onChange, 
+    folder, 
+    placeholder 
+  }: { 
+    value: string
+    onChange: (url: string) => void
+    folder: string
+    placeholder?: string 
+  }) => (
+    <div className="flex gap-2">
+      <input
+        type="text"
+        value={value || ''}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder={placeholder || '/images/...'}
+        className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+      />
+      <label className="cursor-pointer inline-flex items-center px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors">
+        <input
+          type="file"
+          accept="image/*"
+          className="hidden"
+          onChange={async (e) => {
+            const file = e.target.files?.[0]
+            if (file) {
+              const url = await handleFileUpload(file, folder)
+              if (url) {
+                onChange(url)
+              }
+            }
+          }}
+          disabled={uploading}
+        />
+        <span className="text-xl mr-1">📸</span>
+        <span className="text-sm font-medium">Subir</span>
+      </label>
+    </div>
+  )
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -194,50 +236,6 @@ export default function AdminEditPage() {
 
           {/* Content Area */}
           <div className="lg:col-span-3">
-            {/* Upload de Imágenes */}
-            <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg shadow-sm p-6 mb-6">
-              <h3 className="text-lg font-bold text-gray-900 mb-2 flex items-center">
-                <span className="text-2xl mr-2">📸</span>
-                Subir Imágenes
-              </h3>
-              <p className="text-sm text-gray-600 mb-4">Sube imágenes para proyectos, servicios o testimonios</p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                {['projects', 'services', 'testimonials', 'general'].map((folder) => (
-                  <div key={folder} className="bg-white p-4 rounded-lg border-2 border-dashed border-gray-300 hover:border-purple-400 transition-colors">
-                    <label className="cursor-pointer block text-center">
-                      <input
-                        type="file"
-                        accept="image/*"
-                        className="hidden"
-                        onChange={async (e) => {
-                          const file = e.target.files?.[0]
-                          if (file) {
-                            const url = await handleFileUpload(file, folder)
-                            if (url) {
-                              navigator.clipboard.writeText(url)
-                            }
-                          }
-                        }}
-                        disabled={uploading}
-                      />
-                      <div className="text-3xl mb-2">
-                        {folder === 'projects' && '🏗️'}
-                        {folder === 'services' && '⚙️'}
-                        {folder === 'testimonials' && '💬'}
-                        {folder === 'general' && '📁'}
-                      </div>
-                      <div className="text-sm font-medium text-gray-700 capitalize">{folder}</div>
-                      <div className="text-xs text-gray-500 mt-1">Clic para subir</div>
-                    </label>
-                  </div>
-                ))}
-              </div>
-              <p className="text-xs text-gray-500 mt-3">
-                💡 La URL se copiará automáticamente al portapapeles. Pégala en cualquier campo de imagen.
-              </p>
-            </div>
-
             <div className="bg-white rounded-lg shadow-sm p-6">
               {loading ? (
                 <div className="flex items-center justify-center py-12">
@@ -469,19 +467,18 @@ function CompanyEditor({ content, updateField }: CompanyEditorProps) {
                       className="w-full px-2 py-1 border border-gray-300 rounded text-xs focus:ring-1 focus:ring-blue-500"
                     />
                   </div>
-                  <div>
-                    <label className="block text-xs text-gray-600 mb-1">Imagen</label>
-                    <input
-                      type="text"
+                  <div className="col-span-5">
+                    <label className="block text-xs text-gray-600 mb-1">Imagen del Carrusel</label>
+                    <ImageUploadInput
                       value={service.image || ''}
-                      onChange={(e) => {
+                      onChange={(url) => {
                         const newServices = [...content.hero.carouselServices]
-                        newServices[index] = { ...newServices[index], image: e.target.value }
+                        newServices[index] = { ...newServices[index], image: url }
                         const newHero = { ...content.hero, carouselServices: newServices }
                         updateField(['hero'], newHero)
                       }}
-                      placeholder="/images/..."
-                      className="w-full px-2 py-1 border border-gray-300 rounded text-xs focus:ring-1 focus:ring-blue-500"
+                      folder="hero"
+                      placeholder="/images/services-carousel/..."
                     />
                   </div>
                 </div>
@@ -1154,49 +1151,132 @@ function ProjectsEditor({ content, setContent }: ProjectsEditorProps) {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Imagen Principal
+              Imagen Principal del Proyecto
             </label>
-            <input
-              type="text"
+            <ImageUploadInput
               value={project.mainImage || ''}
-              onChange={(e) => updateProject('mainImage', e.target.value)}
-              placeholder="/images/projects/..."
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              onChange={(url) => updateProject('mainImage', url)}
+              folder="projects"
+              placeholder="/images/projects/main-image.jpg"
             />
             {project.mainImage && (
               // eslint-disable-next-line @next/next/no-img-element
               <img 
                 src={project.mainImage} 
                 alt="Preview" 
-                className="mt-2 h-32 w-auto object-cover rounded-lg"
+                className="mt-2 h-32 w-auto object-cover rounded-lg shadow-md"
               />
             )}
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Imágenes &quot;Before&quot; (separadas por coma)
-            </label>
-            <textarea
-              value={project.beforeImages?.join(', ') || ''}
-              onChange={(e) => updateProject('beforeImages', e.target.value.split(',').map((s: string) => s.trim()).filter((s: string) => s))}
-              rows={2}
-              placeholder="/images/projects/before-1.jpg, /images/projects/before-2.jpg"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            />
+            <div className="flex items-center justify-between mb-2">
+              <label className="block text-sm font-medium text-gray-700">
+                Imágenes &quot;Before&quot; ({project.beforeImages?.length || 0} imágenes)
+              </label>
+              <label className="cursor-pointer inline-flex items-center px-3 py-1.5 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm">
+                <input
+                  type="file"
+                  accept="image/*"
+                  className="hidden"
+                  onChange={async (e) => {
+                    const file = e.target.files?.[0]
+                    if (file) {
+                      const url = await handleFileUpload(file, 'projects')
+                      if (url) {
+                        const newBefore = [...(project.beforeImages || []), url]
+                        updateProject('beforeImages', newBefore)
+                      }
+                    }
+                  }}
+                  disabled={uploading}
+                />
+                <span className="mr-1">+</span> Agregar Before
+              </label>
+            </div>
+            <div className="space-y-2">
+              {project.beforeImages?.map((img: string, idx: number) => (
+                <div key={idx} className="flex gap-2 items-center">
+                  <input
+                    type="text"
+                    value={img}
+                    onChange={(e) => {
+                      const newBefore = [...project.beforeImages]
+                      newBefore[idx] = e.target.value
+                      updateProject('beforeImages', newBefore)
+                    }}
+                    className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500"
+                  />
+                  <button
+                    onClick={() => {
+                      const newBefore = project.beforeImages.filter((_: string, i: number) => i !== idx)
+                      updateProject('beforeImages', newBefore)
+                    }}
+                    className="px-3 py-2 bg-red-100 text-red-600 rounded-lg hover:bg-red-200 text-sm"
+                  >
+                    🗑️
+                  </button>
+                </div>
+              ))}
+              {(!project.beforeImages || project.beforeImages.length === 0) && (
+                <p className="text-sm text-gray-500 italic">No hay imágenes before. Haz clic en &quot;+ Agregar Before&quot;</p>
+              )}
+            </div>
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Galería de Imágenes (separadas por coma)
-            </label>
-            <textarea
-              value={project.gallery?.join(', ') || ''}
-              onChange={(e) => updateProject('gallery', e.target.value.split(',').map((s: string) => s.trim()).filter((s: string) => s))}
-              rows={3}
-              placeholder="/images/projects/img-1.jpg, /images/projects/img-2.jpg, /images/projects/img-3.jpg"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            />
+            <div className="flex items-center justify-between mb-2">
+              <label className="block text-sm font-medium text-gray-700">
+                Galería de Imágenes ({project.gallery?.length || 0} imágenes)
+              </label>
+              <label className="cursor-pointer inline-flex items-center px-3 py-1.5 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm">
+                <input
+                  type="file"
+                  accept="image/*"
+                  className="hidden"
+                  onChange={async (e) => {
+                    const file = e.target.files?.[0]
+                    if (file) {
+                      const url = await handleFileUpload(file, 'projects')
+                      if (url) {
+                        const newGallery = [...(project.gallery || []), url]
+                        updateProject('gallery', newGallery)
+                      }
+                    }
+                  }}
+                  disabled={uploading}
+                />
+                <span className="mr-1">+</span> Agregar Imagen
+              </label>
+            </div>
+            <div className="space-y-2">
+              {project.gallery?.map((img: string, idx: number) => (
+                <div key={idx} className="flex gap-2 items-center">
+                  <input
+                    type="text"
+                    value={img}
+                    onChange={(e) => {
+                      const newGallery = [...project.gallery]
+                      newGallery[idx] = e.target.value
+                      updateProject('gallery', newGallery)
+                    }}
+                    className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500"
+                  />
+                  <button
+                    onClick={() => {
+                      const newGallery = project.gallery.filter((_: string, i: number) => i !== idx)
+                      updateProject('gallery', newGallery)
+                    }}
+                    className="px-3 py-2 bg-red-100 text-red-600 rounded-lg hover:bg-red-200 text-sm"
+                  >
+                    🗑️
+                  </button>
+                </div>
+              ))}
+              {(!project.gallery || project.gallery.length === 0) && (
+                <p className="text-sm text-gray-500 italic">No hay imágenes en la galería. Haz clic en &quot;+ Agregar Imagen&quot;</p>
+              )}
+            </div>
           </div>
         </div>
       )}
@@ -1369,28 +1449,69 @@ function ServicesEditor({ content, setContent }: ServicesEditorProps) {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Imagen Principal
+              Imagen Principal del Servicio
             </label>
-            <input
-              type="text"
+            <ImageUploadInput
               value={service.image || ''}
-              onChange={(e) => updateService('image', e.target.value)}
-              placeholder="/images/services/..."
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              onChange={(url) => updateService('image', url)}
+              folder="services"
+              placeholder="/images/services/main-image.jpg"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Galería de Imágenes (separadas por coma)
-            </label>
-            <textarea
-              value={service.gallery?.join(', ') || ''}
-              onChange={(e) => updateService('gallery', e.target.value.split(',').map((s: string) => s.trim()).filter((s: string) => s))}
-              rows={2}
-              placeholder="/images/services/img-1.jpg, /images/services/img-2.jpg"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            />
+            <div className="flex items-center justify-between mb-2">
+              <label className="block text-sm font-medium text-gray-700">
+                Galería de Imágenes ({service.gallery?.length || 0} imágenes)
+              </label>
+              <label className="cursor-pointer inline-flex items-center px-3 py-1.5 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm">
+                <input
+                  type="file"
+                  accept="image/*"
+                  className="hidden"
+                  onChange={async (e) => {
+                    const file = e.target.files?.[0]
+                    if (file) {
+                      const url = await handleFileUpload(file, 'services')
+                      if (url) {
+                        const newGallery = [...(service.gallery || []), url]
+                        updateService('gallery', newGallery)
+                      }
+                    }
+                  }}
+                  disabled={uploading}
+                />
+                <span className="mr-1">+</span> Agregar Imagen
+              </label>
+            </div>
+            <div className="space-y-2">
+              {service.gallery?.map((img: string, idx: number) => (
+                <div key={idx} className="flex gap-2 items-center">
+                  <input
+                    type="text"
+                    value={img}
+                    onChange={(e) => {
+                      const newGallery = [...service.gallery]
+                      newGallery[idx] = e.target.value
+                      updateService('gallery', newGallery)
+                    }}
+                    className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500"
+                  />
+                  <button
+                    onClick={() => {
+                      const newGallery = service.gallery.filter((_: string, i: number) => i !== idx)
+                      updateService('gallery', newGallery)
+                    }}
+                    className="px-3 py-2 bg-red-100 text-red-600 rounded-lg hover:bg-red-200 text-sm"
+                  >
+                    🗑️
+                  </button>
+                </div>
+              ))}
+              {(!service.gallery || service.gallery.length === 0) && (
+                <p className="text-sm text-gray-500 italic">No hay imágenes. Haz clic en &quot;+ Agregar Imagen&quot;</p>
+              )}
+            </div>
           </div>
 
           <div>
@@ -1528,19 +1649,18 @@ function TestimonialsEditor({ content, setContent }: TestimonialsEditorProps) {
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Foto del Cliente
             </label>
-            <input
-              type="text"
+            <ImageUploadInput
               value={testimonial.image || ''}
-              onChange={(e) => updateTestimonial('image', e.target.value)}
-              placeholder="/images/testimonials/..."
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              onChange={(url) => updateTestimonial('image', url)}
+              folder="testimonials"
+              placeholder="/images/testimonials/cliente.jpg"
             />
             {testimonial.image && (
               // eslint-disable-next-line @next/next/no-img-element
               <img 
                 src={testimonial.image} 
                 alt="Preview" 
-                className="mt-2 h-32 w-32 object-cover rounded-full"
+                className="mt-2 h-32 w-32 object-cover rounded-full shadow-md"
               />
             )}
           </div>
