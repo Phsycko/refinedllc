@@ -58,6 +58,22 @@ export const en = {
     pageSubtitle: "Explore our portfolio of successfully completed projects",
     all: "All",
   },
+  featured: {
+    title: "Featured Project",
+    subtitle: "Discover our most recent and exceptional work",
+    feature1: {
+      title: "Exceptional Design",
+      description: "Each project reflects our commitment to architectural design excellence and meticulous attention to detail.",
+    },
+    feature2: {
+      title: "Quality Construction",
+      description: "We use only the finest materials and construction techniques to ensure lasting results.",
+    },
+    feature3: {
+      title: "Satisfaction Guaranteed",
+      description: "Your satisfaction is our priority. We work with you every step of the way to exceed your expectations.",
+    },
+  },
   testimonials: {
     title: "What our clients say",
     subtitle: "Our clients' satisfaction is our greatest reward",
@@ -156,6 +172,7 @@ export const en = {
   slider: {
     before: "Before",
     after: "After",
+    dragToCompare: "Drag to compare",
   },
   common: {
     viewAll: "View all",

@@ -4,12 +4,15 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
 import LanguageToggle from './LanguageToggle'
+import companyDataEs from '@/content/company.json'
+import companyDataEn from '@/content/company-en.json'
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [currentServiceIndex, setCurrentServiceIndex] = useState(0)
   const [isScrolled, setIsScrolled] = useState(false)
   const { t, language } = useLanguage()
+  const companyData = language === 'en' ? companyDataEn : companyDataEs
 
   // Array de servicios con sus imágenes
   const services = [

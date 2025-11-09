@@ -58,6 +58,22 @@ export const es = {
     pageSubtitle: "Explora nuestro portafolio de proyectos completados con excelencia",
     all: "Todos",
   },
+  featured: {
+    title: "Proyecto Destacado",
+    subtitle: "Descubre nuestro trabajo más reciente y excepcional",
+    feature1: {
+      title: "Diseño Excepcional",
+      description: "Cada proyecto refleja nuestro compromiso con la excelencia en diseño arquitectónico y atención meticulosa al detalle.",
+    },
+    feature2: {
+      title: "Construcción de Calidad",
+      description: "Utilizamos solo los mejores materiales y técnicas de construcción para garantizar resultados duraderos.",
+    },
+    feature3: {
+      title: "Satisfacción Garantizada",
+      description: "Tu satisfacción es nuestra prioridad. Trabajamos contigo en cada paso para superar tus expectativas.",
+    },
+  },
   testimonials: {
     title: "Lo que dicen nuestros clientes",
     subtitle: "La satisfacción de nuestros clientes es nuestra mayor recompensa",
@@ -156,6 +172,7 @@ export const es = {
   slider: {
     before: "Antes",
     after: "Después",
+    dragToCompare: "Arrastra para comparar",
   },
   common: {
     viewAll: "Ver todos",
