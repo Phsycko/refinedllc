@@ -6,7 +6,7 @@ import React from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function ValueStats() {
-  const { t, language } = useLanguage()
+  const { language } = useLanguage()
   const companyData = language === 'en' ? companyDataEn : companyDataEs
   
   const iconMap: Record<string, React.ReactElement> = {

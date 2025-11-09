@@ -125,6 +125,26 @@ export const en = {
       errorSending: "Error sending message"
     }
   },
+  projectDetail: {
+    featured: "Featured",
+    location: "Location",
+    year: "Year",
+    area: "Area",
+    services: "Services",
+    projectHighlights: "Project Highlights",
+    beforeAfter: "Before & After",
+    projectGallery: "Project Gallery",
+    discoverMore: "Discover more projects",
+    discoverMoreDesc: "Explore our complete portfolio of exceptional projects",
+    viewAllProjects: "View all projects",
+  },
+  serviceDetail: {
+    features: "Features",
+    requestQuote: "Request quote",
+    projectGallery: "Gallery",
+    interestedTitle: "Interested in this service?",
+    interestedDesc: "Contact us to discuss how we can help you with your project",
+  },
   common: {
     viewAll: "View all",
     viewMore: "Learn more",

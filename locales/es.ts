@@ -125,6 +125,26 @@ export const es = {
       errorSending: "Error al enviar el mensaje"
     }
   },
+  projectDetail: {
+    featured: "Destacado",
+    location: "Ubicación",
+    year: "Año",
+    area: "Área",
+    services: "Servicios",
+    projectHighlights: "Características del Proyecto",
+    beforeAfter: "Antes y Después",
+    projectGallery: "Galería del Proyecto",
+    discoverMore: "Descubre más proyectos",
+    discoverMoreDesc: "Explora nuestro portafolio completo de proyectos excepcionales",
+    viewAllProjects: "Ver todos los proyectos",
+  },
+  serviceDetail: {
+    features: "Características",
+    requestQuote: "Solicitar cotización",
+    projectGallery: "Galería",
+    interestedTitle: "¿Interesado en este servicio?",
+    interestedDesc: "Contáctanos para discutir cómo podemos ayudarte con tu proyecto",
+  },
   common: {
     viewAll: "Ver todos",
     viewMore: "Ver más",
