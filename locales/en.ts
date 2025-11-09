@@ -127,6 +127,7 @@ export const en = {
   },
   projectDetail: {
     featured: "Featured",
+    category: "Category",
     location: "Location",
     year: "Year",
     area: "Area",
