@@ -9,6 +9,56 @@ type ContentType = 'company' | 'projects' | 'services' | 'testimonials'
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type ContentData = any
 
+// Componente helper para upload de imágenes integrado
+interface ImageUploadInputProps {
+  value: string
+  onChange: (url: string) => void
+  folder: string
+  placeholder?: string
+  uploading: boolean
+  handleFileUpload: (file: File, folder: string) => Promise<string | null>
+}
+
+function ImageUploadInput({ 
+  value, 
+  onChange, 
+  folder, 
+  placeholder,
+  uploading,
+  handleFileUpload
+}: ImageUploadInputProps) {
+  return (
+    <div className="flex gap-2">
+      <input
+        type="text"
+        value={value || ''}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder={placeholder || '/images/...'}
+        className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+      />
+      <label className="cursor-pointer inline-flex items-center px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors">
+        <input
+          type="file"
+          accept="image/*"
+          className="hidden"
+          onChange={async (e) => {
+            const file = e.target.files?.[0]
+            if (file) {
+              const url = await handleFileUpload(file, folder)
+              if (url) {
+                onChange(url)
+              }
+            }
+          }}
+          disabled={uploading}
+        />
+        <span className="text-xl mr-1">📸</span>
+        <span className="text-sm font-medium">Subir</span>
+      </label>
+    </div>
+  )
+}
+
 export default function AdminEditPage() {
   const router = useRouter()
 
@@ -115,48 +165,6 @@ export default function AdminEditPage() {
     })
   }
 
-  // Componente helper para upload de imágenes integrado
-  const ImageUploadInput = ({ 
-    value, 
-    onChange, 
-    folder, 
-    placeholder 
-  }: { 
-    value: string
-    onChange: (url: string) => void
-    folder: string
-    placeholder?: string 
-  }) => (
-    <div className="flex gap-2">
-      <input
-        type="text"
-        value={value || ''}
-        onChange={(e) => onChange(e.target.value)}
-        placeholder={placeholder || '/images/...'}
-        className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-      />
-      <label className="cursor-pointer inline-flex items-center px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors">
-        <input
-          type="file"
-          accept="image/*"
-          className="hidden"
-          onChange={async (e) => {
-            const file = e.target.files?.[0]
-            if (file) {
-              const url = await handleFileUpload(file, folder)
-              if (url) {
-                onChange(url)
-              }
-            }
-          }}
-          disabled={uploading}
-        />
-        <span className="text-xl mr-1">📸</span>
-        <span className="text-sm font-medium">Subir</span>
-      </label>
-    </div>
-  )
-
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -251,19 +259,39 @@ export default function AdminEditPage() {
                   </h2>
 
                   {contentType === 'company' && content && (
-                    <CompanyEditor content={content} updateField={updateField} />
+                    <CompanyEditor 
+                      content={content} 
+                      updateField={updateField} 
+                      uploading={uploading}
+                      handleFileUpload={handleFileUpload}
+                    />
                   )}
 
                   {contentType === 'projects' && content && (
-                    <ProjectsEditor content={content} setContent={setContent} />
+                    <ProjectsEditor 
+                      content={content} 
+                      setContent={setContent}
+                      uploading={uploading}
+                      handleFileUpload={handleFileUpload}
+                    />
                   )}
 
                   {contentType === 'services' && content && (
-                    <ServicesEditor content={content} setContent={setContent} />
+                    <ServicesEditor 
+                      content={content} 
+                      setContent={setContent}
+                      uploading={uploading}
+                      handleFileUpload={handleFileUpload}
+                    />
                   )}
 
                   {contentType === 'testimonials' && content && (
-                    <TestimonialsEditor content={content} setContent={setContent} />
+                    <TestimonialsEditor 
+                      content={content} 
+                      setContent={setContent}
+                      uploading={uploading}
+                      handleFileUpload={handleFileUpload}
+                    />
                   )}
                 </div>
               )}
@@ -279,9 +307,11 @@ export default function AdminEditPage() {
 interface CompanyEditorProps {
   content: ContentData
   updateField: (path: string[], value: ContentData) => void
+  uploading: boolean
+  handleFileUpload: (file: File, folder: string) => Promise<string | null>
 }
 
-function CompanyEditor({ content, updateField }: CompanyEditorProps) {
+function CompanyEditor({ content, updateField, uploading, handleFileUpload }: CompanyEditorProps) {
   return (
     <div className="space-y-6">
       <div className="border-b pb-6 mb-6 bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-lg">
@@ -479,6 +509,8 @@ function CompanyEditor({ content, updateField }: CompanyEditorProps) {
                       }}
                       folder="hero"
                       placeholder="/images/services-carousel/..."
+                      uploading={uploading}
+                      handleFileUpload={handleFileUpload}
                     />
                   </div>
                 </div>
@@ -874,9 +906,11 @@ function CompanyEditor({ content, updateField }: CompanyEditorProps) {
 interface ProjectsEditorProps {
   content: ContentData
   setContent: (content: ContentData) => void
+  uploading: boolean
+  handleFileUpload: (file: File, folder: string) => Promise<string | null>
 }
 
-function ProjectsEditor({ content, setContent }: ProjectsEditorProps) {
+function ProjectsEditor({ content, setContent, uploading, handleFileUpload }: ProjectsEditorProps) {
   const [selectedProject, setSelectedProject] = useState<number>(0)
 
   const updateProject = (field: string, value: ContentData) => {
@@ -1158,6 +1192,8 @@ function ProjectsEditor({ content, setContent }: ProjectsEditorProps) {
               onChange={(url) => updateProject('mainImage', url)}
               folder="projects"
               placeholder="/images/projects/main-image.jpg"
+              uploading={uploading}
+              handleFileUpload={handleFileUpload}
             />
             {project.mainImage && (
               // eslint-disable-next-line @next/next/no-img-element
@@ -1288,9 +1324,11 @@ function ProjectsEditor({ content, setContent }: ProjectsEditorProps) {
 interface ServicesEditorProps {
   content: ContentData
   setContent: (content: ContentData) => void
+  uploading: boolean
+  handleFileUpload: (file: File, folder: string) => Promise<string | null>
 }
 
-function ServicesEditor({ content, setContent }: ServicesEditorProps) {
+function ServicesEditor({ content, setContent, uploading, handleFileUpload }: ServicesEditorProps) {
   const [selectedService, setSelectedService] = useState<number>(0)
 
   const updateService = (field: string, value: ContentData) => {
@@ -1456,6 +1494,8 @@ function ServicesEditor({ content, setContent }: ServicesEditorProps) {
               onChange={(url) => updateService('image', url)}
               folder="services"
               placeholder="/images/services/main-image.jpg"
+              uploading={uploading}
+              handleFileUpload={handleFileUpload}
             />
           </div>
 
@@ -1547,9 +1587,11 @@ function ServicesEditor({ content, setContent }: ServicesEditorProps) {
 interface TestimonialsEditorProps {
   content: ContentData
   setContent: (content: ContentData) => void
+  uploading: boolean
+  handleFileUpload: (file: File, folder: string) => Promise<string | null>
 }
 
-function TestimonialsEditor({ content, setContent }: TestimonialsEditorProps) {
+function TestimonialsEditor({ content, setContent, uploading, handleFileUpload }: TestimonialsEditorProps) {
   const [selectedTestimonial, setSelectedTestimonial] = useState<number>(0)
 
   const updateTestimonial = (field: string, value: ContentData) => {
@@ -1654,6 +1696,8 @@ function TestimonialsEditor({ content, setContent }: TestimonialsEditorProps) {
               onChange={(url) => updateTestimonial('image', url)}
               folder="testimonials"
               placeholder="/images/testimonials/cliente.jpg"
+              uploading={uploading}
+              handleFileUpload={handleFileUpload}
             />
             {testimonial.image && (
               // eslint-disable-next-line @next/next/no-img-element
