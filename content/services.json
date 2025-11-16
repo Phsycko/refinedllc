@@ -2,7 +2,7 @@
   {
     "id": 1,
     "slug": "outdoor-living",
-    "title": "Outdoor Living Space",
+    "title": "Espacios al Aire Libre",
     "title_en": "Outdoor Living Space",
     "category": "Arquitectura",
     "category_en": "Architecture",
@@ -35,7 +35,7 @@
   {
     "id": 2,
     "slug": "spaces",
-    "title": "Spaces",
+    "title": "Espacios",
     "title_en": "Spaces",
     "category": "Construcción",
     "category_en": "Construction",
@@ -68,7 +68,7 @@
   {
     "id": 3,
     "slug": "bathrooms",
-    "title": "Bathrooms",
+    "title": "Baños",
     "title_en": "Bathrooms",
     "category": "Remodelación",
     "category_en": "Remodeling",
@@ -102,7 +102,7 @@
   {
     "id": 4,
     "slug": "kitchen",
-    "title": "Kitchen",
+    "title": "Cocina",
     "title_en": "Kitchen",
     "category": "Construcción",
     "category_en": "Construction",
