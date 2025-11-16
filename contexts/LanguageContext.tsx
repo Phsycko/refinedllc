@@ -16,30 +16,32 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>('es')
-  const [translations, setTranslations] = useState<Translations>(es)
+  // Inicialización sin parpadeos: leer localStorage/navegador antes del primer render
+  const getInitialLang = (): Language => {
+    if (typeof window === 'undefined') return 'es'
+    const saved = (window.localStorage.getItem('language') as Language) || null
+    if (saved === 'en' || saved === 'es') return saved
+    const browser = navigator.language.split('-')[0]
+    return browser === 'en' ? 'en' : 'es'
+  }
+  const initialLang = getInitialLang()
+  const [language, setLanguageState] = useState<Language>(initialLang)
+  const [translations, setTranslations] = useState<Translations>(initialLang === 'en' ? en : es)
 
-  // Detectar idioma del navegador al cargar
+  // Sincronizar atributo lang del documento cuando cambie
   useEffect(() => {
-    const browserLang = navigator.language.split('-')[0]
-    const initialLang = browserLang === 'en' ? 'en' : 'es'
-    const savedLang = localStorage.getItem('language') as Language
-    
-    if (savedLang && (savedLang === 'es' || savedLang === 'en')) {
-      setLanguageState(savedLang)
-      setTranslations(savedLang === 'en' ? en : es)
-    } else {
-      setLanguageState(initialLang)
-      setTranslations(initialLang === 'en' ? en : es)
-      localStorage.setItem('language', initialLang)
+    if (typeof document !== 'undefined') {
+      document.documentElement.lang = language
     }
-  }, [])
+  }, [language])
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang)
     setTranslations(lang === 'en' ? en : es)
     localStorage.setItem('language', lang)
-    document.documentElement.lang = lang
+    if (typeof document !== 'undefined') {
+      document.documentElement.lang = lang
+    }
   }
 
   return (
