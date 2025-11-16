@@ -9,10 +9,10 @@ export default function LanguageToggle() {
     <div className="flex items-center space-x-2">
       <button
         onClick={() => setLanguage('es')}
-        className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${
+        className={`px-4 py-2 rounded-none text-base font-medium uppercase tracking-wide transition-colors border ${
           language === 'es'
-            ? 'bg-accent text-white'
-            : 'text-secondary hover:bg-gray-100'
+            ? 'bg-accent text-white border-accent'
+            : 'bg-white text-secondary hover:bg-gray-100 border-gray-300'
         }`}
         aria-label="Cambiar a Español"
       >
@@ -20,10 +20,10 @@ export default function LanguageToggle() {
       </button>
       <button
         onClick={() => setLanguage('en')}
-        className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${
+        className={`px-4 py-2 rounded-none text-base font-medium uppercase tracking-wide transition-colors border ${
           language === 'en'
-            ? 'bg-accent text-white'
-            : 'text-secondary hover:bg-gray-100'
+            ? 'bg-accent text-white border-accent'
+            : 'bg-white text-secondary hover:bg-gray-100 border-gray-300'
         }`}
         aria-label="Switch to English"
       >

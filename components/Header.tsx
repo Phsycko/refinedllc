@@ -101,7 +101,7 @@ export default function Header() {
             <LanguageToggle />
             <Link
               href="/contacto"
-              className={`rounded-md px-6 py-2.5 text-sm font-semibold shadow-sm transition-all hover:shadow-md ${
+              className={`rounded-none px-6 py-2.5 text-sm font-semibold shadow-sm transition-all hover:shadow-md uppercase tracking-wide ${
                 isScrolled
                   ? 'bg-accent text-white hover:bg-accent-dark'
                   : 'bg-accent text-white hover:bg-accent-dark'
@@ -166,7 +166,7 @@ export default function Header() {
               </div>
               <Link
                 href="/contacto"
-                className="block w-full px-3 py-2 text-center text-base font-medium text-white bg-accent hover:bg-accent-dark rounded-md"
+                className="block w-full px-3 py-2 text-center text-base font-medium text-white bg-accent hover:bg-accent-dark rounded-none uppercase tracking-wide"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {t.nav.quote}
@@ -223,7 +223,7 @@ export default function Header() {
               <div className="flex justify-start">
                 <Link
                   href={companyData.hero?.ctaLink || '/contacto'}
-                  className="group relative bg-white text-gray-900 font-medium py-3 px-6 rounded-sm transition-all duration-500 hover:bg-gray-50 text-base tracking-wide uppercase letter-spacing-wider shadow-lg hover:shadow-xl transform hover:-translate-y-1 min-w-[180px] text-center"
+                  className="group relative bg-white text-gray-900 font-medium py-3 px-6 rounded-none transition-all duration-500 hover:bg-gray-50 text-base tracking-wide uppercase letter-spacing-wider shadow-lg hover:shadow-xl transform hover:-translate-y-1 min-w-[180px] text-center"
                 >
                   <span className="relative z-10">{companyData.hero?.ctaText || 'TALK TO US'}</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-gray-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-sm"></div>
