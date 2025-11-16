@@ -432,3 +432,4 @@ El sistema está listo para usar. Si necesitas agregar funcionalidades adicional
 *Implementado con ❤️ para Refined LLC*  
 *Noviembre 2024*
 
+

@@ -281,3 +281,4 @@ Consulta con tu desarrollador para agregar estas funcionalidades.
 
 *Última actualización: Noviembre 2024*
 
+

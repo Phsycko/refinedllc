@@ -25,10 +25,10 @@ export default function ProjectsGrid({ featured = false, limit }: ProjectsGridPr
     <section className="bg-white py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-primary sm:text-4xl">
+          <h2 className="text-3xl font-bold text-primary sm:text-4xl min-h-[2.75rem] sm:min-h-[3.25rem]">
             {t.projects.title}
           </h2>
-          <p className="mt-4 text-lg text-secondary max-w-2xl mx-auto">
+          <p className="mt-4 text-lg text-secondary max-w-2xl mx-auto min-h-[3.5rem]">
             {t.projects.subtitle}
           </p>
         </div>
@@ -59,10 +59,10 @@ export default function ProjectsGrid({ featured = false, limit }: ProjectsGridPr
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-primary group-hover:text-accent transition-colors line-clamp-1">
+                  <h3 className="text-xl font-semibold text-primary group-hover:text-accent transition-colors line-clamp-1 min-h-[1.75rem]">
                     {title}
                   </h3>
-                  <p className="mt-2 text-sm text-secondary line-clamp-2">
+                  <p className="mt-2 text-sm text-secondary line-clamp-2 min-h-[2.5rem]">
                     {description}
                   </p>
                   <div className="mt-4 flex items-center justify-between text-sm text-secondary">

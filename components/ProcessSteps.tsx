@@ -12,10 +12,10 @@ export default function ProcessSteps() {
     <section className="bg-background py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-primary sm:text-4xl">
+          <h2 className="text-3xl font-bold text-primary sm:text-4xl min-h-[2.75rem] sm:min-h-[3.25rem]">
             {language === 'en' ? companyData.process?.title_en : companyData.process?.title}
           </h2>
-          <p className="mt-4 text-lg text-secondary max-w-2xl mx-auto">
+          <p className="mt-4 text-lg text-secondary max-w-2xl mx-auto min-h-[3.5rem]">
             {language === 'en' ? companyData.process?.subtitle_en : companyData.process?.subtitle}
           </p>
         </div>
@@ -33,10 +33,10 @@ export default function ProcessSteps() {
                   <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-accent text-white text-2xl font-bold shadow-lg">
                     {index + 1}
                   </div>
-                  <h3 className="mt-4 text-lg font-semibold text-primary">
+                  <h3 className="mt-4 text-lg font-semibold text-primary min-h-[1.5rem]">
                     {language === 'en' ? step.title_en : step.title}
                   </h3>
-                  <p className="mt-2 text-sm text-secondary">
+                  <p className="mt-2 text-sm text-secondary min-h-[3.25rem]">
                     {language === 'en' ? step.description_en : step.description}
                   </p>
                 </div>

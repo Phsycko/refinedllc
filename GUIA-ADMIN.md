@@ -273,3 +273,4 @@ Visita: **[tudominio.com/admin](http://localhost:3009/admin)**
 *Guía creada para Refined LLC - Panel de Administración Visual*  
 *Última actualización: Noviembre 2024*
 
+

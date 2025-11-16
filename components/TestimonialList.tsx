@@ -10,10 +10,10 @@ export default function TestimonialList() {
     <section className="bg-background py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-primary sm:text-4xl">
+          <h2 className="text-3xl font-bold text-primary sm:text-4xl min-h-[2.75rem] sm:min-h-[3.25rem]">
             {t.testimonials.title}
           </h2>
-          <p className="mt-4 text-lg text-secondary max-w-2xl mx-auto">
+          <p className="mt-4 text-lg text-secondary max-w-2xl mx-auto min-h-[3.5rem]">
             {t.testimonials.subtitle}
           </p>
         </div>
@@ -36,17 +36,17 @@ export default function TestimonialList() {
                   </svg>
                 ))}
               </div>
-              <p className="text-sm text-secondary italic mb-4">
+              <p className="text-sm text-secondary italic mb-4 min-h-[84px]">
                 &ldquo;{testimonial.text}&rdquo;
               </p>
               <div className="mt-4 pt-4 border-t border-gray-200">
-                <p className="font-semibold text-primary text-sm">
+                <p className="font-semibold text-primary text-sm min-h-[1.25rem]">
                   {testimonial.name}
                 </p>
-                <p className="text-xs text-secondary mt-1">
+                <p className="text-xs text-secondary mt-1 min-h-[1rem]">
                   {language === 'en' && testimonial.role_en ? testimonial.role_en : testimonial.role}
                 </p>
-                <p className="text-xs text-accent mt-1">
+                <p className="text-xs text-accent mt-1 min-h-[1rem]">
                   {testimonial.project}
                 </p>
               </div>
