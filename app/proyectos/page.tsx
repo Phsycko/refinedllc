@@ -17,7 +17,12 @@ export default function ProjectsPage() {
     const category = language === 'en' && p.category_en ? p.category_en : p.category
     categoriesSet.add(category)
   })
-  const categories = Array.from(categoriesSet)
+  let categories = Array.from(categoriesSet)
+  // Mostrar solo Residencial y Comercial (ocultar Remodelación)
+  categories = categories.filter((c) => {
+    const normalized = c.toLowerCase()
+    return normalized === 'residencial' || normalized === 'comercial' || normalized === 'residential' || normalized === 'commercial'
+  })
 
   // Filtrar proyectos por categoría seleccionada
   const filteredProjects = selectedCategory === 'all' 
