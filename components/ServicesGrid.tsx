@@ -32,12 +32,21 @@ export default function ServicesGrid() {
                 className="group relative overflow-hidden rounded-lg bg-background shadow-md transition-all hover:shadow-xl hover:scale-105"
               >
                 <div className="aspect-[4/3] relative overflow-hidden rounded-t-lg">
-                  <Image
-                    src={service.image}
-                    alt={title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
+                  {service.image?.startsWith('http') ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={service.image}
+                      alt={title}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                  ) : (
+                    <Image
+                      src={service.image}
+                      alt={title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  )}
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-primary group-hover:text-accent transition-colors min-h-[1.75rem]">
