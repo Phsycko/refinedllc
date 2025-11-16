@@ -47,11 +47,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
             <p className="mt-6 text-lg text-gray-300">
               {language === 'en' && service.description_en ? service.description_en : service.description}
             </p>
-            {service.price && (
-              <p className="mt-4 text-xl font-semibold text-accent">
-                {language === 'en' && service.price_en ? service.price_en : service.price}
-              </p>
-            )}
+            {/* Precio ocultado por requerimiento */}
           </div>
         </div>
       </section>

@@ -270,9 +270,7 @@ export default function Header() {
                 <h3 className="text-sm sm:text-xl font-bold text-white mb-0.5 sm:mb-1 truncate">
                   {language === 'en' ? services[currentServiceIndex]?.nameEn : services[currentServiceIndex]?.name}
                 </h3>
-                <p className="text-xs sm:text-sm text-white/80 uppercase tracking-wider font-medium truncate">
-                  {language === 'en' ? services[currentServiceIndex]?.priceEn : services[currentServiceIndex]?.price}
-                </p>
+                {/* Precio ocultado por requerimiento */}
               </div>
 
               {/* Botón grande a la derecha */}

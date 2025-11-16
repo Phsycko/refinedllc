@@ -59,13 +59,7 @@ export default function ServicesPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
                     </div>
-                    {service.price && (
-                      <div className="mt-4 pt-4 border-t border-gray-200">
-                        <p className="text-sm font-semibold text-primary">
-                          {service.price}
-                        </p>
-                      </div>
-                    )}
+                    {/* Precio ocultado por requerimiento */}
                   </div>
                 </Link>
               )
