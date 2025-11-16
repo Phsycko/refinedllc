@@ -100,8 +100,8 @@ export default function Header() {
                 {index < navItems.length - 1 && (
                   <span
                     aria-hidden="true"
-                    className={`mx-2 h-5 w-px ${
-                      isScrolled ? 'bg-gray-300' : 'bg-white/30'
+                    className={`mx-3 h-6 w-px ${
+                      isScrolled ? 'bg-gray-400' : 'bg-white/60'
                     }`}
                   />
                 )}
