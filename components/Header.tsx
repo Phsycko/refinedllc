@@ -84,19 +84,28 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:space-x-5">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`text-sm font-medium transition-colors duration-300 w-32 text-center inline-flex items-center justify-center whitespace-nowrap ${
-                  isScrolled 
-                    ? 'text-gray-900 hover:text-gray-600' 
-                    : 'text-white hover:text-gray-300'
-                }`}
-              >
-                {item.label}
-              </Link>
+          <div className="hidden md:flex md:items-center">
+            {navItems.map((item, index) => (
+              <div key={item.href} className="flex items-center">
+                <Link
+                  href={item.href}
+                  className={`text-sm font-medium transition-colors duration-300 w-32 text-center inline-flex items-center justify-center whitespace-nowrap ${
+                    isScrolled 
+                      ? 'text-gray-900 hover:text-gray-600' 
+                      : 'text-white hover:text-gray-300'
+                  }`}
+                >
+                  {item.label}
+                </Link>
+                {index < navItems.length - 1 && (
+                  <span
+                    aria-hidden="true"
+                    className={`mx-2 h-5 w-px ${
+                      isScrolled ? 'bg-gray-300' : 'bg-white/30'
+                    }`}
+                  />
+                )}
+              </div>
             ))}
             <LanguageToggle />
             <Link
