@@ -108,6 +108,10 @@ export default function Header() {
               </div>
             ))}
             <LanguageToggle />
+            <span
+              aria-hidden="true"
+              className={`mx-3 h-6 w-px ${isScrolled ? 'bg-gray-300' : 'bg-white/50'}`}
+            />
             <Link
               href="/contacto"
               className={`rounded-none h-10 px-4 text-sm font-semibold shadow-sm transition-all hover:shadow-md uppercase tracking-wide inline-flex items-center justify-center ${
