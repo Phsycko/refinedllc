@@ -1492,7 +1492,7 @@ function ServicesEditor({ content, setContent, uploading, handleFileUpload }: Se
             <ImageUploadInput
               value={service.image || ''}
               onChange={(url) => updateService('image', url)}
-              folder={service?.slug === 'bathrooms' ? 'imagenes' : 'services'}
+              folder="services"
               placeholder="/images/services/main-image.jpg"
               uploading={uploading}
               handleFileUpload={handleFileUpload}
