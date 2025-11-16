@@ -2,7 +2,6 @@
 
 import companyDataEs from '@/content/company.json'
 import companyDataEn from '@/content/company-en.json'
-import ValueStats from '@/components/ValueStats'
 import CTASection from '@/components/CTASection'
 import { useLanguage } from '@/contexts/LanguageContext'
 import HeaderSimple from '@/components/HeaderSimple'
@@ -84,9 +83,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      {/* Stats */}
-      <ValueStats />
 
       {/* Why Choose Us */}
       <section className="bg-white py-16 sm:py-24">
