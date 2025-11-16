@@ -89,7 +89,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-sm font-medium transition-colors duration-300 ${
+                className={`text-sm font-medium transition-colors duration-300 w-28 text-center inline-flex justify-center ${
                   isScrolled 
                     ? 'text-gray-900 hover:text-gray-600' 
                     : 'text-white hover:text-gray-300'

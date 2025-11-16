@@ -9,7 +9,7 @@ export default function LanguageToggle() {
     <div className="flex items-center space-x-2">
       <button
         onClick={() => setLanguage('es')}
-        className={`px-4 py-2 rounded-none text-base font-medium uppercase tracking-wide transition-colors border ${
+        className={`px-3 py-1.5 rounded-none text-sm font-medium uppercase tracking-wide transition-colors border min-w-[48px] text-center ${
           language === 'es'
             ? 'bg-accent text-white border-accent'
             : 'bg-white text-secondary hover:bg-gray-100 border-gray-300'
@@ -20,7 +20,7 @@ export default function LanguageToggle() {
       </button>
       <button
         onClick={() => setLanguage('en')}
-        className={`px-4 py-2 rounded-none text-base font-medium uppercase tracking-wide transition-colors border ${
+        className={`px-3 py-1.5 rounded-none text-sm font-medium uppercase tracking-wide transition-colors border min-w-[48px] text-center ${
           language === 'en'
             ? 'bg-accent text-white border-accent'
             : 'bg-white text-secondary hover:bg-gray-100 border-gray-300'
