@@ -37,7 +37,7 @@ export default function TestimonialList() {
                 ))}
               </div>
               <p className="text-sm text-secondary italic mb-4 min-h-[84px]">
-                &ldquo;{testimonial.text}&rdquo;
+                &ldquo;{language === 'en' && testimonial.text_en ? testimonial.text_en : testimonial.text}&rdquo;
               </p>
               <div className="mt-4 pt-4 border-t border-gray-200">
                 <p className="font-semibold text-primary text-sm min-h-[1.25rem]">

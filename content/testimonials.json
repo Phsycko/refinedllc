@@ -3,9 +3,11 @@
     "id": 1,
     "name": "Jennifer Williams",
     "role": "CEO, TechVision Inc.",
+    "role_en": "CEO, TechVision Inc.",
     "project": "Tech Startup Hub",
     "rating": 5,
     "text": "Refined LLC transformó nuestra visión en realidad. El espacio de oficinas que crearon es exactamente lo que necesitábamos para fomentar la innovación y colaboración en nuestro equipo. Profesionalismo excepcional de principio a fin.",
+    "text_en": "Refined LLC turned our vision into reality. The office space they created is exactly what we needed to foster innovation and collaboration across our team. Exceptional professionalism from start to finish.",
     "image": "/images/testimonials/jennifer-w.jpg",
     "date": "2024-08-15"
   },
@@ -17,6 +19,7 @@
     "project": "Villa Moderna Pacific Coast",
     "rating": 5,
     "text": "La atención al detalle y el compromiso con la excelencia de Refined LLC superó todas nuestras expectativas. Nuestra casa de ensueño frente al mar es aún más hermosa de lo que imaginamos. Recomendamos sus servicios sin reservas.",
+    "text_en": "Refined LLC's attention to detail and commitment to excellence exceeded our expectations. Our oceanfront dream home is even more beautiful than we imagined. We highly recommend their services.",
     "image": "/images/testimonials/michael-c.jpg",
     "date": "2024-06-22"
   },
@@ -24,9 +27,11 @@
     "id": 3,
     "name": "Sarah Thompson",
     "role": "Directora de Desarrollo",
+    "role_en": "Development Director",
     "project": "Penthouse Downtown Renovation",
     "rating": 5,
     "text": "La remodelación de nuestro penthouse fue manejada con absoluto profesionalismo. El equipo respetó nuestros tiempos, presupuesto y entregó resultados que exceden nuestras expectativas. El espacio ahora es verdaderamente espectacular.",
+    "text_en": "The renovation of our penthouse was handled with complete professionalism. The team respected our timelines and budget and delivered results that exceeded our expectations. The space is now truly spectacular.",
     "image": "/images/testimonials/sarah-t.jpg",
     "date": "2023-11-10"
   },
@@ -38,6 +43,7 @@
     "project": "Residencia Familiar en Suburbios",
     "rating": 5,
     "text": "Refined LLC hizo realidad nuestro sueño de tener una casa familiar perfecta. Desde el diseño inicial hasta la entrega final, cada paso fue manejado con cuidado y experiencia. No podríamos estar más felices con nuestra nueva casa.",
+    "text_en": "Refined LLC made our dream of a perfect family home come true. From the initial design to final delivery, every step was handled with care and expertise. We couldn't be happier with our new home.",
     "image": "/images/testimonials/martinez-family.jpg",
     "date": "2023-09-05"
   }
