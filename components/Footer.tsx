@@ -17,8 +17,13 @@ export default function Footer() {
           {/* Logo y eslogan */}
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="flex items-center space-x-3">
-              <div className="relative h-12 w-12 bg-accent rounded-lg flex items-center justify-center">
-                <span className="text-2xl font-bold text-white">R</span>
+              <div className="h-12 w-auto">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/logo.jpg"
+                  alt="Refined LLC"
+                  className="h-12 w-auto object-contain filter brightness-0 invert"
+                />
               </div>
               <div>
                 <div className="text-xl font-bold text-white">Refined LLC</div>
