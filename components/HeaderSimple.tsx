@@ -18,7 +18,7 @@ export default function HeaderSimple() {
   ]
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
@@ -33,21 +33,26 @@ export default function HeaderSimple() {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:space-x-6">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-sm font-medium text-gray-900 hover:text-gray-600 transition-colors duration-300"
-              >
-                {item.label}
-              </Link>
+          {/* Desktop Navigation - idéntico al header principal (estado scrolled) */}
+          <div className="hidden md:flex md:items-center">
+            {navItems.map((item, index) => (
+              <div key={item.href} className="flex items-center">
+                <Link
+                  href={item.href}
+                  className="text-sm font-medium text-gray-900 hover:text-gray-600 transition-colors duration-300 w-32 text-center inline-flex items-center justify-center whitespace-nowrap"
+                >
+                  {item.label}
+                </Link>
+                {index < navItems.length - 1 && (
+                  <span aria-hidden="true" className="mx-3 h-6 w-px bg-gray-400" />
+                )}
+              </div>
             ))}
+            <div className="mx-3" />
             <LanguageToggle />
             <Link
               href="/contacto"
-              className="rounded-md bg-accent px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-accent-dark hover:shadow-md"
+              className="rounded-none h-10 px-4 text-sm font-semibold shadow-sm transition-all hover:shadow-md uppercase tracking-wide inline-flex items-center justify-center bg-accent text-white hover:bg-accent-dark"
             >
               {t.nav.quote}
             </Link>
@@ -96,7 +101,7 @@ export default function HeaderSimple() {
               </div>
               <Link
                 href="/contacto"
-                className="block w-full px-3 py-2 text-center text-base font-medium text-white bg-accent hover:bg-accent-dark rounded-md"
+                className="block w-full px-3 py-2 text-center text-base font-semibold text-white bg-accent hover:bg-accent-dark rounded-none uppercase tracking-wide"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {t.nav.quote}
