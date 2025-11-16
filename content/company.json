@@ -1,23 +1,23 @@
 {
   "name": "Refined LLC",
-  "slogan": "Exceeding Expectations",
+  "slogan": "Superando Expectativas",
   "founded": 2015,
   "description": "Refined LLC es una firma líder en diseño arquitectónico y construcción, comprometida con la excelencia en cada proyecto. Nos especializamos en transformar visiones en realidades tangibles, superando las expectativas de nuestros clientes.",
   "mission": "Nuestra misión es crear espacios excepcionales que mejoren la vida de las personas, combinando diseño innovador, artesanía de calidad superior y un compromiso inquebrantable con la satisfacción del cliente.",
   "hero": {
     "title": {
-      "line1": "Transforming",
-      "line2": "Visions into",
-      "line3": "Reality"
+      "line1": "Transformando",
+      "line2": "Visiones en",
+      "line3": "Realidad"
     },
-    "subtitle": "World-class architectural design and construction.",
-    "description": "Over 9 years creating exceptional spaces that exceed expectations.",
-    "ctaText": "TALK TO US",
+    "subtitle": "Diseño arquitectónico y construcción de clase mundial.",
+    "description": "Más de 9 años creando espacios excepcionales que superan expectativas.",
+    "ctaText": "CONTÁCTANOS",
     "ctaLink": "/contacto",
     "carouselServices": [
       {
         "id": "outdoor-living",
-        "name": "Outdoor Living Space",
+        "name": "Espacios al Aire Libre",
         "nameEn": "Outdoor Living Space",
         "image": "/images/services-carousel/diseno.jpg",
         "price": "Desde $12,000",
@@ -44,7 +44,7 @@
       },
       {
         "id": "kitchen",
-        "name": "Cocinas",
+        "name": "Cocina",
         "nameEn": "Kitchen",
         "image": "/images/services-carousel/construccion.jpg",
         "price": "Desde $20,000",
