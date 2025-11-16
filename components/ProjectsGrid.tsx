@@ -52,11 +52,6 @@ export default function ProjectsGrid({ featured = false, limit }: ProjectsGridPr
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute top-4 right-4">
-                    <span className="inline-flex items-center rounded-full bg-accent px-3 py-1 text-xs font-semibold text-white">
-                      {category}
-                    </span>
-                  </div>
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-primary group-hover:text-accent transition-colors line-clamp-1 min-h-[1.75rem]">
