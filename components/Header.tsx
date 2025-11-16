@@ -84,12 +84,12 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:space-x-4">
+          <div className="hidden md:flex md:items-center md:space-x-5">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-sm font-medium transition-colors duration-300 w-24 text-center inline-flex justify-center ${
+                className={`text-sm font-medium transition-colors duration-300 w-32 text-center inline-flex items-center justify-center whitespace-nowrap ${
                   isScrolled 
                     ? 'text-gray-900 hover:text-gray-600' 
                     : 'text-white hover:text-gray-300'
@@ -101,7 +101,7 @@ export default function Header() {
             <LanguageToggle />
             <Link
               href="/contacto"
-              className={`rounded-none px-5 py-2.5 text-sm font-semibold shadow-sm transition-all hover:shadow-md uppercase tracking-wide ${
+              className={`rounded-none h-10 px-4 text-sm font-semibold shadow-sm transition-all hover:shadow-md uppercase tracking-wide inline-flex items-center justify-center ${
                 isScrolled
                   ? 'bg-accent text-white hover:bg-accent-dark'
                   : 'bg-accent text-white hover:bg-accent-dark'
