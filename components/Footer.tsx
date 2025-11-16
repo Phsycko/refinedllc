@@ -95,13 +95,6 @@ export default function Footer() {
             <p className="text-sm text-gray-400">
               © {currentYear} Refined LLC. {t.footer.allRightsReserved}
             </p>
-            <Link 
-              href="/admin" 
-              className="text-xs text-gray-600 hover:text-accent transition-colors opacity-50 hover:opacity-100"
-              title="Panel de Administración"
-            >
-              🔐
-            </Link>
           </div>
           <div className="flex space-x-6 mt-4 md:mt-0">
             {companyData.social.facebook && (
