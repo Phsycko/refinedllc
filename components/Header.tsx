@@ -84,12 +84,12 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center">
+          <div className="hidden md:flex md:items-center flex-shrink-0">
             {navItems.map((item, index) => (
-              <div key={item.href} className="flex items-center">
+              <div key={item.href} className="flex items-center flex-shrink-0">
                 <Link
                   href={item.href}
-                  className={`text-sm font-medium transition-colors duration-300 min-w-[120px] max-w-[120px] text-center inline-flex items-center justify-center whitespace-nowrap ${
+                  className={`text-sm font-medium transition-colors duration-300 w-[120px] text-center inline-flex items-center justify-center whitespace-nowrap flex-shrink-0 ${
                     isScrolled 
                       ? 'text-gray-900 hover:text-gray-600' 
                       : 'text-white hover:text-gray-300'
@@ -100,21 +100,23 @@ export default function Header() {
                 {index < navItems.length - 1 && (
                   <span
                     aria-hidden="true"
-                    className={`mx-3 h-6 w-px ${
+                    className={`mx-3 h-6 w-px flex-shrink-0 ${
                       isScrolled ? 'bg-gray-400' : 'bg-white/60'
                     }`}
                   />
                 )}
               </div>
             ))}
-            <LanguageToggle />
+            <div className="flex-shrink-0">
+              <LanguageToggle />
+            </div>
             <span
               aria-hidden="true"
-              className={`mx-3 h-6 w-px ${isScrolled ? 'bg-gray-300' : 'bg-white/50'}`}
+              className={`mx-3 h-6 w-px flex-shrink-0 ${isScrolled ? 'bg-gray-300' : 'bg-white/50'}`}
             />
             <Link
               href="/contacto"
-              className={`rounded-none h-10 px-4 text-sm font-semibold shadow-sm transition-all hover:shadow-md uppercase tracking-wide inline-flex items-center justify-center ${
+              className={`rounded-none h-10 min-w-[140px] px-4 text-sm font-semibold shadow-sm transition-all hover:shadow-md uppercase tracking-wide inline-flex items-center justify-center flex-shrink-0 ${
                 isScrolled
                   ? 'bg-accent text-white hover:bg-accent-dark'
                   : 'bg-accent text-white hover:bg-accent-dark'

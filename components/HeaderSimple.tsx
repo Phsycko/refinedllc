@@ -34,26 +34,27 @@ export default function HeaderSimple() {
           </Link>
 
           {/* Desktop Navigation - idéntico al header principal (estado scrolled) */}
-          <div className="hidden md:flex md:items-center">
+          <div className="hidden md:flex md:items-center flex-shrink-0">
             {navItems.map((item, index) => (
-              <div key={item.href} className="flex items-center">
+              <div key={item.href} className="flex items-center flex-shrink-0">
                 <Link
                   href={item.href}
-                  className="text-sm font-medium text-gray-900 hover:text-gray-600 transition-colors duration-300 min-w-[120px] max-w-[120px] text-center inline-flex items-center justify-center whitespace-nowrap"
+                  className="text-sm font-medium text-gray-900 hover:text-gray-600 transition-colors duration-300 w-[120px] text-center inline-flex items-center justify-center whitespace-nowrap flex-shrink-0"
                 >
                   {item.label}
                 </Link>
                 {index < navItems.length - 1 && (
-                  <span aria-hidden="true" className="mx-3 h-6 w-px bg-gray-400" />
+                  <span aria-hidden="true" className="mx-3 h-6 w-px bg-gray-400 flex-shrink-0" />
                 )}
               </div>
             ))}
-            <div className="mx-3" />
-            <LanguageToggle />
-            <span aria-hidden="true" className="mx-3 h-6 w-px bg-gray-300" />
+            <div className="flex-shrink-0">
+              <LanguageToggle />
+            </div>
+            <span aria-hidden="true" className="mx-3 h-6 w-px bg-gray-300 flex-shrink-0" />
             <Link
               href="/contacto"
-              className="rounded-none h-10 px-4 text-sm font-semibold shadow-sm transition-all hover:shadow-md uppercase tracking-wide inline-flex items-center justify-center bg-accent text-white hover:bg-accent-dark"
+              className="rounded-none h-10 min-w-[140px] px-4 text-sm font-semibold shadow-sm transition-all hover:shadow-md uppercase tracking-wide inline-flex items-center justify-center bg-accent text-white hover:bg-accent-dark flex-shrink-0"
             >
               {t.nav.quote}
             </Link>
