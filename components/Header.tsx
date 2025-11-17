@@ -89,7 +89,7 @@ export default function Header() {
               <div key={item.href} className="flex items-center">
                 <Link
                   href={item.href}
-                  className={`text-sm font-medium transition-colors duration-300 w-32 text-center inline-flex items-center justify-center whitespace-nowrap ${
+                  className={`text-sm font-medium transition-colors duration-300 min-w-[120px] max-w-[120px] text-center inline-flex items-center justify-center whitespace-nowrap ${
                     isScrolled 
                       ? 'text-gray-900 hover:text-gray-600' 
                       : 'text-white hover:text-gray-300'
