@@ -193,24 +193,68 @@ export default function Header() {
       </nav>
 
       {/* Hero section con carrusel */}
-      <header className="relative w-full h-screen overflow-hidden">
+      <header className="relative w-full h-screen overflow-hidden bg-gray-600">
         {/* Carrusel de imágenes */}
         <div className="absolute inset-0">
-          {services.map((service, index) => (
-            <div
-              key={service.id}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
-                index === currentServiceIndex ? 'opacity-100' : 'opacity-0'
-              }`}
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={service.image}
-                alt={service.name}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          ))}
+          {services.map((service, index) => {
+            // Función para obtener la URL correcta de Google Drive
+            const getImageUrl = (url: string) => {
+              if (!url) return ''
+              
+              // Si ya es una URL de uc?export=view, usarla directamente
+              if (url.includes('/uc?export=view&id=')) {
+                return url
+              }
+              
+              // Si es una URL de file/d/, convertirla
+              if (url.includes('drive.google.com/file/d/')) {
+                const match = url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/)
+                if (match && match[1]) {
+                  return `https://drive.google.com/uc?export=view&id=${match[1]}`
+                }
+              }
+              
+              // Si es una URL de view, extraer el ID
+              if (url.includes('drive.google.com/file/d/') && url.includes('/view')) {
+                const match = url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/)
+                if (match && match[1]) {
+                  return `https://drive.google.com/uc?export=view&id=${match[1]}`
+                }
+              }
+              
+              return url
+            }
+            
+            const imageUrl = getImageUrl(service.image || '')
+            
+            return (
+              <div
+                key={service.id}
+                className={`absolute inset-0 transition-opacity duration-1000 ${
+                  index === currentServiceIndex ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={imageUrl}
+                  alt={service.name}
+                  className="w-full h-full object-cover"
+                  loading="eager"
+                  onError={(e) => {
+                    // Fallback: intentar formato alternativo
+                    const currentUrl = e.currentTarget.src
+                    if (currentUrl.includes('drive.google.com/uc?export=view&id=')) {
+                      const id = currentUrl.match(/id=([a-zA-Z0-9_-]+)/)?.[1]
+                      if (id) {
+                        // Intentar formato alternativo
+                        e.currentTarget.src = `https://lh3.googleusercontent.com/d/${id}=w1920-h1080`
+                      }
+                    }
+                  }}
+                />
+              </div>
+            )
+          })}
         </div>
 
         {/* Overlay oscuro semitransparente */}
