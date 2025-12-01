@@ -179,13 +179,15 @@ export default function Header() {
               <div className="px-3 py-2">
                 <LanguageToggle />
               </div>
-              <Link
-                href="/contacto"
-                className="block w-full px-3 py-2 text-center text-base font-medium text-white bg-accent hover:bg-accent-dark rounded-none uppercase tracking-wide"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {t.nav.quote}
-              </Link>
+              <div className="flex justify-center px-3 py-2">
+                <Link
+                  href="/contacto"
+                  className="inline-block px-4 py-2 text-sm font-medium text-white bg-accent hover:bg-accent-dark rounded-none uppercase tracking-wide"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {t.nav.quote}
+                </Link>
+              </div>
             </div>
           </div>
         )}
