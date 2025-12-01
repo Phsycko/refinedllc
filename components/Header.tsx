@@ -295,7 +295,7 @@ export default function Header() {
 
         {/* Tarjeta de servicios - PEGADA A LA ESQUINA */}
         <div className="absolute bottom-0 right-0 z-20">
-          <div className="bg-white/10 backdrop-blur-sm rounded-tl-lg shadow-lg border border-white/20 p-4 sm:p-8 w-[420px] sm:w-[560px] h-[100px] sm:h-[120px]">
+          <div className="bg-white/10 backdrop-blur-sm rounded-tl-lg shadow-lg border border-white/20 p-3 sm:p-8 w-[320px] sm:w-[560px] h-[90px] sm:h-[120px]">
             <div className="flex items-center justify-between h-full">
               {/* Botones de navegación a la izquierda */}
               <div className="flex flex-col space-y-1 sm:space-y-2">
@@ -318,7 +318,7 @@ export default function Header() {
               </div>
 
               {/* Contenido central - ANCHO COMPLETO */}
-              <div className="text-left w-[220px] sm:w-[300px] px-2 sm:px-4">
+              <div className="text-left w-[160px] sm:w-[300px] px-2 sm:px-4">
                 <h3 className="text-sm sm:text-xl font-bold text-white mb-0.5 sm:mb-1 truncate">
                   {language === 'en' ? services[currentServiceIndex]?.nameEn : services[currentServiceIndex]?.name}
                 </h3>
