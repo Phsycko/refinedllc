@@ -89,7 +89,7 @@ export default function Header() {
               <div key={item.href} className="flex items-center flex-shrink-0">
                 <Link
                   href={item.href}
-                  className={`text-sm font-medium transition-colors duration-300 w-[120px] text-center inline-flex items-center justify-center whitespace-nowrap flex-shrink-0 ${
+                  className={`text-sm font-medium transition-colors duration-300 w-[140px] text-center inline-flex items-center justify-center whitespace-nowrap flex-shrink-0 ${
                     isScrolled 
                       ? 'text-gray-900 hover:text-gray-600' 
                       : 'text-white hover:text-gray-300'
@@ -116,7 +116,7 @@ export default function Header() {
             />
             <Link
               href="/contacto"
-              className={`rounded-none h-10 min-w-[140px] px-4 text-sm font-semibold shadow-sm transition-all hover:shadow-md uppercase tracking-wide inline-flex items-center justify-center flex-shrink-0 ${
+              className={`rounded-none h-10 w-[180px] px-4 text-sm font-semibold shadow-sm transition-all hover:shadow-md uppercase tracking-wide inline-flex items-center justify-center flex-shrink-0 ${
                 isScrolled
                   ? 'bg-accent text-white hover:bg-accent-dark'
                   : 'bg-accent text-white hover:bg-accent-dark'
