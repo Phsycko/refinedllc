@@ -39,7 +39,7 @@ export default function HeaderSimple() {
               <div key={item.href} className="flex items-center flex-shrink-0">
                 <Link
                   href={item.href}
-                  className="text-sm font-medium text-gray-900 hover:text-gray-600 transition-colors duration-300 w-[120px] text-center inline-flex items-center justify-center whitespace-nowrap flex-shrink-0"
+                  className="text-sm font-medium text-gray-900 hover:text-gray-600 transition-colors duration-300 w-[140px] text-center inline-flex items-center justify-center whitespace-nowrap flex-shrink-0"
                 >
                   {item.label}
                 </Link>
@@ -54,7 +54,7 @@ export default function HeaderSimple() {
             <span aria-hidden="true" className="mx-3 h-6 w-px bg-gray-300 flex-shrink-0" />
             <Link
               href="/contacto"
-              className="rounded-none h-10 min-w-[140px] px-4 text-sm font-semibold shadow-sm transition-all hover:shadow-md uppercase tracking-wide inline-flex items-center justify-center bg-accent text-white hover:bg-accent-dark flex-shrink-0"
+              className="rounded-none h-10 w-[180px] px-4 text-sm font-semibold shadow-sm transition-all hover:shadow-md uppercase tracking-wide inline-flex items-center justify-center bg-accent text-white hover:bg-accent-dark flex-shrink-0"
             >
               {t.nav.quote}
             </Link>
@@ -101,13 +101,15 @@ export default function HeaderSimple() {
               <div className="px-3 py-2">
                 <LanguageToggle />
               </div>
-              <Link
-                href="/contacto"
-                className="block w-full px-3 py-2 text-center text-base font-semibold text-white bg-accent hover:bg-accent-dark rounded-none uppercase tracking-wide"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {t.nav.quote}
-              </Link>
+              <div className="flex justify-center px-3 py-2">
+                <Link
+                  href="/contacto"
+                  className="inline-block px-6 py-2.5 text-base font-medium text-white bg-accent hover:bg-accent-dark rounded-none uppercase tracking-wide"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {t.nav.quote}
+                </Link>
+              </div>
             </div>
           </div>
         )}
