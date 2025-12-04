@@ -32,54 +32,14 @@ export default function ServicesGrid() {
                 className="group relative overflow-hidden rounded-lg bg-background shadow-md transition-all hover:shadow-xl hover:scale-105"
               >
                 <div className="aspect-[4/3] relative overflow-hidden rounded-t-lg bg-gray-200">
-                  {(() => {
-                    // Función para obtener la URL correcta de Google Drive
-                    const getImageUrl = (url: string) => {
-                      if (!url) return ''
-                      
-                      // Si ya es una URL de uc?export=view, usarla directamente
-                      if (url.includes('/uc?export=view&id=')) {
-                        return url
-                      }
-                      
-                      // Si es una URL de file/d/, convertirla
-                      if (url.includes('drive.google.com/file/d/')) {
-                        const match = url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/)
-                        if (match && match[1]) {
-                          return `https://drive.google.com/uc?export=view&id=${match[1]}`
-                        }
-                      }
-                      
-                      return url
-                    }
-                    
-                    const imageUrl = getImageUrl(service.image || '')
-                    
-                    return imageUrl.startsWith('http') ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        src={imageUrl}
-                        alt={title}
-                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                        onError={(e) => {
-                          const currentUrl = e.currentTarget.src
-                          if (currentUrl.includes('drive.google.com/uc?export=view&id=')) {
-                            const id = currentUrl.match(/id=([a-zA-Z0-9_-]+)/)?.[1]
-                            if (id) {
-                              e.currentTarget.src = `https://lh3.googleusercontent.com/d/${id}=w800-h600`
-                            }
-                          }
-                        }}
-                      />
-                    ) : (
-                      <Image
-                        src={service.image}
-                        alt={title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    )
-                  })()}
+                  <Image
+                    src={service.image}
+                    alt={title}
+                    fill
+                    priority
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-primary group-hover:text-accent transition-colors min-h-[1.75rem]">
