@@ -32,13 +32,12 @@ export default function ServicesGrid() {
                 className="group relative overflow-hidden rounded-lg bg-background shadow-md transition-all hover:shadow-xl hover:scale-105"
               >
                 <div className="aspect-[4/3] relative overflow-hidden rounded-t-lg bg-gray-200">
-                  <Image
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
                     src={service.image}
                     alt={title}
-                    fill
-                    priority
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading="eager"
                   />
                 </div>
                 <div className="p-6">
